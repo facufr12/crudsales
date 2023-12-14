@@ -9,3 +9,6 @@
 - **Diagrama Miro:**
   - [Enlace al Código Site Map](https://miro.com/app/board/uXjVMtMwTMs=/)
   - [Enlace al panel de Miro](https://miro.com/app/board)
+
+- **Libreria de Gráficos del DashBoard:**
+  - [Enlace a apexcharts(https://apexcharts.com/)
