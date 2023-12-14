@@ -11,4 +11,4 @@
   - [Enlace al panel de Miro](https://miro.com/app/board)
 
 - **Libreria de Gráficos del DashBoard:**
-  - [Enlace a apexcharts(https://apexcharts.com/)
+  - [Enlace a apexcharts](https://apexcharts.com/)
