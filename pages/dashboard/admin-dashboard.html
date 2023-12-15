@@ -864,10 +864,11 @@
             <!-- Container fluid -->
             <section class="container-fluid p-4">
                 <div class="row">
+                    
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="border-bottom pb-3 mb-3 d-lg-flex justify-content-between align-items-center">
                             <div class="mb-3 mb-lg-0">
-                                <h1 class="mb-0 h2 fw-bold">Juan Lopéz - Dashboard </h1>
+                                <h1 class="mb-0 h2 fw-bold">Dashboard - Juan Lopéz  </h1>
                             </div>
                             <div class="d-flex">
                                 <div class="input-group me-3">
@@ -896,7 +897,7 @@
                                         <span class="fe fe-shopping-bag fs-3 text-primary"></span>
                                     </div>
                                 </div>
-                                <h2 class="fw-bold mb-1">10</h2>
+                                <h2 class="fw-bold mb-1">$ 120.000</h2>
                                 <span class="text-success fw-semibold">
                                     <i class="fe fe-trending-up me-1"></i>
                                     +20% Vigencia Anterior
@@ -918,7 +919,7 @@
                                         <span class="fe fe-book-open fs-3 text-primary"></span>
                                     </div>
                                 </div>
-                                <h2 class="fw-bold mb-1">12</h2>
+                                <h2 class="fw-bold mb-1">$ 70.000</h2>
                                  
                                 <span class="text-warning fw-semibold">
                                     <i class="fe fe-trending-up me-1"></i>
@@ -942,7 +943,7 @@
                                         <span class="fe fe-users fs-3 text-primary"></span>
                                     </div>
                                 </div>
-                                <h2 class="fw-bold mb-1">6</h2>
+                                <h2 class="fw-bold mb-1">$ 40.000</h2>
                                 <span class="text-danger fw-semibold">
                                     <i class="fe fe-trending-down me-1"></i>
                                     +10% Vigencia Anterior
@@ -964,7 +965,7 @@
                                         <span class="fe fe-user-check fs-3 text-primary"></span>
                                     </div>
                                 </div>
-                                <h2 class="fw-bold mb-1">5</h2>
+                                <h2 class="fw-bold mb-1">5 Prospectos</h2>
                                 <span class="text-warning fw-semibold">
                                     <i class="fe fe-trending-down me-1"></i>
                                     -2% Vigencia Anterior
@@ -1296,9 +1297,9 @@
                                             </div>
                                             <div class="col ms-n2">
                                                 <h4 class="mb-0 h5">Carmen</h4>
-                                                <p class="mb-1">Actualizaste el estado a ""
+                                                <p class="mb-1">Actualizaste el estado a "Venta Cerrada".
                                                 </p>
-                                                <span class="fs-6">2m ago</span>
+                                                <span class="fs-6">2 minutos atrás...</span>
                                             </div>
                                         </div>
                                     </li>
@@ -1312,10 +1313,10 @@
                                                 </div>
                                             </div>
                                             <div class="col ms-n2">
-                                                <h4 class="mb-0 h5">Irene Hargrove</h4>
-                                                <p class="mb-1">Comment on “Bootstrap Tutorial” Says “Hi,I m irene...
+                                                <h4 class="mb-0 h5">Celeste</h4>
+                                                <p class="mb-1">Se te asignó un prospecto.
                                                 </p>
-                                                <span class="fs-6">1 hour ago</span>
+                                                <span class="fs-6">1 hora atrás...</span>
                                             </div>
                                         </div>
                                     </li>
@@ -1329,9 +1330,9 @@
                                                 </div>
                                             </div>
                                             <div class="col ms-n2">
-                                                <h4 class="mb-0 h5">Trevor Bradle</h4>
-                                                <p class="mb-1">Just share your article on Social Media..</p>
-                                                <span class="fs-6">2 month ago</span>
+                                                <h4 class="mb-0 h5">David</h4>
+                                                <p class="mb-1">Actualizaste el estado a "Rechazado"</p>
+                                                <span class="fs-6">2 horas atrás...</span>
                                             </div>
                                         </div>
                                     </li>
@@ -1344,10 +1345,10 @@
                                                 </div>
                                             </div>
                                             <div class="col ms-n2">
-                                                <h4 class="mb-0 h5">John Deo</h4>
-                                                <p class="mb-1">Just buy the courses”Build React Application Tutorial”
+                                                <h4 class="mb-0 h5">Juan</h4>
+                                                <p class="mb-1">Se re-asignó uno de tus prospectos.
                                                 </p>
-                                                <span class="fs-6">2m ago</span>
+                                                <span class="fs-6">1 semana atrás...</span>
                                             </div>
                                         </div>
                                     </li>
@@ -1363,37 +1364,39 @@
     <!-- Script -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
-        const ventasCerradas = {
+        var options = {
             series: [{
-              name: "Desktops",
-              data: [10, 15, 5, 25, 34, 4, 6, 14, 20]
-          }],
+                name: 'Datos Asignados',
+                data: [10, 15, 12, 11, 8, 15, 4]
+            }, {
+                name: 'Ventas Cerradas',
+                data: [2, 8, 5, 9, 5, 10, 3]
+            }],
             chart: {
-            height: 350,
-            type: 'line',
-            zoom: {
-              enabled: false
-            }
-          },
-          dataLabels: {
-            enabled: false
-          },
-          stroke: {
-            curve: 'straight'
-          },
-          grid: {
-            row: {
-              colors: ['#f3f3f3', 'transparent'],
-              opacity: 0.5
+                height: 350,
+                type: 'area'
             },
-          },
-          xaxis: {
-            categories: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre'],
-          }
-          };
-          var chart = new ApexCharts(document.querySelector("#chart"), ventasCerradas);
-          chart.render();
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            xaxis: {
+                type: 'category',
+                categories: ["Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+            },
+            tooltip: {
+                x: {
+                    format: 'dd/MM/yy HH:mm'
+                },
+            },
+        };
+    
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
     </script>
+    
 
     <!-- Libs JS -->
     <script src="../../assets/libs/%40popperjs/core/dist/umd/popper.min.js"></script>
