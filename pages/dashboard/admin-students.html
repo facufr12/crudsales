@@ -867,7 +867,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
                         <!-- Page Header -->
-                        <div class="border-bottom pb-3 mb-3 d-flex justify-content-between align-items-center">
+                        <div class="border-bottom pb-3 mb-3 d-flex flex-column flex-md-row justify-content-between align-items-center">
                             <div class="mb-2 mb-lg-0">
                                 <h1 class="mb-1 h2 fw-bold">
                                     Prospectos
@@ -884,18 +884,25 @@
                                     </ol>
                                 </nav>
                             </div>
-                            <div class="nav btn-group" role="tablist">
-                                <button class="btn btn-outline-secondary active" data-bs-toggle="tab"
-                                    data-bs-target="#tabPaneGrid" role="tab" aria-controls="tabPaneGrid"
-                                    aria-selected="true">
-                                    <span class="fe fe-grid"></span>
-                                </button>
-                                <button class="btn btn-outline-secondary" data-bs-toggle="tab"
-                                    data-bs-target="#tabPaneList" role="tab" aria-controls="tabPaneList"
-                                    aria-selected="false">
-                                    <span class="fe fe-list"></span>
-                                </button>
+                            <div class="d-flex  gap-1">
+                                <div class="">
+                                    <a href="../dashboard/ecommerce/add-customer.html" class="btn btn-primary me-2">Add Customer</a>
+                                </div>
+                                <div class="nav btn-group" role="tablist">
+                                    <button class="btn btn-outline-secondary active" data-bs-toggle="tab"
+                                        data-bs-target="#tabPaneGrid" role="tab" aria-controls="tabPaneGrid"
+                                        aria-selected="true">
+                                        <span class="fe fe-grid"></span>
+                                    </button>
+                                    <button class="btn btn-outline-secondary" data-bs-toggle="tab"
+                                        data-bs-target="#tabPaneList" role="tab" aria-controls="tabPaneList"
+                                        aria-selected="false">
+                                        <span class="fe fe-list"></span>
+                                    </button>
+                                </div>
+
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -910,6 +917,7 @@
                                     <input type="search" class="form-control" placeholder="Buscar prospectos">
                                 </div>
                                 <div class="row">
+                                    <!-- Card de cada prospecto -->
                                     <div class="col-xl-4 col-lg-6 col-md-6 col-12">
                                         <!-- Card -->
                                         <div class="card mb-4">
@@ -950,14 +958,20 @@
                                                 </div>
                                                 <div class="d-flex justify-content-between pt-2">
                                                     <div class="pt-2">
-                                                        <span >Cobertura</span>
+                                                        <span >Estado</span>
                                                     </div>
                                                     
                                             
                                                     <select class="form-select w-65 d-flex text-center" id="category">
-                                                        <option value="">Finalizado</option>
-                                                        <option value="Post Category">En Proceso</option>
-                                                        <option value="Workshop">Rechazado</option>
+                                                        <option value="">Venta Cerrada</option>
+                                                        <option value="">Pago Pendiente</option>
+                                                        <option value="">En Espera</option>
+                                                        <option value="">Pasa de Vigencia</option>
+                                                        <option value="">Es Afiliado</option>
+                                                        <option value="">Duplicado</option>
+                                                        <option value="">Desestimado Por Cober</option>
+                                                        <option value="">No Le Interesa</option>
+                                                        <option value="">Rechazado</option>
                                                     </select>
         
                                                     
@@ -977,7 +991,7 @@
                                                     -->
                                                     <!-- text Finalizado -->
                                                     <div>
-                                                        <span class="badge bg-success-soft">Finalizado</span>
+                                                        <span class="badge bg-success-soft">Venta Cerrada</span>
                                                     </div>
                                                 </div>
                                                 <!-- text -->
@@ -1023,7 +1037,7 @@
                                             <div class="card-body">
                                                 <div class="text-center">
                                                     <div class="position-relative">
-                                                        <img src="../../assets/images/avatar/avatar-13.jpg"
+                                                        <img src="../../assets/images/avatar/avatar-14.jpg"
                                                             class="rounded-circle avatar-xl mb-3" alt="">
                                                         <a href="#" class="position-absolute mt-8 ms-n5">
                                                             <span class="status bg-success"></span>
@@ -1037,33 +1051,39 @@
                                                 </div>
                                                 <div class="d-flex justify-content-between border-bottom py-2 mt-6">
                                                     <span>Celular</span>
-                                                    <span class="text-dark">123456789</span>
+                                                    <span class="text-dark">[ $celular ]</span>
                                                 </div>
 
                                                 <div class="d-flex justify-content-between border-bottom py-2">
                                                     <span>Correo</span>
-                                                    <span class="text-dark">carlos@gmail.com</span>
+                                                    <span class="text-dark">[ $correo ]</span>
                                                 </div>
 
                                                 <div class="d-flex justify-content-between border-bottom py-2">
                                                     <span>Fecha Ingreso</span>
-                                                    <span class="text-dark">12/12/2023 02:05</span>
+                                                    <span class="text-dark">[ $fecha ]</span>
                                                 </div>
 
                                                 <div class="d-flex justify-content-between border-bottom py-2">
                                                     <span>Edad</span>
-                                                    <span>34 Años</span>
+                                                    <span>[ $edad ]</span>
                                                 </div>
                                                 <div class="d-flex justify-content-between pt-2">
                                                     <div class="pt-2">
-                                                        <span >Cobertura</span>
+                                                        <span >Estado</span>
                                                     </div>
                                                     
                                             
                                                     <select class="form-select w-65 d-flex text-center" id="category">
-                                                        <option value="">Finalizado</option>
-                                                        <option value="Post Category">En Proceso</option>
-                                                        <option value="Workshop">Rechazado</option>
+                                                        <option value="">Venta Cerrada</option>
+                                                        <option value="">Pago Pendiente</option>
+                                                        <option value="">En Espera</option>
+                                                        <option value="">Pasa de Vigencia</option>
+                                                        <option value="">Es Afiliado</option>
+                                                        <option value="">Duplicado</option>
+                                                        <option value="">Desestimado Por Cober</option>
+                                                        <option value="">No Le Interesa</option>
+                                                        <option value="">Rechazado</option>
                                                     </select>
         
                                                     
@@ -1072,7 +1092,7 @@
                                                      <!-- text cancel -->
                                                      
                                                      <div>
-                                                        <span class="badge bg-danger-soft">Cancel</span>
+                                                        <span class="badge" style="background-color: gray; color:white ">Duplicado</span>
                                                     </div>
                                                     
                                                     <!-- text en progreso -->
@@ -1109,8 +1129,238 @@
                                                 <!-- progress bar -->
                                                  
                                                 <div class="progress progress-tooltip mt-5" style="height: 6px">
-                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>12%</span>
+                                                    <div class="progress-bar bg-gray" style="background-color: gray;" role="progressbar" style="width: 100%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>0%</span>
+                                                    </div>
+                                                </div>
+                                                
+
+                                                <!-- Ver detalles del prospecto -->
+                                                
+                                                <div class="d-flex justify-content-center mt-5">
+                                                    <a href="/pages/dashboard/ecommerce/customer-single.html" class="btn btn-primary me-2">Detalles del Prospecto</a>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                                        <!-- Card -->
+                                        <div class="card mb-4">
+                                            <!-- Card body -->
+                                            <div class="card-body">
+                                                <div class="text-center">
+                                                    <div class="position-relative">
+                                                        <img src="../../assets/images/avatar/avatar-15.jpg"
+                                                            class="rounded-circle avatar-xl mb-3" alt="">
+                                                        <a href="#" class="position-absolute mt-8 ms-n5">
+                                                            <span class="status bg-success"></span>
+                                                        </a>
+                                                    </div>
+                                                    <h4 class="mb-0">[ $NombreyApellido ]</h4>
+                                                    <p class="mb-0">
+                                                        <i class="fe fe-map-pin me-1 fs-6"></i>
+                                                       [ $Localidad ]
+                                                    </p>
+                                                </div>
+                                                <div class="d-flex justify-content-between border-bottom py-2 mt-6">
+                                                    <span>Celular</span>
+                                                    <span class="text-dark">[ $celular ]</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between border-bottom py-2">
+                                                    <span>Correo</span>
+                                                    <span class="text-dark">[ $correo ]</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between border-bottom py-2">
+                                                    <span>Fecha Ingreso</span>
+                                                    <span class="text-dark">[ $fecha ]</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between border-bottom py-2">
+                                                    <span>Edad</span>
+                                                    <span>[ $edad ]</span>
+                                                </div>
+                                                <div class="d-flex justify-content-between pt-2">
+                                                    <div class="pt-2">
+                                                        <span >Estado</span>
+                                                    </div>
+                                                    
+                                            
+                                                    <select class="form-select w-65 d-flex text-center" id="category">
+                                                        <option value="">Venta Cerrada</option>
+                                                        <option value="">Pago Pendiente</option>
+                                                        <option value="">En Espera</option>
+                                                        <option value="">Pasa de Vigencia</option>
+                                                        <option value="">Es Afiliado</option>
+                                                        <option value="">Duplicado</option>
+                                                        <option value="">Desestimado Por Cober</option>
+                                                        <option value="">No Le Interesa</option>
+                                                        <option value="">Rechazado</option>
+                                                    </select>
+        
+                                                    
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-center mt-5">
+                                                     <!-- text cancel -->
+                                                     
+                                                     <div>
+                                                        <span class="badge bg-danger-soft">No Le Interesa</span>
+                                                    </div>
+                                                    
+                                                    <!-- text en progreso -->
+                                                    <!-- 
+                                                    <div>
+                                                        <span class="badge bg-info-soft">En Progreso</span>
+                                                    </div>
+                                                    -->
+                                                    <!-- text Finalizado -->
+                                                    <!-- 
+                                                    <div>
+                                                        <span class="badge bg-success-soft">Finalizado</span>
+                                                    </div>
+                                                    -->
+                                                </div>
+                                                <!-- text -->
+                                                <!-- progress bar -->
+                                                <!-- 
+                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
+                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>100%</span>
+                                                    </div>
+                                                </div>
+                                                -->
+                                                 <!-- progress bar -->
+                                                 <!-- 
+                                                <div class="progress progress-tooltip" style="height: 6px">
+                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>45%</span>
+                                                    </div>
+                                                </div>
+                                                -->
+
+                                                <!-- progress bar -->
+                                                 
+                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 5%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>5%</span>
+                                                    </div>
+                                                </div>
+                                                
+
+                                                <!-- Ver detalles del prospecto -->
+                                                
+                                                <div class="d-flex justify-content-center mt-5">
+                                                    <a href="/pages/dashboard/ecommerce/customer-single.html" class="btn btn-primary me-2">Detalles del Prospecto</a>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                                        <!-- Card -->
+                                        <div class="card mb-4">
+                                            <!-- Card body -->
+                                            <div class="card-body">
+                                                <div class="text-center">
+                                                    <div class="position-relative">
+                                                        <img src="../../assets/images/avatar/avatar-16.jpg"
+                                                            class="rounded-circle avatar-xl mb-3" alt="">
+                                                        <a href="#" class="position-absolute mt-8 ms-n5">
+                                                            <span class="status bg-success"></span>
+                                                        </a>
+                                                    </div>
+                                                    <h4 class="mb-0">[ $NombreyApellido ]</h4>
+                                                    <p class="mb-0">
+                                                        <i class="fe fe-map-pin me-1 fs-6"></i>
+                                                       [ $Localidad ]
+                                                    </p>
+                                                </div>
+                                                <div class="d-flex justify-content-between border-bottom py-2 mt-6">
+                                                    <span>Celular</span>
+                                                    <span class="text-dark">[ $celular ]</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between border-bottom py-2">
+                                                    <span>Correo</span>
+                                                    <span class="text-dark">[ $correo ]</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between border-bottom py-2">
+                                                    <span>Fecha Ingreso</span>
+                                                    <span class="text-dark">[ $fecha ]</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between border-bottom py-2">
+                                                    <span>Edad</span>
+                                                    <span>[ $edad ]</span>
+                                                </div>
+                                                <div class="d-flex justify-content-between pt-2">
+                                                    <div class="pt-2">
+                                                        <span >Estado</span>
+                                                    </div>
+                                                    
+                                            
+                                                    <select class="form-select w-65 d-flex text-center" id="category">
+                                                        <option value="">Venta Cerrada</option>
+                                                        <option value="">Pago Pendiente</option>
+                                                        <option value="">En Espera</option>
+                                                        <option value="">Pasa de Vigencia</option>
+                                                        <option value="">Es Afiliado</option>
+                                                        <option value="">Duplicado</option>
+                                                        <option value="">Desestimado Por Cober</option>
+                                                        <option value="">No Le Interesa</option>
+                                                        <option value="">Rechazado</option>
+                                                    </select>
+        
+                                                    
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-center mt-5">
+                                                     <!-- text cancel -->
+                                                     
+                                                     <div>
+                                                        <span class="badge bg-danger-soft">Desestimado Por Cober</span>
+                                                    </div>
+                                                    
+                                                    <!-- text en progreso -->
+                                                    <!-- 
+                                                    <div>
+                                                        <span class="badge bg-info-soft">En Progreso</span>
+                                                    </div>
+                                                    -->
+                                                    <!-- text Finalizado -->
+                                                    <!-- 
+                                                    <div>
+                                                        <span class="badge bg-success-soft">Finalizado</span>
+                                                    </div>
+                                                    -->
+                                                </div>
+                                                <!-- text -->
+                                                <!-- progress bar -->
+                                                <!-- 
+                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
+                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>100%</span>
+                                                    </div>
+                                                </div>
+                                                -->
+                                                 <!-- progress bar -->
+                                                 <!-- 
+                                                <div class="progress progress-tooltip" style="height: 6px">
+                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>45%</span>
+                                                    </div>
+                                                </div>
+                                                -->
+
+                                                <!-- progress bar -->
+                                                 
+                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 5%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>5%</span>
                                                     </div>
                                                 </div>
                                                 
@@ -1146,50 +1396,56 @@
                                                 </div>
                                                 <div class="d-flex justify-content-between border-bottom py-2 mt-6">
                                                     <span>Celular</span>
-                                                    <span class="text-dark">123456789</span>
+                                                    <span class="text-dark">[ $celular ]</span>
                                                 </div>
 
                                                 <div class="d-flex justify-content-between border-bottom py-2">
                                                     <span>Correo</span>
-                                                    <span class="text-dark">carlos@gmail.com</span>
+                                                    <span class="text-dark">[ $correo ]</span>
                                                 </div>
 
                                                 <div class="d-flex justify-content-between border-bottom py-2">
                                                     <span>Fecha Ingreso</span>
-                                                    <span class="text-dark">12/12/2023 02:05</span>
+                                                    <span class="text-dark">[ $fecha ]</span>
                                                 </div>
 
                                                 <div class="d-flex justify-content-between border-bottom py-2">
                                                     <span>Edad</span>
-                                                    <span>34 Años</span>
+                                                    <span>[ $edad ]</span>
                                                 </div>
                                                 <div class="d-flex justify-content-between pt-2">
                                                     <div class="pt-2">
-                                                        <span >Cobertura</span>
+                                                        <span >Estado</span>
                                                     </div>
                                                     
                                             
                                                     <select class="form-select w-65 d-flex text-center" id="category">
-                                                        <option value="">Finalizado</option>
-                                                        <option value="Post Category">En Proceso</option>
-                                                        <option value="Workshop">Rechazado</option>
+                                                        <option value="">Venta Cerrada</option>
+                                                        <option value="">Pago Pendiente</option>
+                                                        <option value="">En Espera</option>
+                                                        <option value="">Pasa de Vigencia</option>
+                                                        <option value="">Es Afiliado</option>
+                                                        <option value="">Duplicado</option>
+                                                        <option value="">Desestimado Por Cober</option>
+                                                        <option value="">No Le Interesa</option>
+                                                        <option value="">Rechazado</option>
                                                     </select>
         
                                                     
                                                 </div>
                                                 <div class="d-flex align-items-center justify-content-center mt-5">
                                                      <!-- text cancel -->
-                                                     <!-- 
-                                                     <div>
-                                                        <span class="badge bg-danger-soft">Cancel</span>
-                                                    </div>
-                                                    -->
-                                                    <!-- text en progreso -->
                                                      
+                                                     <div>
+                                                        <span class="badge bg-danger-soft">Es Afiliado</span>
+                                                    </div>
+                                                    
+                                                    <!-- text en progreso -->
+                                                    <!-- 
                                                     <div>
                                                         <span class="badge bg-info-soft">En Progreso</span>
                                                     </div>
-                                                    
+                                                    -->
                                                     <!-- text Finalizado -->
                                                     <!-- 
                                                     <div>
@@ -1207,22 +1463,22 @@
                                                 </div>
                                                 -->
                                                  <!-- progress bar -->
-                                                 
-                                                <div class="progress progress-tooltip mt-5 " style="height: 6px">
+                                                 <!-- 
+                                                <div class="progress progress-tooltip" style="height: 6px">
                                                     <div class="progress-bar bg-info" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
                                                         <span>45%</span>
                                                     </div>
                                                 </div>
-                                                
+                                                -->
 
                                                 <!-- progress bar -->
-                                                <!-- 
-                                                <div class="progress progress-tooltip" style="height: 6px">
-                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>12%</span>
+                                                 
+                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 5%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>5%</span>
                                                     </div>
                                                 </div>
-                                                -->
+                                                
 
                                                 <!-- Ver detalles del prospecto -->
                                                 
@@ -1241,7 +1497,7 @@
                                             <div class="card-body">
                                                 <div class="text-center">
                                                     <div class="position-relative">
-                                                        <img src="../../assets/images/avatar/avatar-15.jpg"
+                                                        <img src="../../assets/images/avatar/avatar-12.jpg"
                                                             class="rounded-circle avatar-xl mb-3" alt="">
                                                         <a href="#" class="position-absolute mt-8 ms-n5">
                                                             <span class="status bg-success"></span>
@@ -1250,85 +1506,96 @@
                                                     <h4 class="mb-0">[ $NombreyApellido ]</h4>
                                                     <p class="mb-0">
                                                         <i class="fe fe-map-pin me-1 fs-6"></i>
-                                                        [ $Localidad ]
+                                                       [ $Localidad ]
                                                     </p>
                                                 </div>
                                                 <div class="d-flex justify-content-between border-bottom py-2 mt-6">
                                                     <span>Celular</span>
-                                                    <span class="text-dark">123456789</span>
+                                                    <span class="text-dark">[ $celular ]</span>
                                                 </div>
 
                                                 <div class="d-flex justify-content-between border-bottom py-2">
                                                     <span>Correo</span>
-                                                    <span class="text-dark">carlos@gmail.com</span>
+                                                    <span class="text-dark">[ $correo ]</span>
                                                 </div>
 
                                                 <div class="d-flex justify-content-between border-bottom py-2">
                                                     <span>Fecha Ingreso</span>
-                                                    <span class="text-dark">12/12/2023 02:05</span>
+                                                    <span class="text-dark">[ $fecha ]</span>
                                                 </div>
 
                                                 <div class="d-flex justify-content-between border-bottom py-2">
                                                     <span>Edad</span>
-                                                    <span>34 Años</span>
+                                                    <span>[ $edad ]</span>
                                                 </div>
                                                 <div class="d-flex justify-content-between pt-2">
                                                     <div class="pt-2">
-                                                        <span >Cobertura</span>
+                                                        <span >Estado</span>
                                                     </div>
                                                     
                                             
                                                     <select class="form-select w-65 d-flex text-center" id="category">
-                                                        <option value="">Finalizado</option>
-                                                        <option value="Post Category">En Proceso</option>
-                                                        <option value="Workshop">Rechazado</option>
+                                                        <option value="">Venta Cerrada</option>
+                                                        <option value="">Pago Pendiente</option>
+                                                        <option value="">En Espera</option>
+                                                        <option value="">Pasa de Vigencia</option>
+                                                        <option value="">Es Afiliado</option>
+                                                        <option value="">Duplicado</option>
+                                                        <option value="">Desestimado Por Cober</option>
+                                                        <option value="">No Le Interesa</option>
+                                                        <option value="">Rechazado</option>
                                                     </select>
         
                                                     
                                                 </div>
                                                 <div class="d-flex align-items-center justify-content-center mt-5">
                                                      <!-- text cancel -->
-                                                     <!-- 
-                                                     <div>
-                                                        <span class="badge bg-danger-soft">Cancel</span>
-                                                    </div>
-                                                    -->
-                                                    <!-- text en progreso -->
                                                     <!-- 
-                                                    <div>
-                                                        <span class="badge bg-info-soft">En Progreso</span>
+                                                     <div>
+                                                        <span class="badge bg-danger-soft">En Espera</span>
                                                     </div>
                                                     -->
+                                                    
+                                                    <!-- text en progreso -->
+                                                    
+                                                    <div>
+                                                        <span class="badge bg-warning-soft">En Espera</span>
+                                                    </div>
+                                                    
                                                     <!-- text Finalizado -->
+                                                    <!-- 
                                                     <div>
                                                         <span class="badge bg-success-soft">Finalizado</span>
                                                     </div>
+                                                    -->
                                                 </div>
                                                 <!-- text -->
                                                 <!-- progress bar -->
-
+                                                <!-- 
                                                 <div class="progress progress-tooltip mt-5" style="height: 6px">
                                                     <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                                                         <span>100%</span>
                                                     </div>
                                                 </div>
+                                                -->
                                                  <!-- progress bar -->
-                                                 <!-- 
-                                                <div class="progress progress-tooltip" style="height: 6px">
-                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>45%</span>
+                                                
+                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
+                                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>50%</span>
                                                     </div>
                                                 </div>
-                                                -->
+                                                
 
                                                 <!-- progress bar -->
                                                 <!-- 
-                                                <div class="progress progress-tooltip" style="height: 6px">
-                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>12%</span>
+                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 5%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>5%</span>
                                                     </div>
                                                 </div>
                                                 -->
+                                                
 
                                                 <!-- Ver detalles del prospecto -->
                                                 
@@ -1339,9 +1606,264 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    
-                                   
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                                        <!-- Card -->
+                                        <div class="card mb-4">
+                                            <!-- Card body -->
+                                            <div class="card-body">
+                                                <div class="text-center">
+                                                    <div class="position-relative">
+                                                        <img src="../../assets/images/avatar/avatar-17.jpg"
+                                                            class="rounded-circle avatar-xl mb-3" alt="">
+                                                        <a href="#" class="position-absolute mt-8 ms-n5">
+                                                            <span class="status bg-success"></span>
+                                                        </a>
+                                                    </div>
+                                                    <h4 class="mb-0">[ $NombreyApellido ]</h4>
+                                                    <p class="mb-0">
+                                                        <i class="fe fe-map-pin me-1 fs-6"></i>
+                                                       [ $Localidad ]
+                                                    </p>
+                                                </div>
+                                                <div class="d-flex justify-content-between border-bottom py-2 mt-6">
+                                                    <span>Celular</span>
+                                                    <span class="text-dark">[ $celular ]</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between border-bottom py-2">
+                                                    <span>Correo</span>
+                                                    <span class="text-dark">[ $correo ]</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between border-bottom py-2">
+                                                    <span>Fecha Ingreso</span>
+                                                    <span class="text-dark">[ $fecha ]</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between border-bottom py-2">
+                                                    <span>Edad</span>
+                                                    <span>[ $edad ]</span>
+                                                </div>
+                                                <div class="d-flex justify-content-between pt-2">
+                                                    <div class="pt-2">
+                                                        <span >Estado</span>
+                                                    </div>
+                                                    
+                                            
+                                                    <select class="form-select w-65 d-flex text-center" id="category">
+                                                        <option value="">Venta Cerrada</option>
+                                                        <option value="">Pago Pendiente</option>
+                                                        <option value="">En Espera</option>
+                                                        <option value="">Pasa de Vigencia</option>
+                                                        <option value="">Es Afiliado</option>
+                                                        <option value="">Duplicado</option>
+                                                        <option value="">Desestimado Por Cober</option>
+                                                        <option value="">No Le Interesa</option>
+                                                        <option value="">Rechazado</option>
+                                                    </select>
+        
+                                                    
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-center mt-5">
+                                                     <!-- text cancel -->
+                                                     <!--
+                                                     <div>
+                                                        <span class="badge bg-danger-soft">Pasa De Vigencia</span>
+                                                    </div>
+                                                    -->
+                                                    
+                                                    <!-- text en progreso -->
+                                                     
+                                                    <div>
+                                                        <span class="badge bg-warning-soft">Pasa De Vigencia</span>
+                                                    </div>
+                                                    
+                                                    <!-- text Finalizado -->
+                                                    <!-- 
+                                                    <div>
+                                                        <span class="badge bg-success-soft">Finalizado</span>
+                                                    </div>
+                                                    -->
+                                                </div>
+                                                <!-- text -->
+                                                <!-- progress bar -->
+                                                <!-- 
+                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
+                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>100%</span>
+                                                    </div>
+                                                </div>
+                                                -->
+                                                 <!-- progress bar -->
+                                        
+                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
+                                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>50%</span>
+                                                    </div>
+                                                </div>
+                                                
+
+                                                <!-- progress bar -->
+                                                 <!-- 
+                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 5%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>5%</span>
+                                                    </div>
+                                                </div>
+                                                -->
+                                                
+
+                                                <!-- Ver detalles del prospecto -->
+                                                
+                                                <div class="d-flex justify-content-center mt-5">
+                                                    <a href="/pages/dashboard/ecommerce/customer-single.html" class="btn btn-primary me-2">Detalles del Prospecto</a>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                                        <!-- Card -->
+                                        <div class="card mb-4">
+                                            <!-- Card body -->
+                                            <div class="card-body">
+                                                <div class="text-center">
+                                                    <div class="position-relative">
+                                                        <img src="../../assets/images/avatar/avatar-18.jpg"
+                                                            class="rounded-circle avatar-xl mb-3" alt="">
+                                                        <a href="#" class="position-absolute mt-8 ms-n5">
+                                                            <span class="status bg-success"></span>
+                                                        </a>
+                                                    </div>
+                                                    <h4 class="mb-0">[ $NombreyApellido ]</h4>
+                                                    <p class="mb-0">
+                                                        <i class="fe fe-map-pin me-1 fs-6"></i>
+                                                       [ $Localidad ]
+                                                    </p>
+                                                </div>
+                                                <div class="d-flex justify-content-between border-bottom py-2 mt-6">
+                                                    <span>Celular</span>
+                                                    <span class="text-dark">[ $celular ]</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between border-bottom py-2">
+                                                    <span>Correo</span>
+                                                    <span class="text-dark">[ $correo ]</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between border-bottom py-2">
+                                                    <span>Fecha Ingreso</span>
+                                                    <span class="text-dark">[ $fecha ]</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between border-bottom py-2">
+                                                    <span>Edad</span>
+                                                    <span>[ $edad ]</span>
+                                                </div>
+                                                <div class="d-flex justify-content-between pt-2">
+                                                    <div class="pt-2">
+                                                        <span >Estado</span>
+                                                    </div>
+                                                    
+                                            
+                                                    <select class="form-select w-65 d-flex text-center" id="category">
+                                                        <option value="">Venta Cerrada</option>
+                                                        <option value="">Pago Pendiente</option>
+                                                        <option value="">En Espera</option>
+                                                        <option value="">Pasa de Vigencia</option>
+                                                        <option value="">Es Afiliado</option>
+                                                        <option value="">Duplicado</option>
+                                                        <option value="">Desestimado Por Cober</option>
+                                                        <option value="">No Le Interesa</option>
+                                                        <option value="">Rechazado</option>
+                                                    </select>
+        
+                                                    
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-center mt-5">
+                                                     <!-- text cancel -->
+                                                     <!-- 
+                                                     <div>
+                                                        <span class="badge bg-danger-soft">Pago Pendiente</span>
+                                                    </div>
+                                                    -->
+                                                    
+                                                    <!-- text en progreso -->
+                                                    
+                                                    <div>
+                                                        <span class="badge bg-info-soft">Pago Pendiente</span>
+                                                    </div>
+                                                    
+                                                    
+                                                    <!-- text Finalizado -->
+                                                    <!-- 
+                                                    <div>
+                                                        <span class="badge bg-success-soft">Finalizado</span>
+                                                    </div>
+                                                    -->
+                                                </div>
+                                                <!-- text -->
+                                                <!-- progress bar -->
+                                                <!-- 
+                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
+                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>100%</span>
+                                                    </div>
+                                                </div>
+                                                -->
+                                                 <!-- progress bar -->
+                                                 <div class="d-flex align-items-center justify-content-center mt-2">
+                                                    <!-- text cancel -->
+                                                    <!-- 
+                                                    <div>
+                                                       <span class="badge bg-danger-soft">Pago Pendiente</span>
+                                                   </div>
+                                                   -->
+                                                   
+                                                   <!-- text en progreso -->
+                                                   
+                                                   <div>
+                                                       <span>75%</span>
+                                                   </div>
+                                                   
+                                                   
+                                                   <!-- text Finalizado -->
+                                                   <!-- 
+                                                   <div>
+                                                       <span class="badge bg-success-soft">Finalizado</span>
+                                                   </div>
+                                                   -->
+                                               </div>
+                                                <div class="progress progress-tooltip " style="height: 6px">
+                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+
+                                                <!-- progress bar -->
+                                                <!-- 
+                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 5%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
+                                                        <span>5%</span>
+                                                    </div>
+                                                </div>
+                                                -->
+                                                
+
+                                                <!-- Ver detalles del prospecto -->
+                                                
+                                                <div class="d-flex justify-content-center mt-5">
+                                                    <a href="/pages/dashboard/ecommerce/customer-single.html" class="btn btn-primary me-2">Detalles del Prospecto</a>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                   <!-- Paginado de la sección -->
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <!-- Pagination -->
                                         <nav>
