@@ -1915,12 +1915,16 @@
                                         <table class="table mb-0 text-nowrap table-hover table-centered">
                                             <thead class="table-light">
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>Enrolled</th>
-                                                    <th>Joined At</th>
-                                                    <th>TotaL Payment</th>
-                                                    <th>Locations</th>
-                                                    <th>Action</th>
+                                                    <th>Nombre y Apellido</th>
+                                                    <th>Celular</th>
+                                                    <th>Correo</th>
+                                                    <th>Fecha Ingreso</th>
+                                                    <th>Edad</th>
+                                                    <!-- <th>Action</th> -->
+                                                    <th>Localidad</th>
+                                                    <th>Estado</th>
+                                                    <th>Modificar Estado</th>
+                                                    <th>Detalles del Prospecto</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -1928,92 +1932,52 @@
                                                     <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="position-relative">
-                                                                <img src="../../assets/images/avatar/avatar-11.jpg"
+                                                                <img src="../../assets/images/avatar/avatar-12.jpg"
                                                                     alt="" class="rounded-circle avatar-md me-2">
                                                                 <a href="#" class="position-absolute mt-5 ms-n4">
                                                                     <span class="status bg-success"></span>
                                                                 </a>
                                                             </div>
-                                                            <h5 class="mb-0">Guy Hawkins</h5>
+                                                            <h5 class="mb-0">Carlos</h5>
                                                         </div>
                                                     </td>
-                                                    <td>6 Courses</td>
-                                                    <td>7 July, 2020</td>
                                                     <td>123456789</td>
-                                                    <td>Los Angeles, CA</td>
-
+                                                    <td>carlos@gmail.com</td>
+                                                    <td>12/12/2023 02:05</td>
+                                                    <td>34 Años</td>
+                                                    <td>CABA</td>
                                                     <td>
-                                                        <div class="hstack gap-4">
-                                                            <a href="#" class="fe fe-mail" data-bs-toggle="tooltip"
-                                                                data-placement="top" title="Message"></a>
-                                                            <a href="#" data-bs-toggle="tooltip" data-placement="top"
-                                                                title="Delete"><i class="fe fe-trash"></i></a>
-                                                            <span class="dropdown dropstart">
-                                                                <a class="btn-icon btn btn-ghost btn-sm rounded-circle"
-                                                                    href="#" role="button" data-bs-toggle="dropdown"
-                                                                    data-bs-offset="-20,20" aria-expanded="false">
-                                                                    <i class="fe fe-more-vertical"></i>
-                                                                </a>
-                                                                <span class="dropdown-menu">
-                                                                    <span class="dropdown-header">Settings</span>
-                                                                    <a class="dropdown-item" href="#">
-                                                                        <i class="fe fe-edit dropdown-item-icon"></i>
-                                                                        Edit
-                                                                    </a>
-                                                                    <a class="dropdown-item" href="#">
-                                                                        <i class="fe fe-trash dropdown-item-icon"></i>
-                                                                        Remove
-                                                                    </a>
-                                                                </span>
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="position-relative">
-                                                                <img src="../../assets/images/avatar/avatar-12.jpg"
-                                                                    alt="" class="rounded-circle avatar-md me-2">
-                                                                <a href="#" class="position-absolute mt-5 ms-n4">
-                                                                    <span class="status bg-secondary"></span>
-                                                                </a>
+                                                        <div class="d-flex">
+                                                            <div class="d-flex text-center h-50">
+                                                                <span class="badge bg-success-soft text-center">Venta Cerrada</span>
                                                             </div>
-                                                            <h5 class="mb-0">Dianna Smiley</h5>
                                                         </div>
                                                     </td>
-                                                    <td>3 Courses</td>
-                                                    <td>15 Aug, 2020</td>
-                                                    <td>$2,660</td>
-                                                    <td>United Kingdom</td>
 
                                                     <td>
-                                                        <div class="hstack gap-4">
-                                                            <a href="#" class="fe fe-mail" data-bs-toggle="tooltip"
-                                                                data-placement="top" title="Message"></a>
-                                                            <a href="#" data-bs-toggle="tooltip" data-placement="top"
-                                                                title="Delete"><i class="fe fe-trash"></i></a>
-                                                            <span class="dropdown dropstart">
-                                                                <a class="btn-icon btn btn-ghost btn-sm rounded-circle"
-                                                                    href="#" role="button" data-bs-toggle="dropdown"
-                                                                    data-bs-offset="-20,20" aria-expanded="false">
-                                                                    <i class="fe fe-more-vertical"></i>
-                                                                </a>
-                                                                <span class="dropdown-menu">
-                                                                    <span class="dropdown-header">Settings</span>
-                                                                    <a class="dropdown-item" href="#">
-                                                                        <i class="fe fe-edit dropdown-item-icon"></i>
-                                                                        Edit
-                                                                    </a>
-                                                                    <a class="dropdown-item" href="#">
-                                                                        <i class="fe fe-trash dropdown-item-icon"></i>
-                                                                        Remove
-                                                                    </a>
-                                                                </span>
-                                                            </span>
+                                                        <div class="d-flex">
+                                                            <select class="form-select d-flex text-start" id="category">
+                                                                <option value="">[ $Estado ]</option>
+                                                                <option value="">Venta Cerrada</option>
+                                                                <option value="">Pago Pendiente</option>
+                                                                <option value="">En Espera</option>
+                                                                <option value="">Pasa de Vigencia</option>
+                                                                <option value="">Es Afiliado</option>
+                                                                <option value="">Duplicado</option>
+                                                                <option value="">Desestimado Por Cober</option>
+                                                                <option value="">No Le Interesa</option>
+                                                                <option value="">Rechazado</option>
+                                                            </select>
                                                         </div>
                                                     </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center">
+                                                            <a href="/pages/dashboard/ecommerce/customer-single.html" class="btn btn-primary me-2">Ver Detalles del Prospecto</a>
+                                                        </div>
+                                                    </td>
+                                                    
                                                 </tr>
+
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex align-items-center">
@@ -2024,41 +1988,46 @@
                                                                     <span class="status bg-success"></span>
                                                                 </a>
                                                             </div>
-                                                            <h5 class="mb-0">Jacob Jones</h5>
+                                                            <h5 class="mb-0">[ $NombreyApellido ]</h5>
                                                         </div>
                                                     </td>
-                                                    <td>7 Courses</td>
-                                                    <td>12 Aug, 2020</td>
-                                                    <td>$14,944</td>
-                                                    <td>United State</td>
+                                                    <td>[ $celular ]</td>
+                                                    <td>[ $correo ]</td>
+                                                    <td>[ $fecha ]</td>
+                                                    <td>[ $edad ]</td>
+                                                    <td>[ $Localidad ]</td>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <div>
+                                                                <span class="badge bg-info-soft">Pago Pendiente</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
 
                                                     <td>
-                                                        <div class="hstack gap-4">
-                                                            <a href="#" class="fe fe-mail" data-bs-toggle="tooltip"
-                                                                data-placement="top" title="Message"></a>
-                                                            <a href="#" data-bs-toggle="tooltip" data-placement="top"
-                                                                title="Delete"><i class="fe fe-trash"></i></a>
-                                                            <span class="dropdown dropstart">
-                                                                <a class="btn-icon btn btn-ghost btn-sm rounded-circle"
-                                                                    href="#" role="button" data-bs-toggle="dropdown"
-                                                                    data-bs-offset="-20,20" aria-expanded="false">
-                                                                    <i class="fe fe-more-vertical"></i>
-                                                                </a>
-                                                                <span class="dropdown-menu">
-                                                                    <span class="dropdown-header">Settings</span>
-                                                                    <a class="dropdown-item" href="#">
-                                                                        <i class="fe fe-edit dropdown-item-icon"></i>
-                                                                        Edit
-                                                                    </a>
-                                                                    <a class="dropdown-item" href="#">
-                                                                        <i class="fe fe-trash dropdown-item-icon"></i>
-                                                                        Remove
-                                                                    </a>
-                                                                </span>
-                                                            </span>
+                                                        <div class="d-flex">
+                                                            <select class="form-select d-flex text-start" id="category">
+                                                                <option value="">[ $Estado ]</option>
+                                                                <option value="">Venta Cerrada</option>
+                                                                <option value="">Pago Pendiente</option>
+                                                                <option value="">En Espera</option>
+                                                                <option value="">Pasa de Vigencia</option>
+                                                                <option value="">Es Afiliado</option>
+                                                                <option value="">Duplicado</option>
+                                                                <option value="">Desestimado Por Cober</option>
+                                                                <option value="">No Le Interesa</option>
+                                                                <option value="">Rechazado</option>
+                                                            </select>
                                                         </div>
                                                     </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center">
+                                                            <a href="/pages/dashboard/ecommerce/customer-single.html" class="btn btn-primary me-2">Ver Detalles del Prospecto</a>
+                                                        </div>
+                                                    </td>
+                                                    
                                                 </tr>
+
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex align-items-center">
@@ -2066,44 +2035,49 @@
                                                                 <img src="../../assets/images/avatar/avatar-14.jpg"
                                                                     alt="" class="rounded-circle avatar-md me-2">
                                                                 <a href="#" class="position-absolute mt-5 ms-n4">
-                                                                    <span class="status bg-secondary"></span>
+                                                                    <span class="status bg-success"></span>
                                                                 </a>
                                                             </div>
-                                                            <h5 class="mb-0">Kristin Watson</h5>
+                                                            <h5 class="mb-0">[ $NombreyApellido ]</h5>
                                                         </div>
                                                     </td>
-                                                    <td>5 Courses</td>
-                                                    <td>5 Aug, 2020</td>
-                                                    <td>$6,845</td>
-                                                    <td>India</td>
+                                                    <td>[ $celular ]</td>
+                                                    <td>[ $correo ]</td>
+                                                    <td>[ $fecha ]</td>
+                                                    <td>[ $edad ]</td>
+                                                    <td>[ $Localidad ]</td>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <div>
+                                                                <span class="badge bg-danger-soft">No Le Interesa</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
 
                                                     <td>
-                                                        <div class="hstack gap-4">
-                                                            <a href="#" class="fe fe-mail" data-bs-toggle="tooltip"
-                                                                data-placement="top" title="Message"></a>
-                                                            <a href="#" data-bs-toggle="tooltip" data-placement="top"
-                                                                title="Delete"><i class="fe fe-trash"></i></a>
-                                                            <span class="dropdown dropstart">
-                                                                <a class="btn-icon btn btn-ghost btn-sm rounded-circle"
-                                                                    href="#" role="button" data-bs-toggle="dropdown"
-                                                                    data-bs-offset="-20,20" aria-expanded="false">
-                                                                    <i class="fe fe-more-vertical"></i>
-                                                                </a>
-                                                                <span class="dropdown-menu">
-                                                                    <span class="dropdown-header">Settings</span>
-                                                                    <a class="dropdown-item" href="#">
-                                                                        <i class="fe fe-edit dropdown-item-icon"></i>
-                                                                        Edit
-                                                                    </a>
-                                                                    <a class="dropdown-item" href="#">
-                                                                        <i class="fe fe-trash dropdown-item-icon"></i>
-                                                                        Remove
-                                                                    </a>
-                                                                </span>
-                                                            </span>
+                                                        <div class="d-flex">
+                                                            <select class="form-select d-flex text-start" id="category">
+                                                                <option value="">[ $Estado ]</option>
+                                                                <option value="">Venta Cerrada</option>
+                                                                <option value="">Pago Pendiente</option>
+                                                                <option value="">En Espera</option>
+                                                                <option value="">Pasa de Vigencia</option>
+                                                                <option value="">Es Afiliado</option>
+                                                                <option value="">Duplicado</option>
+                                                                <option value="">Desestimado Por Cober</option>
+                                                                <option value="">No Le Interesa</option>
+                                                                <option value="">Rechazado</option>
+                                                            </select>
                                                         </div>
                                                     </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center">
+                                                            <a href="/pages/dashboard/ecommerce/customer-single.html" class="btn btn-primary me-2">Ver Detalles del Prospecto</a>
+                                                        </div>
+                                                    </td>
+                                                    
                                                 </tr>
+
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex align-items-center">
@@ -2114,40 +2088,94 @@
                                                                     <span class="status bg-success"></span>
                                                                 </a>
                                                             </div>
-                                                            <h5 class="mb-0">Rivao Luke</h5>
+                                                            <h5 class="mb-0">[ $NombreyApellido ]</h5>
                                                         </div>
                                                     </td>
-                                                    <td>12 Courses</td>
-                                                    <td>1 Aug, 2020</td>
-                                                    <td>$8,230</td>
-                                                    <td>Netherland</td>
+                                                    <td>[ $celular ]</td>
+                                                    <td>[ $correo ]</td>
+                                                    <td>[ $fecha ]</td>
+                                                    <td>[ $edad ]</td>
+                                                    <td>[ $Localidad ]</td>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <div>
+                                                                <span class="badge bg-warning-soft">Pasa De Vigencia</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
 
                                                     <td>
-                                                        <div class="hstack gap-4">
-                                                            <a href="#" class="fe fe-mail" data-bs-toggle="tooltip"
-                                                                data-placement="top" title="Message"></a>
-                                                            <a href="#" data-bs-toggle="tooltip" data-placement="top"
-                                                                title="Delete"><i class="fe fe-trash"></i></a>
-                                                            <span class="dropdown dropstart">
-                                                                <a class="btn-icon btn btn-ghost btn-sm rounded-circle"
-                                                                    href="#" role="button" data-bs-toggle="dropdown"
-                                                                    data-bs-offset="-20,20" aria-expanded="false">
-                                                                    <i class="fe fe-more-vertical"></i>
-                                                                </a>
-                                                                <span class="dropdown-menu">
-                                                                    <span class="dropdown-header">Settings</span>
-                                                                    <a class="dropdown-item" href="#">
-                                                                        <i class="fe fe-edit dropdown-item-icon"></i>
-                                                                        Edit
-                                                                    </a>
-                                                                    <a class="dropdown-item" href="#">
-                                                                        <i class="fe fe-trash dropdown-item-icon"></i>
-                                                                        Remove
-                                                                    </a>
-                                                                </span>
-                                                            </span>
+                                                        <div class="d-flex">
+                                                            <select class="form-select d-flex text-start" id="category">
+                                                                <option value="">[ $Estado ]</option>
+                                                                <option value="">Venta Cerrada</option>
+                                                                <option value="">Pago Pendiente</option>
+                                                                <option value="">En Espera</option>
+                                                                <option value="">Pasa de Vigencia</option>
+                                                                <option value="">Es Afiliado</option>
+                                                                <option value="">Duplicado</option>
+                                                                <option value="">Desestimado Por Cober</option>
+                                                                <option value="">No Le Interesa</option>
+                                                                <option value="">Rechazado</option>
+                                                            </select>
                                                         </div>
                                                     </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center">
+                                                            <a href="/pages/dashboard/ecommerce/customer-single.html" class="btn btn-primary me-2">Ver Detalles del Prospecto</a>
+                                                        </div>
+                                                    </td>
+                                                    
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="position-relative">
+                                                                <img src="../../assets/images/avatar/avatar-16.jpg"
+                                                                    alt="" class="rounded-circle avatar-md me-2">
+                                                                <a href="#" class="position-absolute mt-5 ms-n4">
+                                                                    <span class="status bg-success"></span>
+                                                                </a>
+                                                            </div>
+                                                            <h5 class="mb-0">[ $NombreyApellido ]</h5>
+                                                        </div>
+                                                    </td>
+                                                    <td>[ $celular ]</td>
+                                                    <td>[ $correo ]</td>
+                                                    <td>[ $fecha ]</td>
+                                                    <td>[ $edad ]</td>
+                                                    <td>[ $Localidad ]</td>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <div>
+                                                                <span class="badge bg-info-soft">Pago Pendiente</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <select class="form-select d-flex text-start" id="category">
+                                                                <option value="">[ $Estado ]</option>
+                                                                <option value="">Venta Cerrada</option>
+                                                                <option value="">Pago Pendiente</option>
+                                                                <option value="">En Espera</option>
+                                                                <option value="">Pasa de Vigencia</option>
+                                                                <option value="">Es Afiliado</option>
+                                                                <option value="">Duplicado</option>
+                                                                <option value="">Desestimado Por Cober</option>
+                                                                <option value="">No Le Interesa</option>
+                                                                <option value="">Rechazado</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center">
+                                                            <a href="/pages/dashboard/ecommerce/customer-single.html" class="btn btn-primary me-2">Ver Detalles del Prospecto</a>
+                                                        </div>
+                                                    </td>
+                                                    
                                                 </tr>
                                                 
                                             </tbody>
@@ -2174,6 +2202,7 @@
                                                     <li class="page-item">
                                                         <a class="page-link mx-1 rounded" href="#">3</a>
                                                     </li>
+                                                   
                                                     <li class="page-item">
                                                         <a class="page-link mx-1 rounded" href="#">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="10"
