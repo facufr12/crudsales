@@ -867,20 +867,38 @@
                             <div class="card mb-4">
                                 <!-- card body -->
                                 <div class="card-body">
-                                    <div class="d-flex align-items-center">
+                                    <div class="d-flex justify-content-end align-items-center mb-2">
+                                        <a href="/pages/dashboard/ecommerce/add-customer.html">Editar</a>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-center">
                                         <!-- img -->
                                         <img src="../../../assets/images/avatar/avatar-12.jpg" class="avatar-xl rounded-circle" alt="" >
                                         <div class="ms-4">
+                                            
                                             <!-- text -->
                                             <h3 class="mb-1">[ $NombreyApellido ]</h3>
-                                            <div>
-                                                <span>
-                                                    <i class="fe fe-calendar me-2"></i>
-                                                    [ $fecha ]
+
+                                            <div class="d-flex flex-column flex-md-row gap-md-5 gap-sm-2">
+                                                <span >
+                                                    <i class="fe fe-calendar"></i>
+                                                    <span>[ $fecha ]</span>
                                                 </span>
-                                                <span class="ms-3">
-                                                    <i class="fe fe-map-pin me-2"></i>
-                                                    [ $Localidad ]
+                                                <span class="">
+                                                    <i class="fe fe-map-pin"></i>
+                                                    <span>[ $Localidad ]</span>
+                                                </span>
+                                            </div>
+                                            
+                                            
+                                            <div class="d-flex flex-column flex-md-row gap-md-5  gap-sm-2 mt-1">
+                                                <span>
+                                                    <i class="fe fe-mail"></i>
+                                                    <span>[$correo]</span> 
+                                                </span>
+                                                
+                                                <span class="">
+                                                    <i class="fe fe-phone"></i>
+                                                    <span>[$Celular]</span>
                                                 </span>
                                             </div>
                                         </div>
@@ -924,7 +942,7 @@
                             <div class="mb-4">
                                 <div class="card">
                                     <!-- card body -->
-                                    <div class="card-header"><h4 class="mb-0">Recent Order</h4></div>
+                                    <div class="card-header"><h4 class="mb-0">Historial</h4></div>
                                     <div class="card-body">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item px-0">
@@ -932,10 +950,7 @@
                                                     <!-- order id -->
                                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                                         <div>
-                                                            <h6 class="text-primary mb-0">Order ID: GK00017</h6>
-                                                        </div>
-                                                        <div>
-                                                            <span>Yesterday at 4:41 pm</span>
+                                                            <span>12/12/2023 02:05</span>
                                                         </div>
                                                     </div>
                                                     <!-- text -->
@@ -945,19 +960,21 @@
                                                                 <div class="d-lg-flex align-items-center">
                                                                     <!-- img -->
                                                                     <div>
-                                                                        <img src="../../../assets/images/ecommerce/ecommerce-img-1.jpg" alt="" class="img-4by3-md rounded" >
+                                                                        <img src="/assets/images/avatar/avatar-12.jpg" alt="" class="img-4by3-md rounded" >
                                                                     </div>
                                                                     <!-- text -->
                                                                     <div class="ms-lg-3 mt-2 mt-lg-0">
-                                                                        <h5 class="mb-0">White & Red Nike Athletic Shoe</h5>
-                                                                        <span class="fs-6">SKU: Shoe01</span>
+                                                                        <h5 class="mb-0">Se cambio estado a "Venta Cerrada".</h5>
+                                                                        <span class="fs-6"></span>
                                                                     </div>
                                                                 </div>
                                                             </a>
                                                         </div>
                                                         <div>
                                                             <!-- button -->
-                                                            <a href="#" class="btn btn-light-danger text-danger btn-sm">Refund</a>
+                                                            <div>
+                                                                <span class="badge bg-success-soft">Venta Cerrada</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -967,10 +984,7 @@
                                                     <!-- order id -->
                                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                                         <div>
-                                                            <h6 class="text-primary mb-0">Order ID: GK00017</h6>
-                                                        </div>
-                                                        <div>
-                                                            <span>Yesterday at 4:41 pm</span>
+                                                            <span>11/12/2023 09:05</span>
                                                         </div>
                                                     </div>
                                                     <!-- text -->
@@ -980,19 +994,21 @@
                                                                 <div class="d-lg-flex align-items-center">
                                                                     <!-- img -->
                                                                     <div>
-                                                                        <img src="../../../assets/images/ecommerce/ecommerce-img-1.jpg" alt="" class="img-4by3-md rounded" >
+                                                                        <img src="/assets/images/avatar/avatar-12.jpg" alt="" class="img-4by3-md rounded" >
                                                                     </div>
                                                                     <!-- text -->
                                                                     <div class="ms-lg-3 mt-2 mt-lg-0">
-                                                                        <h5 class="mb-0">White & Red Nike Athletic Shoe</h5>
-                                                                        <span class="fs-6">SKU: Shoe01</span>
+                                                                        <h5 class="mb-0">Se cambio estado a "Pago Pendiente".</h5>
+                                                                        <span class="fs-6"></span>
                                                                     </div>
                                                                 </div>
                                                             </a>
                                                         </div>
                                                         <div>
                                                             <!-- button -->
-                                                            <a href="#" class="btn btn-light-danger text-danger btn-sm">Refund</a>
+                                                            <div>
+                                                                <span class="badge bg-info-soft">Pago Pendiente</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1001,9 +1017,11 @@
                                     </div>
 
                                     <!-- text -->
+                                    <!-- 
                                     <div class="card-footer d-flex justify-content-end">
                                         <a href="order-summary.html">View All Orders</a>
                                     </div>
+                                    -->
                                 </div>
                             </div>
                             <!--
