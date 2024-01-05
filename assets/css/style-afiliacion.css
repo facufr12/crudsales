@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap');
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root{
+  --zipper: #7B3092;
+  --oxford: #d06025;
+  --taylored: #7f8040;
+  --wagon: #24697d;
+  --secundary: #606060;
+}
+
+body {
+  background:
+        linear-gradient(#64748b, transparent),
+        linear-gradient(to top left, rgb(255, 255, 255), transparent),
+        linear-gradient(to top right, rgb(0, 0, 0), transparent);
+    background-blend-mode: screen ;
+    font-family: 'Inter', sans-serif;
+ 
+}
+/*
+p{
+  color: #3CB371;
+  }
+*/
+form {
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+  color: var(--secundary);
+  font-size: 3rem;
+}
+
+h2.valor-plan{
+  text-align: center;
+  color: var(--zipper);
+  font-size: 2.2rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  max-width: 200px;
+}
+a#nextBtn{
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  text-decoration: none;
+  max-width: 200px;
+}
+
+fieldset {
+  margin-bottom: 30px;
+  border: none;
+}
+
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+.number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 100%;
+}
+.container-general{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+form {
+  max-width: 450px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 20px;
+  /* Nuevo Formulario*/
+  
+  
+}
+
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: 40px;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+ 
+select {
+  padding: 6px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+button.btnPrimary {
+  padding: 15px 39px 15px 39px;
+  color: #FFF;
+  background-color: #db4a01;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 20px;
+  border: 1px solid #db4a01;
+  border-width: 1px 1px 1px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-top: -12px;
+ 
+}
+button.btnPrimary:hover {
+  color: #FFF;
+  background-color: #ff7300;
+}
+button.btnPrimary.btnContinuar{
+  width: 100%;
+  padding: 2%;
+}
+button.btnSecondary {
+  padding: 15px 39px 15px 39px;
+  color: #006600;
+  background-color: var(--secundary);
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 20px;
+  width: 100%;
+  border: 1px solid #006600;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-top: -12px;
+}
+button.btnSecondary:hover {
+  color: #FFF;
+  background-color: #006600;
+}
+fieldset {
+  margin-bottom: 30px;
+  border: none;
+}
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+button.btnPrimary.btnCompra {
+  width: 50%;
+}
+.contenedor-principal{
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+/* --------- Inicio Validacion de Aceptación de terminos y condiciones ----------- */
+.error-message {
+  color: red;
+  display: flex;
+  justify-content: start;
+
+}
+/* --------- Fin Validacion de Aceptación de terminos y condiciones ----------- */
+/*===========STEPPER====================*/
+.stepper {
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.steps-container {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.step {
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 20px;
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+/* Botón cerrar */
+.cerrar {
+color: black;
+float: right;
+font-size: 30px;
+font-weight: bold;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+.btnAnterior {
+position: absolute;
+left: 1%;
+top: 50%;
+width: 55px;
+height: 55px;
+border: none;
+}
+.btnSiguiente {
+position: absolute;
+right: 1%;
+top: 50%;
+width: 55px;
+height: 55px;
+border: none;
+}
+.btn-enviar{
+  background-color: var(--zipper);
+}
+.btn-enviar:hover{
+  background-color: var(--secundary);
+}
+
+@media screen and (min-width: 480px) {
+  form {
+    max-width: 85%;
+  }
+}
+@media (min-width: 1200px) {
+  form {
+    width: 65%;
+  }
+}
+

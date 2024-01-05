@@ -853,23 +853,25 @@
                                         </ol>
                                     </nav>
                                 </div>
-                                <!-- 
+                                 
                                 <div>
-                                    <a href="add-customer.html" class="btn btn-primary me-2">Add Customer</a>
+                                    <a href="../../../secciones/afiliacion.html" class="btn btn-primary me-2">Crear Póliza</a>
                                 </div>
-                                -->
+                                
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12 col-12">
+                        <div class="col-lg-8 col-12">
                             <!-- card -->
                             <div class="card mb-4">
                                 <!-- card body -->
                                 <div class="card-body">
+                                    <!-- 
                                     <div class="d-flex justify-content-end align-items-center mb-2">
                                         <a href="/pages/dashboard/ecommerce/add-customer.html">Editar</a>
                                     </div>
+                                    -->
                                     <div class="d-flex align-items-center justify-content-center">
                                         <!-- img -->
                                         <img src="../../../assets/images/avatar/avatar-12.jpg" class="avatar-xl rounded-circle" alt="" >
@@ -883,22 +885,22 @@
                                                     <i class="fe fe-calendar"></i>
                                                     <span>[ $fecha ]</span>
                                                 </span>
-                                                <span class="">
-                                                    <i class="fe fe-map-pin"></i>
-                                                    <span>[ $Localidad ]</span>
+                                                <span >
+                                                    <i class="fe fe-calendar"></i>
+                                                    <span>[ $plan ]</span>
                                                 </span>
                                             </div>
                                             
                                             
                                             <div class="d-flex flex-column flex-md-row gap-md-5  gap-sm-2 mt-1">
                                                 <span>
-                                                    <i class="fe fe-mail"></i>
-                                                    <span>[$correo]</span> 
+                                                    <i class="fe fe-user"></i>
+                                                    <span>[$estado]</span> 
                                                 </span>
                                                 
                                                 <span class="">
-                                                    <i class="fe fe-phone"></i>
-                                                    <span>[$Celular]</span>
+                                                    <i class="fe fe-users"></i>
+                                                    <span>[$tipoDeAfiliacion]</span>
                                                 </span>
                                             </div>
                                         </div>
@@ -914,7 +916,9 @@
                                                 <h5 class="h3 fw-bold mb-0">20 Horas Atrás</h5>
                                                 <span>Se realizó cambio de estado a [$Estado]</span>
                                             </div>
+                                            
                                         </div>
+                                        
                                         <!-- text -->
                                         <!-- 
                                         <div class="mb-3">
@@ -936,164 +940,41 @@
                                         </div>
                                         -->
                                     </div>
-                                </div>
-                            </div>
-                            <!-- card -->
-                            <div class="mb-4">
-                                <div class="card">
-                                    <!-- card body -->
-                                    <div class="card-header"><h4 class="mb-0">Historial</h4></div>
-                                    <div class="card-body">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item px-0">
-                                                <div>
-                                                    <!-- order id -->
-                                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                                        <div>
-                                                            <span>12/12/2023 02:05</span>
-                                                        </div>
-                                                    </div>
-                                                    <!-- text -->
-                                                    <div class="d-flex justify-content-between">
-                                                        <div>
-                                                            <a href="#" class="text-inherit">
-                                                                <div class="d-lg-flex align-items-center">
-                                                                    <!-- img -->
-                                                                    <div>
-                                                                        <img src="/assets/images/avatar/avatar-12.jpg" alt="" class="img-4by3-md rounded" >
-                                                                    </div>
-                                                                    <!-- text -->
-                                                                    <div class="ms-lg-3 mt-2 mt-lg-0">
-                                                                        <h5 class="mb-0">Se cambio estado a "Venta Cerrada".</h5>
-                                                                        <span class="fs-6"></span>
-                                                                    </div>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                        <div>
-                                                            <!-- button -->
-                                                            <div>
-                                                                <span class="badge bg-success-soft">Venta Cerrada</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item px-0">
-                                                <div>
-                                                    <!-- order id -->
-                                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                                        <div>
-                                                            <span>11/12/2023 09:05</span>
-                                                        </div>
-                                                    </div>
-                                                    <!-- text -->
-                                                    <div class="d-flex justify-content-between">
-                                                        <div>
-                                                            <a href="#" class="text-inherit">
-                                                                <div class="d-lg-flex align-items-center">
-                                                                    <!-- img -->
-                                                                    <div>
-                                                                        <img src="/assets/images/avatar/avatar-12.jpg" alt="" class="img-4by3-md rounded" >
-                                                                    </div>
-                                                                    <!-- text -->
-                                                                    <div class="ms-lg-3 mt-2 mt-lg-0">
-                                                                        <h5 class="mb-0">Se cambio estado a "Pago Pendiente".</h5>
-                                                                        <span class="fs-6"></span>
-                                                                    </div>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                        <div>
-                                                            <!-- button -->
-                                                            <div>
-                                                                <span class="badge bg-info-soft">Pago Pendiente</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                    <div class="hstack gap-2 justify-content-between d-md-flex d-inline">
+                                        <!-- text -->
+                                        <div class="mb-3">
+                                            <span class="fw-semibold">Comentarios</span>
+                                            <div class="mt-2">
+                                                <h5 class="h3 fw-bold mb-0">[$fechaComentario]</h5>
+                                                <span>El prospecto tiene ...</span>
+                                            </div>
+                                            
+                                        </div>
+                                       
                                     </div>
-
-                                    <!-- text -->
-                                    <!-- 
-                                    <div class="card-footer d-flex justify-content-end">
-                                        <a href="order-summary.html">View All Orders</a>
+                                    <div class="hstack gap-2 justify-content-between d-md-flex d-inline">
+                                        <!-- text -->
+                                        <div class="mb-3">
+                                            <div class="mt-2">
+                                                <h5 class="h3 fw-bold mb-0">[$fechaComentario]</h5>
+                                                <span>El prospecto no es ...</span>
+                                            </div>
+                                            
+                                        </div>
+                                       
                                     </div>
-                                    -->
+                                    <div>
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                            <label for="floatingTextarea">Agregar Comentarios</label>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end mt-3 ">
+                                        <a href="#" class="btn btn-primary me-2">Agregar Comentario</a>
+                                    </div>
                                 </div>
                             </div>
-                            <!--
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="mb-0">Recent Payments</h4>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table mb-0 text-nowrap table-centered table-hover">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Amount</th>
-                                                <th>Date</th>
-                                                <th>Status</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        
-                                        <tbody>
-                                            <tr>
-                                                <td><a href="#!">#GK00017</a></td>
-                                                <td>$23.00</td>
-                                                <td>May 5, 2022</td>
-                                                <td>
-                                                    <span class="badge bg-success-soft">Completed</span>
-                                                </td>
-                                                <td><a href="#">View Details</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#!">#GK00018</a></td>
-                                                <td>$123.00</td>
-                                                <td>April 4, 2022</td>
-                                                <td>
-                                                    <span class="badge bg-success-soft">Refunded</span>
-                                                </td>
-                                                <td><a href="#">View Details</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#!">#GK00019</a></td>
-                                                <td>$124.00</td>
-                                                <td>April 3, 2022</td>
-                                                <td>
-                                                    <span class="badge bg-success-soft">Completed</span>
-                                                </td>
-                                                <td><a href="#">View Details</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#!">#GK00020</a></td>
-                                                <td>$657.00</td>
-                                                <td>April 2, 2022</td>
-                                                <td>
-                                                    <span class="badge bg-danger-soft">Cancel</span>
-                                                </td>
-                                                <td><a href="#">View Details</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#!">#GK00021</a></td>
-                                                <td>$235.00</td>
-                                                <td>March 31, 2022</td>
-                                                <td>
-                                                    <span class="badge bg-success-soft">Completed</span>
-                                                </td>
-                                                <td><a href="#">View Details</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            -->
                         </div>
-                        <!-- 
                         <div class="col-lg-4">
                             
                             <div class="card mt-4 mt-lg-0">
@@ -1102,7 +983,7 @@
                                      
                                     <div class="d-flex justify-content-between align-items-center mb-4">
                                         <h4 class="mb-0">Contacto</h4>
-                                        <a href="#">Editar</a>
+                                        <!-- <a href="#">Editar</a> -->
                                     </div>
                                     
                                     <div>
@@ -1111,38 +992,114 @@
                                             <a href="#" class="ms-2">[$correo]</a>
                                         </div>
                                         
-                                        <div class="d-flex align-items-center">
+                                        <div class="d-flex align-items-center mb-2">
                                             <i class="fe fe-phone fs-4"></i>
                                             <span class="ms-2">[$Celular]</span>
                                         </div>
+
+                                        <div class="d-flex align-items-center mb-2">
+                                            
+                                            <i class="fe fe-map-pin"></i>
+                                            <span class="ms-2">[ $Localidad ]</span>
+                                            
+                                        </div>
+
                                     </div>
                                    
                                 </div>
                                 
-                                
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between align-items-center mb-4">
-                                       
-                                        <h4 class="mb-0">Default Address</h4>
-                                        <a href="#">Change</a>
-                                    </div>
-                                    <div>
-                                        
-                                        <p class="mb-0">
-                                            3812 Orchard Street
-                                            <br />
-                                            Bloomington,
-                                            <br />
-                                            Minnesota 55431,
-                                            <br />
-                                            United States
-                                        </p>
-                                    </div>
-                                </div>
+                               
                                 
                             </div>
                         </div>
-                        -->
+                    </div>
+                    <div class="row mt-5">
+                        <!-- card -->
+                        <div class="mb-4">
+                            <div class="card">
+                                <!-- card body -->
+                                <div class="card-header"><h4 class="mb-0">Historial</h4></div>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0">
+                                            <div>
+                                                <!-- order id -->
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <div>
+                                                        <span>12/12/2023 02:05</span>
+                                                    </div>
+                                                </div>
+                                                <!-- text -->
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        <a href="#" class="text-inherit">
+                                                            <div class="d-lg-flex align-items-center">
+                                                                <!-- img -->
+                                                                <div>
+                                                                    <img src="/assets/images/avatar/avatar-12.jpg" alt="" class="img-4by3-md rounded" >
+                                                                </div>
+                                                                <!-- text -->
+                                                                <div class="ms-lg-3 mt-2 mt-lg-0">
+                                                                    <h5 class="mb-0">Se cambio estado a "Venta Cerrada".</h5>
+                                                                    <span class="fs-6"></span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div>
+                                                        <!-- button -->
+                                                        <div>
+                                                            <span class="badge bg-success-soft">Venta Cerrada</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-0">
+                                            <div>
+                                                <!-- order id -->
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <div>
+                                                        <span>11/12/2023 09:05</span>
+                                                    </div>
+                                                </div>
+                                                <!-- text -->
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        <a href="#" class="text-inherit">
+                                                            <div class="d-lg-flex align-items-center">
+                                                                <!-- img -->
+                                                                <div>
+                                                                    <img src="/assets/images/avatar/avatar-12.jpg" alt="" class="img-4by3-md rounded" >
+                                                                </div>
+                                                                <!-- text -->
+                                                                <div class="ms-lg-3 mt-2 mt-lg-0">
+                                                                    <h5 class="mb-0">Se cambio estado a "Pago Pendiente".</h5>
+                                                                    <span class="fs-6"></span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div>
+                                                        <!-- button -->
+                                                        <div>
+                                                            <span class="badge bg-info-soft">Pago Pendiente</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- text -->
+                                <!-- 
+                                <div class="card-footer d-flex justify-content-end">
+                                    <a href="order-summary.html">View All Orders</a>
+                                </div>
+                                -->
+                            </div>
+                        </div>
                     </div>
                 </section>
             </main>
