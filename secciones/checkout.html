@@ -892,51 +892,9 @@
                 <!-- row -->
 
                 
-                <div class="row">
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="card mt-4 mt-lg-0">
-                            <div class="card-body">
-                                <div class="mb-4 d-flex justify-content-between align-items-center">
-                                    <h4 class="mb-1">Plan Seleccionado</h4>
-
-                                </div>
-
-                                <div class="d-md-flex">
-                                    <div>
-                                        <img src="../assets/images/Zipper.PNG" alt="" class="+img-4by3-xl rounded"
-                                            width="120px" />
-                                    </div>
-                                    <div class="ms-md-4 mt-2">
-                                        <h4 class="mb-1 text-primary-hover">Zipper</h4>
-                                        <h5>Individual. 34 años. Sin Hijos</h5>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="card-body border-top pt-2">
-                                <ul class="list-group list-group-flush mb-0">
-                                    <li class="d-flex justify-content-between list-group-item px-0">
-                                        <span>Subtotal</span>
-                                        <span class="text-dark fw-semibold"><del>$174415</del></span>
-                                    </li>
-                                    <li class="d-flex justify-content-between list-group-item px-0">
-                                        <span>Bonificación afiliación online 40%</span>
-                                        <span class="text-success fw-semibold"> -$42000</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between list-group-item px-0">
-                                        <span>Aportes Titular RelDep</span>
-                                        <span class="text-success fw-semibold"> -$13000</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between list-group-item px-0 pb-0">
-                                        <span class="fs-3 fw-semibold text-dark">Cuota Mensual</span>
-                                        <span class="fs-3 fw-semibold text-dark">$99000</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-8 col-lg-7">
+                <div class="d-flex flex-md-row flex-column-reverse gap-3">
+                    
+                    <div class="col-xl-8 col-lg-7 col-12">
                         <!-- stepper -->
                         <div id="stepperForm" class="bs-stepper">
                             <!-- card -->
@@ -1145,7 +1103,7 @@
 
                                                     <h4>Afiliado</h4>
                                                     <div class="d-flex flex-wrap mt-md-3">
-                                                        <div class="col-md-6 col-12 pe-md-3">
+                                                        <div class="col-md-6 col-12 pe-md-3 mb-2">
                                                             <select class="form-select"
                                                                 aria-label="Default select example"
                                                                 
@@ -1535,8 +1493,8 @@
                                                         </div>
                                                     </div>
                                                     <h4 class="mt-3">Conyuge</h4>
-                                                    <div class="d-flex flex-wrap mt-md-3">
-                                                        <div class="col-md-6 col-12 pe-md-3">
+                                                    <div class="d-flex flex-wrap mt-md-3 ">
+                                                        <div class="col-md-6 col-12 pe-md-3 mb-2">
                                                             <select class="form-select"
                                                                 aria-label="Default select example"
                                                                 name="pesoConyugeFormularioAfiliacion">
@@ -2321,6 +2279,12 @@
                                                                 </label>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                    <!-- input -->
+                                                    <div class="col-md-6 col-12">
+                                                        <label for="">Ingresa la fecha de tu última menstruación:</label>
+                                                        <input type="date" class="form-control" placeholder=""
+                                                            id="bornDate" />
                                                     </div>
                                                     <div class="col-md-12">
                                                         <label for="">¿Presentaste náuseas o vómitos recientemente / mareos o dolores de cabeza?</label>
@@ -3122,6 +3086,7 @@
                                                     </div>
                                                     <div class="error-message" id="errorMessage" style="display: none;">
                                                     </div>
+                                                    <!-- 
                                                     <div class="d-flex">
                                                         <div><input class="form-check-input" type="checkbox"
                                                                 id="checkboxNoLabel" name="aceptoTerminoCondiciones"
@@ -3136,12 +3101,13 @@
                                                             modificaciones sin previo aviso. Válida por 48 hs.
                                                         </p>
                                                     </div>
+                                                    -->
 
 
                                                 </div>
 
-                                                <div class="d-md-flex justify-content-between mt-4">
-                                                    <button class="btn btn-outline-primary mb-2 mb-md-0"
+                                                <div class="d-flex justify-content-between">
+                                                    <button class="btn btn-outline-primary mb-md-0"
                                                         onclick="stepperForm.previous()">Volver</button>
                                                     <!-- Button -->
                                                     <button class="btn btn-primary" onclick="stepperForm.next()">
@@ -3202,7 +3168,8 @@
                                                                 condiciones</div>
                                                         </div>
                                                         <div>
-                                                            <p>Acepto los términos y condiciones. <br> La presente
+                                                            <p>
+                                                                La presente
                                                                 cotización no implica aceptación como socio hasta que se
                                                                 complete la soclicitud de ingreso y sea aprobada por el
                                                                 departamento comercial y auditoría médica. Sujeta a
@@ -3227,6 +3194,50 @@
                                         </form>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="card mt-4 mt-lg-0">
+                            <div class="card-body">
+                                <div class="mb-4 d-flex justify-content-between align-items-center">
+                                    <h4 class="mb-1">Plan Seleccionado</h4>
+
+                                </div>
+
+                                <div class="d-md-flex">
+                                    <div>
+                                        <img src="../assets/images/Zipper.PNG" alt="" class="+img-4by3-xl rounded"
+                                            width="120px" />
+                                    </div>
+                                    <div class="ms-md-4 mt-2">
+                                        <h4 class="mb-1 text-primary-hover">Zipper</h4>
+                                        <h5>Individual. 34 años. Sin Hijos</h5>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card-body border-top pt-2">
+                                <ul class="list-group list-group-flush mb-0">
+                                    <li class="d-flex justify-content-between list-group-item px-0">
+                                        <span>Subtotal</span>
+                                        <span class="text-dark fw-semibold"><del>$174415</del></span>
+                                    </li>
+                                    <li class="d-flex justify-content-between list-group-item px-0">
+                                        <span>Bonificación afiliación online 40%</span>
+                                        <span class="text-success fw-semibold"> -$42000</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between list-group-item px-0">
+                                        <span>Aportes Titular RelDep</span>
+                                        <span class="text-success fw-semibold"> -$13000</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between list-group-item px-0 pb-0">
+                                        <span class="fs-3 fw-semibold text-dark">Cuota Mensual</span>
+                                        <span class="fs-3 fw-semibold text-dark">$99000</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
