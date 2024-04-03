@@ -114,13 +114,14 @@ document.getElementById("formulariooo").addEventListener('submit', function(even
       throw new Error('Error en la solicitud');
     }
     //return response.json();
-    response.json().then(etc =>{
-      console.log(etc.WithDs)
+    response.json().then(quotes =>{
+      console.log(quotes.WithDs)
       const quotesContainer = document.getElementById("cotizaciones")
       quotesContainer.innerHTML = "";
-      for(const key in etc.WithDs){
-        if (etc.WithDs.hasOwnProperty(key)) {
-          let value = etc.WithDs[key];
+      let element = document.createElement('p')
+      for(let key in quotes.NoDs){
+        if (quotes.WithDs.hasOwnProperty(key)) {
+          let value = quotes.NoDs[key];
 
           // Crear elementos para mostrar la clave y el valor
           let element = document.createElement('p');
@@ -132,6 +133,22 @@ document.getElementById("formulariooo").addEventListener('submit', function(even
           quotesContainer.appendChild(element);
         }
       }
+      element.textContent = `Cotizaciones con descuento de ${quotes.Ds}% ⬇⬇⬇`;
+      for(let key in quotes.WithDs){
+        if (quotes.WithDs.hasOwnProperty(key)) {
+          let value = quotes.WithDs[key];
+
+          // Crear elementos para mostrar la clave y el valor
+          let element = document.createElement('p');
+
+          // Asignar texto a los elementos
+          element.textContent = `${key}: ${value}`;
+
+          // Agregar los elementos al contenedor en el DOM
+          quotesContainer.appendChild(element);
+        }
+      }
+      
     })
   })
   .catch(error => {
