@@ -115,7 +115,7 @@ document.getElementById("formulariooo").addEventListener('submit', function(even
     }
     //return response.json();
     response.json().then(quotes =>{
-      console.log(quotes.WithDs)
+      console.log(quotes)
       const quotesContainer = document.getElementById("cotizaciones")
       quotesContainer.innerHTML = "";
       for(let key in quotes.NoDs){
