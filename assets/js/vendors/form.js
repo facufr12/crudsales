@@ -100,7 +100,7 @@ document.getElementById("formulariooo").addEventListener('submit', function(even
   }
   console.log(jsonData)
   // Enviar los datos del formulario a la URL deseada
-  fetch('https://d642-190-210-23-53.ngrok-free.app/quote/2', {
+  fetch('https://2be6-190-210-23-53.ngrok-free.app/quote/2', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
