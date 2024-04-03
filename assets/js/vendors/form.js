@@ -158,7 +158,7 @@ document
           let listNods = document.createElement("ul");
           let listDs = document.createElement("ul");
           let sds = document.createElement("p");
-          sds.textContent("Cotizaciones sin descuento:");
+          sds.textContent = "Cotizaciones sin descuento:";
           for (let key in quotes.NoDs) {
             if (quotes.WithDs.hasOwnProperty(key)) {
               let value = parseFloat(quotes.NoDs[key]).toFixed(2);
@@ -175,7 +175,7 @@ document
           }
           quotesContainer.appendChild(listNods);
           let ds = document.createElement("p");
-          ds.textContent(`Cotizaciones con descuento de ${quotes.Ds}% :`);
+          ds.textContent = `Cotizaciones con descuento de ${quotes.Ds}% :`;
 
           quotesContainer.appendChild(ds);
           for (let key in quotes.WithDs) {
