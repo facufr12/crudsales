@@ -159,6 +159,7 @@ document
           let listDs = document.createElement("ul");
           let sds = document.createElement("p");
           sds.textContent = "Cotizaciones sin descuento:";
+          quotesContainer.appendChild(sds);
           for (let key in quotes.NoDs) {
             if (quotes.WithDs.hasOwnProperty(key)) {
               let value = parseFloat(quotes.NoDs[key]).toFixed(2);
@@ -183,7 +184,7 @@ document
               let value = parseFloat(quotes.WithDs[key]).toFixed(2);
 
               // Crear elementos para mostrar la clave y el valor
-              let element = document.createElement("p");
+              let element = document.createElement("li");
 
               // Asignar texto a los elementos
               element.textContent = `${key}: ${value}`;
