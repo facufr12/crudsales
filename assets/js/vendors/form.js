@@ -133,7 +133,7 @@ document.getElementById("formulariooo").addEventListener('submit', function(even
         }
       }
       let etc = document.createElement('p')
-      etc.textContent = `Cotizaciones con descuento de ${quotes.Ds}% ⬇⬇⬇`;
+      etc.textContent = `Cotizaciones con descuento de ${quotes.Ds}%`;
       for(let key in quotes.WithDs){
         if (quotes.WithDs.hasOwnProperty(key)) {
           let value = quotes.WithDs[key];
