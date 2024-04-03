@@ -120,7 +120,7 @@ document.getElementById("formulariooo").addEventListener('submit', function(even
       quotesContainer.innerHTML = "";
       for(let key in quotes.NoDs){
         if (quotes.WithDs.hasOwnProperty(key)) {
-          let value = quotes.NoDs[key];
+          let value = parseFloat(quotes.NoDs[key]).toFixed(2);
 
           // Crear elementos para mostrar la clave y el valor
           let element = document.createElement('p');
@@ -137,7 +137,7 @@ document.getElementById("formulariooo").addEventListener('submit', function(even
       quotesContainer.appendChild(etc)
       for(let key in quotes.WithDs){
         if (quotes.WithDs.hasOwnProperty(key)) {
-          let value = quotes.WithDs[key];
+          let value = parseFloat(quotes.WithDs[key]).toFixed(2);
 
           // Crear elementos para mostrar la clave y el valor
           let element = document.createElement('p');
