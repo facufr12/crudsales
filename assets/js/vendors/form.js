@@ -157,9 +157,8 @@ document
 
           let listNods = document.createElement("ul");
           let listDs = document.createElement("ul");
-          document
-            .createElement("p")
-            .textContent("Cotizaciones sin descuento:")
+          let sds = document.createElement("p");
+          sds.textContent("Cotizaciones sin descuento:");
           for (let key in quotes.NoDs) {
             if (quotes.WithDs.hasOwnProperty(key)) {
               let value = parseFloat(quotes.NoDs[key]).toFixed(2);
@@ -174,10 +173,9 @@ document
               listNods.appendChild(element);
             }
           }
-          quotesContainer.appendChild(listNods)
-          let ds = document
-            .createElement("p")
-            .textContent(`Cotizaciones con descuento de ${quotes.Ds}%`);
+          quotesContainer.appendChild(listNods);
+          let ds = document.createElement("p");
+          ds.textContent(`Cotizaciones con descuento de ${quotes.Ds}% :`);
 
           quotesContainer.appendChild(ds);
           for (let key in quotes.WithDs) {
@@ -194,7 +192,7 @@ document
               listDs.appendChild(element);
             }
           }
-          quotesContainer.appendChild(listDs)
+          quotesContainer.appendChild(listDs);
         });
       })
       .catch((error) => {
