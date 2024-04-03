@@ -118,7 +118,6 @@ document.getElementById("formulariooo").addEventListener('submit', function(even
       console.log(quotes.WithDs)
       const quotesContainer = document.getElementById("cotizaciones")
       quotesContainer.innerHTML = "";
-      let element = document.createElement('p')
       for(let key in quotes.NoDs){
         if (quotes.WithDs.hasOwnProperty(key)) {
           let value = quotes.NoDs[key];
@@ -133,7 +132,8 @@ document.getElementById("formulariooo").addEventListener('submit', function(even
           quotesContainer.appendChild(element);
         }
       }
-      element.textContent = `Cotizaciones con descuento de ${quotes.Ds}% ⬇⬇⬇`;
+      let etc = document.createElement('p')
+      etc.textContent = `Cotizaciones con descuento de ${quotes.Ds}% ⬇⬇⬇`;
       for(let key in quotes.WithDs){
         if (quotes.WithDs.hasOwnProperty(key)) {
           let value = quotes.WithDs[key];
