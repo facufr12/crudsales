@@ -88,6 +88,7 @@ document.getElementById("formulariooo").addEventListener('submit', function(even
     "email": document.getElementById("email").value,
     "cel": document.getElementById("celular").value
   };
+  console.log("->>>>>>>",document.getElementById("hijos_si").value)
   if(document.getElementById("hijos_si").value === 'true'){
     jsonData.sons =  true
     jsonData.ageSons = []
