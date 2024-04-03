@@ -168,7 +168,7 @@ document
               let element = document.createElement("li");
 
               // Asignar texto a los elementos
-              element.textContent = `$${key}: ${value}`;
+              element.textContent = `${key}: $${value}`;
 
               // Agregar los elementos al contenedor en el DOM
               listNods.appendChild(element);
@@ -187,7 +187,7 @@ document
               let element = document.createElement("li");
 
               // Asignar texto a los elementos
-              element.textContent = `$${key}: ${value}`;
+              element.textContent = `${key}: $${value}`;
 
               // Agregar los elementos al contenedor en el DOM
               listDs.appendChild(element);
