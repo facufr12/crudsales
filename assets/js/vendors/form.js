@@ -88,15 +88,16 @@ document.getElementById("formulariooo").addEventListener('submit', function(even
     "email": document.getElementById("email").value,
     "cel": document.getElementById("celular").value
   };
-  console.log("->>>>>>>",document.getElementById("hijos_si").value)
-  if(document.getElementById("hijos_si").value === 'true'){
+  var opcionSi = document.getElementById('hijos_si');
+  var opcionNo = document.getElementById('hijos_no');
+  if(opcionSi.checked){
     jsonData.sons =  true
     jsonData.ageSons = []
     for (let i=1; i<= parseInt(document.getElementById("cantidad_hijos").value); i++){
       console.log(document.getElementById(`edad_hijo_${i}`).value)
       jsonData.ageSons.push(parseInt(document.getElementById(`edad_hijo_${i}`).value))
     }
-  }else{
+  }else if(opcionNo.checked){
     jsonData.sons = false
   }
   console.log(jsonData)
