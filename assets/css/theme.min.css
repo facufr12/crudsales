@@ -12024,6 +12024,9 @@ fieldset:disabled .btn {
     .flex-md-row {
         flex-direction: row!important
     }
+    .flex-md-row2 {
+        flex-direction: column-reverse!important
+    }
     .flex-md-column {
         flex-direction: column!important
     }
