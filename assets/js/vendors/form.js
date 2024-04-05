@@ -67,9 +67,9 @@ document.getElementById("hijos_si").addEventListener("click", function () {
   document
     .getElementById("cantidad_hijos")
     .addEventListener("input", function () {
-      var cantidad = parseInt(this.value);
-      var edadesHtml = "";
-      for (var i = 0; i < cantidad; i++) {
+      let cantidad = parseInt(this.value);
+      let edadesHtml = "";
+      for (let i = 0; i < cantidad; i++) {
         edadesHtml +=
           `<input class="form-control" type="number" id="edad_hijo_${i+1}" name="edad_hijo_${i+1}" placeholder="Edad Hijo ${i+1}" required>`;
       }
