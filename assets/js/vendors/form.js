@@ -71,7 +71,7 @@ document.getElementById("hijos_si").addEventListener("click", function () {
       var edadesHtml = "";
       for (var i = 0; i < cantidad; i++) {
         edadesHtml +=
-          `<input class="form_control" type="number" id="edad_hijo_${i+1}" name="edad_hijo_${i+1} placeholder="Edad Hijo ${i+1}" required><br><br>`;
+          `<input class="form-control" type="number" id="edad_hijo_${i+1}" name="edad_hijo_${i+1}" placeholder="Edad Hijo ${i+1}" required>`;
       }
       document.getElementById("edades_hijos").innerHTML = edadesHtml;
     });
