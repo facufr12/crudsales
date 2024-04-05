@@ -18012,8 +18012,10 @@ fieldset:disabled .btn {
     height: 2.5rem;
     justify-content: center;
     padding: 0;
-    position: relative;
-    width: 2.5rem
+    position: fixed;
+    width: 2.5rem;
+    top: 25px;
+    right: 25px;
 }
 .btn-icon.btn-xs {
     font-size: .75rem;
