@@ -67,21 +67,11 @@ document.getElementById("hijos_si").addEventListener("click", function () {
   document
     .getElementById("cantidad_hijos")
     .addEventListener("input", function () {
-      var cantidad = parseInt(this.value);
-      var edadesHtml = "";
-      for (var i = 0; i < cantidad; i++) {
+      let cantidad = parseInt(this.value);
+      let edadesHtml = "";
+      for (let i = 0; i < cantidad; i++) {
         edadesHtml +=
-          '<label for="edad_hijo_' +
-          (i + 1) +
-          '">Edad del hijo ' +
-          (i + 1) +
-          ":</label><br>";
-        edadesHtml +=
-          '<input type="number" id="edad_hijo_' +
-          (i + 1) +
-          '" name="edad_hijo_' +
-          (i + 1) +
-          '" required><br><br>';
+          `<input class="form-control" type="number" id="edad_hijo_${i+1}" name="edad_hijo_${i+1}" placeholder="Edad Hijo ${i+1}" required>`;
       }
       document.getElementById("edades_hijos").innerHTML = edadesHtml;
     });
