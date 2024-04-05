@@ -92,112 +92,114 @@ document.getElementById("hijos_no").addEventListener("click", function () {
   document.getElementById("edades_hijos").innerHTML = "";
 });
 
-document
-  .getElementById("formulariooo")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
+document.getElementById("cotizar").addEventListener("click", function (event) {
+  event.preventDefault();
 
-    // Crear el objeto JSON según el formato deseado
-    const jsonData = {
-      name: document.getElementById("nombre").value,
-      location: document.getElementById("localidad").value,
-      age: parseInt(document.getElementById("edad_titular").value),
-      maritalStatus: document.getElementById("estado_civil").value,
-      wifeAge: parseInt(document.getElementById("edad_esposa").value) || null,
-      membershipWife:
-        document.getElementById("tipo_contratacion_esposa").value || null,
-      salaryWife: parseInt(document.getElementById("sueldo_esposa").value) || 0,
-      categoryMonotributeWife:
-        document.getElementById("categoria_monotributo_esposa").value || null,
-      numberSons:
-        parseInt(document.getElementById("cantidad_hijos").value) || null,
-      membership: document.getElementById("tipo_contratacion").value,
-      salary: parseInt(document.getElementById("sueldo_titular").value) || 0,
-      categoryMonotribute:
-        document.getElementById("categoria_monotributo").value || null,
-      email: document.getElementById("email").value,
-      cel: document.getElementById("celular").value,
-    };
-    var opcionSi = document.getElementById("hijos_si");
-    var opcionNo = document.getElementById("hijos_no");
-    if (opcionSi.checked) {
-      jsonData.sons = true;
-      jsonData.ageSons = [];
-      for (
-        let i = 1;
-        i <= parseInt(document.getElementById("cantidad_hijos").value);
-        i++
-      ) {
-        console.log(document.getElementById(`edad_hijo_${i}`).value);
-        jsonData.ageSons.push(
-          parseInt(document.getElementById(`edad_hijo_${i}`).value)
-        );
-      }
-    } else if (opcionNo.checked) {
-      jsonData.sons = false;
+  // Crear el objeto JSON según el formato deseado
+  const jsonData = {
+    //name: document.getElementById("nombre").value,
+    //location: document.getElementById("localidad").value,
+    age: parseInt(document.getElementById("edad_titular").value),
+    maritalStatus: document.getElementById("estado_civil").value,
+    wifeAge: parseInt(document.getElementById("edad_esposa").value) || null,
+    membershipWife:
+      document.getElementById("tipo_contratacion_esposa").value || null,
+    salaryWife: parseInt(document.getElementById("sueldo_esposa").value) || 0,
+    categoryMonotributeWife:
+      document.getElementById("categoria_monotributo_esposa").value || null,
+    numberSons:
+      parseInt(document.getElementById("cantidad_hijos").value) || null,
+    membership: document.getElementById("tipo_contratacion").value,
+    salary: parseInt(document.getElementById("sueldo_titular").value) || 0,
+    categoryMonotribute:
+      document.getElementById("categoria_monotributo").value || null,
+    //email: document.getElementById("email").value,
+    //cel: document.getElementById("celular").value,
+  };
+  var opcionSi = document.getElementById("hijos_si");
+  var opcionNo = document.getElementById("hijos_no");
+  if (opcionSi.checked) {
+    jsonData.sons = true;
+    jsonData.ageSons = [];
+    for (
+      let i = 1;
+      i <= parseInt(document.getElementById("cantidad_hijos").value);
+      i++
+    ) {
+      console.log(document.getElementById(`edad_hijo_${i}`).value);
+      jsonData.ageSons.push(
+        parseInt(document.getElementById(`edad_hijo_${i}`).value)
+      );
     }
-    console.log(jsonData);
-    // Enviar los datos del formulario a la URL deseada
-    fetch("https://2be6-190-210-23-53.ngrok-free.app/quote/2", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(jsonData),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error en la solicitud");
+  } else if (opcionNo.checked) {
+    jsonData.sons = false;
+  }
+  console.log(jsonData);
+  // Enviar los datos del formulario a la URL deseada
+  fetch("https://2be6-190-210-23-53.ngrok-free.app/quote/2", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(jsonData),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error en la solicitud");
+      }
+      //return response.json();
+      response.json().then((quotes) => {
+        console.log(quotes);
+        const quotesContainer = document.getElementById("cotizaciones");
+        quotesContainer.innerHTML = "";
+
+        let listNods = document.createElement("ul");
+        let listDs = document.createElement("ul");
+        let sds = document.createElement("p");
+        sds.textContent = "Cotizaciones sin descuento:";
+        quotesContainer.appendChild(sds);
+        for (let key in quotes.NoDs) {
+          if (quotes.WithDs.hasOwnProperty(key)) {
+            let value = parseFloat(quotes.NoDs[key]).toFixed(2);
+
+            // Crear elementos para mostrar la clave y el valor
+            let element = document.createElement("li");
+
+            // Asignar texto a los elementos
+            element.textContent = `${key}: $${value}`;
+
+            // Agregar los elementos al contenedor en el DOM
+            listNods.appendChild(element);
+          }
         }
-        //return response.json();
-        response.json().then((quotes) => {
-          console.log(quotes);
-          const quotesContainer = document.getElementById("cotizaciones");
-          quotesContainer.innerHTML = "";
+        quotesContainer.appendChild(listNods);
+        let ds = document.createElement("p");
+        ds.textContent = `Cotizaciones con descuento de ${quotes.Ds}% :`;
 
-          let listNods = document.createElement("ul");
-          let listDs = document.createElement("ul");
-          let sds = document.createElement("p");
-          sds.textContent = "Cotizaciones sin descuento:";
-          quotesContainer.appendChild(sds);
-          for (let key in quotes.NoDs) {
-            if (quotes.WithDs.hasOwnProperty(key)) {
-              let value = parseFloat(quotes.NoDs[key]).toFixed(2);
+        quotesContainer.appendChild(ds);
+        for (let key in quotes.WithDs) {
+          if (quotes.WithDs.hasOwnProperty(key)) {
+            let value = parseFloat(quotes.WithDs[key]).toFixed(2);
 
-              // Crear elementos para mostrar la clave y el valor
-              let element = document.createElement("li");
+            // Crear elementos para mostrar la clave y el valor
+            let element = document.createElement("li");
 
-              // Asignar texto a los elementos
-              element.textContent = `${key}: $${value}`;
+            // Asignar texto a los elementos
+            element.textContent = `${key}: $${value}`;
 
-              // Agregar los elementos al contenedor en el DOM
-              listNods.appendChild(element);
-            }
+            // Agregar los elementos al contenedor en el DOM
+            listDs.appendChild(element);
           }
-          quotesContainer.appendChild(listNods);
-          let ds = document.createElement("p");
-          ds.textContent = `Cotizaciones con descuento de ${quotes.Ds}% :`;
-
-          quotesContainer.appendChild(ds);
-          for (let key in quotes.WithDs) {
-            if (quotes.WithDs.hasOwnProperty(key)) {
-              let value = parseFloat(quotes.WithDs[key]).toFixed(2);
-
-              // Crear elementos para mostrar la clave y el valor
-              let element = document.createElement("li");
-
-              // Asignar texto a los elementos
-              element.textContent = `${key}: $${value}`;
-
-              // Agregar los elementos al contenedor en el DOM
-              listDs.appendChild(element);
-            }
-          }
-          quotesContainer.appendChild(listDs);
-        });
-      })
-      .catch((error) => {
-        console.error("Error al enviar los datos:");
-        console.log(error.message);
+        }
+        quotesContainer.appendChild(listDs);
       });
-  });
+    })
+    .catch((error) => {
+      console.error("Error al enviar los datos:");
+      console.log(error.message);
+    });
+})
+
+/* document
+  .getElementById("formulariooo")
+  .addEventListener("submit", ); */

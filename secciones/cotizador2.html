@@ -391,51 +391,50 @@
                     </div>
                     <!-- card cotizacion -->
 
-                <!-- card cotizacion -->
-                <div class="col-xl-4 col-lg-5">
-                    <div class="card mt-4 mt-lg-0">
-                        <div class="card-body">
-                            <div class="mb-4 d-flex justify-content-between align-items-center">
-                                <h4 class="mb-1">Cotización Plan</h4>
+                    <!-- card cotizacion -->
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="card mt-4 mt-lg-0">
+                            <div class="card-body">
+                                <div class="mb-4 d-flex justify-content-between align-items-center">
+                                    <h4 class="mb-1">Cotización Plan</h4>
+                                </div>
+
+                                <div class="d-md-flex">
+                                    <div>
+                                        <img src="../assets/images/Zipper.PNG" alt="" class="+img-4by3-xl rounded"
+                                            width="120px" />
+                                    </div>
+                                    <div class="ms-md-4 mt-2">
+                                        <h4 class="mb-1 text-primary-hover">Zipper</h4>
+                                        <h5>Individual. 34 años. Sin Hijos</h5>
+
+                                    </div>
+                                </div>
 
                             </div>
-
-                            <div class="d-md-flex">
-                                <div>
-                                    <img src="../assets/images/Zipper.PNG" alt="" class="+img-4by3-xl rounded"
-                                        width="120px" />
-                                </div>
-                                <div class="ms-md-4 mt-2">
-                                    <h4 class="mb-1 text-primary-hover">Zipper</h4>
-                                    <h5>Individual. 34 años. Sin Hijos</h5>
-
-                                </div>
+                            <div class="card-body border-top pt-2">
+                                <ul class="list-group list-group-flush mb-0">
+                                    <li class="d-flex justify-content-between list-group-item px-0">
+                                        <span>Subtotal</span>
+                                        <span class="text-dark fw-semibold"><del>$174415</del></span>
+                                    </li>
+                                    <li class="d-flex justify-content-between list-group-item px-0">
+                                        <span>Bonif. Af. online 40%</span>
+                                        <span class="text-success fw-semibold"> -$42000</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between list-group-item px-0">
+                                        <span>Aportes Titular RelDep</span>
+                                        <span class="text-success fw-semibold"> -$13000</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between list-group-item px-0 pb-0">
+                                        <span class="fs-3 fw-semibold text-dark">Cuota Mensual</span>
+                                        <span class="fs-3 fw-semibold text-dark">$99000</span>
+                                    </li>
+                                </ul>
                             </div>
-
-                        </div>
-                        <div class="card-body border-top pt-2">
-                            <ul class="list-group list-group-flush mb-0">
-                                <li class="d-flex justify-content-between list-group-item px-0">
-                                    <span>Subtotal</span>
-                                    <span class="text-dark fw-semibold"><del>$174415</del></span>
-                                </li>
-                                <li class="d-flex justify-content-between list-group-item px-0">
-                                    <span>Bonif. Af. online 40%</span>
-                                    <span class="text-success fw-semibold"> -$42000</span>
-                                </li>
-                                <li class="d-flex justify-content-between list-group-item px-0">
-                                    <span>Aportes Titular RelDep</span>
-                                    <span class="text-success fw-semibold"> -$13000</span>
-                                </li>
-                                <li class="d-flex justify-content-between list-group-item px-0 pb-0">
-                                    <span class="fs-3 fw-semibold text-dark">Cuota Mensual</span>
-                                    <span class="fs-3 fw-semibold text-dark">$99000</span>
-                                </li>
-                            </ul>
                         </div>
                     </div>
-                </div>
-            <!-- card cotizacion -->
+                    <!-- card cotizacion -->
 
                     <div class="col-xl-8 col-lg-7 col-12">
                         <!-- stepper -->
@@ -470,6 +469,8 @@
                                                     <p class="mb-0"> </p>
                                                 </div>
                                                 <!-- row -->
+
+                                                <!--Titular-->
                                                 <div class="row gx-3">
                                                     <div class="mb-3 col-12">
                                                         <h4 class="mb-1">Titular</h4>
@@ -496,10 +497,9 @@
                                                         <!--Categoria Monotributo Titular-->
                                                         <div id="categoria_monotributo_section" class="col-md-6 col-12"
                                                             style="display: none">
-                                                            <select id="categoria_monotributo" class="form-select"
-                                                                aria-label="Default select example">
-                                                                <option selected="">Seleccione una categoria de
-                                                                    Monotributo</option>
+                                                            <select id="categoria_monotributo"
+                                                                class="form-select" aria-label="Default select example">
+                                                                <option value="">Categoría Monotributo Titular</option>
                                                                 <option value="A">A</option>
                                                                 <option value="B">B</option>
                                                                 <option value="C">C</option>
@@ -548,6 +548,7 @@
                                                     </div>
                                                 </div>
 
+                                                <!--Esposa-->
                                                 <div id="estado_civil_section" class="row gx-3" style="display: none;">
                                                     <div class="mb-3 col-12">
                                                         <h4 class="mb-1">Conyugue - Esposa</h4>
@@ -573,16 +574,16 @@
                                                             </select>
                                                         </div>
                                                         <!--Sueldo Esposa-->
-                                                        <div class="col-md-6 col-12" style="display: none">
+                                                        <div id="sueldo_e" class="col-md-6 col-12" style="display: none">
                                                             <label for="sueldo_esposa">Sueldo Bruto
                                                                 Esposa:</label><br />
                                                             <input type="number" id="sueldo_esposa" /><br /><br />
                                                         </div>
                                                         <!--Categoria Monotributo Esposa-->
-                                                        <div class="col-md-6 col-12" style="display: none">
+                                                        <div id="categoria_monotributo_esposa_section" class="col-md-6 col-12" style="display: none">
                                                             <select id="categoria_monotributo_esposa"
                                                                 class="form-select" aria-label="Default select example">
-                                                                <option value="">Seleccione una categoría</option>
+                                                                <option value="">Categoría Monotributo Conyugue-Esposa</option>
                                                                 <option value="A">A</option>
                                                                 <option value="B">B</option>
                                                                 <option value="C">C</option>
@@ -596,12 +597,20 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <!--Hijos-->
+                                                <div id="hijos_section" class="row gx-3" style="display: none;">
+                                                    <label for="cantidad_hijos">Cantidad de hijos:</label>
+                                                    <input type="number" id="cantidad_hijos" />
+
+                                                    <div id="edades_hijos" class="col-md-6 col-12"></div>
+                                                </div>
                                             </div>
                                             <br> <br>
                                             <div class="d-flex justify-content-between">
 
                                                 <!-- Button -->
-                                                <button class="btn btn-primary" onclick="">
+                                                <button id="cotizar" class="btn btn-primary" onclick="">
                                                     Cotizar
                                                     <i class="fe fe-credit-card ms-2"></i>
                                                 </button>
