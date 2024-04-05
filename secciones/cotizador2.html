@@ -54,11 +54,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link  active " href="admin-dashboard.html">Overview</a>
                                 </li>
-                                
+
                             </ul>
                         </div>
                     </li>
-                    
+
                     <!-- Nav item -->
                     <li class="nav-item">
                         <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse" data-bs-target="#navProfile"
@@ -471,47 +471,124 @@
                                                         <h4 class="mb-1">Titular</h4>
                                                     </div>
                                                     <div class="d-flex flex-wrap mt-md-3">
+                                                        <!--Edad titular-->
                                                         <div class="col-md-6 col-12 pe-md-3 mb-2">
-                                                            <select id="edadTitular" class="form-select"
+                                                            <select id="edad_titular" class="form-select"
                                                                 aria-label="Default select example" name="edad">
                                                                 <option selected="">Edad Titular</option>
                                                             </select>
                                                         </div>
-
+                                                        <!--Contratacion titular-->
                                                         <div class="col-md-6 col-12">
-                                                            <select class="form-select"
+                                                            <select id="tipo_contratacion" class="form-select"
                                                                 aria-label="Default select example" name="contratación">
                                                                 <option selected="">Contratación</option>
-                                                                <option value="particular">Particular</option>
-                                                                <option value="recibo">Recibo de Sueldo</option>
-                                                                <option value="mono">Monotributo</option>
+                                                                <option value="Particular">Particular</option>
+                                                                <option value="Recibo de Sueldo">Recibo de Sueldo
+                                                                </option>
+                                                                <option value="Monotributo">Monotributo</option>
                                                             </select>
                                                         </div>
+                                                        <!--Categoria Monotributo Titular-->
+                                                        <div id="categoria_monotributo_section" class="col-md-6 col-12"
+                                                            style="display: none">
+                                                            <select id="categoria_monotributo" class="form-select"
+                                                                aria-label="Default select example">
+                                                                <option selected="">Seleccione una categoria de
+                                                                    Monotributo</option>
+                                                                <option value="A">A</option>
+                                                                <option value="B">B</option>
+                                                                <option value="C">C</option>
+                                                                <option value="D">D</option>
+                                                                <option value="E">E</option>
+                                                                <option value="F">F</option>
+                                                                <option value="G">G</option>
+                                                                <option value="H">H</option>
+                                                                <option value="I">I</option>
+                                                            </select>
+                                                        </div>
+                                                        <!--Sueldo Titular-->
+                                                        <div id="sueldo" class="col-md-6 col-12" style="display: none">
+                                                            <label for="sueldo_titular">Sueldo Bruto:</label><br />
+                                                            <input type="number" id="sueldo_titular" required />
+                                                        </div>
+
                                                     </div>
                                                     <div class="d-flex flex-wrap mt-md-3">
+                                                        <!--Estado civil-->
                                                         <div class="col-md-6 col-12 pe-md-3 mb-2">
-                                                            <select class="form-select"
+                                                            <select id="estado_civil" class="form-select"
                                                                 aria-label="Default select example" name="grupo">
                                                                 <option selected="">Estado civil</option>
-                                                                <option value="soltero">Soltero</option>
-                                                                <option value="casado">Casado</option>
-                                                                <option value="concubinato">Concubinato</option>
+                                                                <option value="Soltero">Soltero</option>
+                                                                <option value="Casado">Casado</option>
+                                                                <option value="Concubinato">Concubinato</option>
                                                             </select>
                                                         </div>
+
                                                         <div class="col-md-6 col-12">
                                                             <label class="form-label" for="">¿Tiene hijos?</label>
                                                             <input class="form-check-input" type="radio"
                                                                 name="decJurMedicacionFormularioAfiliacion"
-                                                                id="flexRadioDefault1" value="si">
+                                                                id="hijos_si" value="true">
                                                             <label class="form-check-label" for="flexRadioDefault1">
                                                                 Si
                                                             </label>
                                                             <input class="form-check-input" type="radio"
                                                                 name="decJurMedicacionFormularioAfiliacion"
-                                                                id="flexRadioDefault1" value="si">
+                                                                id="hijos_no" value="false">
                                                             <label class="form-check-label" for="flexRadioDefault1">
                                                                 No
                                                             </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div id="estado_civil_section" class="row gx-3" style="display: none;">
+                                                    <div class="mb-3 col-12">
+                                                        <h4 class="mb-1">Conyugue - Esposa</h4>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap mt-md-3">
+                                                        <!--Edad Esposa-->
+                                                        <div class="col-md-6 col-12 pe-md-3 mb-2">
+                                                            <select id="edad_esposa" class="form-select"
+                                                                aria-label="Default select example" name="edad">
+                                                                <option selected="">Edad Conyugue - Esposa</option>
+                                                            </select>
+                                                        </div>
+                                                        <!--Contratacion Esposa-->
+                                                        <div class="col-md-6 col-12">
+                                                            <select id="tipo_contratacion_esposa" class="form-select"
+                                                                aria-label="Default select example" name="contratación">
+                                                                <option selected="">Contratación Conyugue - Esposa
+                                                                </option>
+                                                                <option value="Particular">Particular</option>
+                                                                <option value="Recibo de Sueldo">Recibo de Sueldo
+                                                                </option>
+                                                                <option value="Monotributo">Monotributo</option>
+                                                            </select>
+                                                        </div>
+                                                        <!--Sueldo Esposa-->
+                                                        <div class="col-md-6 col-12" style="display: none">
+                                                            <label for="sueldo_esposa">Sueldo Bruto
+                                                                Esposa:</label><br />
+                                                            <input type="number" id="sueldo_esposa" /><br /><br />
+                                                        </div>
+                                                        <!--Categoria Monotributo Esposa-->
+                                                        <div class="col-md-6 col-12" style="display: none">
+                                                            <select id="categoria_monotributo_esposa"
+                                                                class="form-select" aria-label="Default select example">
+                                                                <option value="">Seleccione una categoría</option>
+                                                                <option value="A">A</option>
+                                                                <option value="B">B</option>
+                                                                <option value="C">C</option>
+                                                                <option value="D">D</option>
+                                                                <option value="E">E</option>
+                                                                <option value="F">F</option>
+                                                                <option value="G">G</option>
+                                                                <option value="H">H</option>
+                                                                <option value="I">I</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -564,8 +641,8 @@
             const paymentMethodSelect = document.getElementById("paymentMethod");
             const cardDetailsDiv = document.getElementById("cardDetails");
             const selectAge = document.getElementById("edadTitular")
-            
-            for (let i=1; i<=80; i++){
+
+            for (let i = 1; i <= 80; i++) {
                 let option = document.createElement("option");
                 option.text = i;
                 option.value = i;

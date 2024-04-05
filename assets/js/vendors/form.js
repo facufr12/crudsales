@@ -101,7 +101,7 @@ document
     const jsonData = {
       name: document.getElementById("nombre").value,
       location: document.getElementById("localidad").value,
-      age: parseInt(document.getElementById("edad").value),
+      age: parseInt(document.getElementById("edad_titular").value),
       maritalStatus: document.getElementById("estado_civil").value,
       wifeAge: parseInt(document.getElementById("edad_esposa").value) || null,
       membershipWife:
