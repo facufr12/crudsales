@@ -657,6 +657,12 @@
                 option.text = i;
                 option.value = i;
                 selectAge.appendChild(option)
+            }
+
+            for (let i = 18; i <= 65; i++) {
+                let option = document.createElement("option");
+                option.text = i;
+                option.value = i;
                 selectAgeWife.appendChild(option)
             }
             // Añadimos un evento de cambio al select
