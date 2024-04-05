@@ -651,12 +651,13 @@
             const paymentMethodSelect = document.getElementById("paymentMethod");
             const cardDetailsDiv = document.getElementById("cardDetails");
             const selectAge = document.getElementById("edad_titular")
-
-            for (let i = 1; i <= 80; i++) {
+            const selectAgeWife = document.getElementById("edad_esposa")
+            for (let i = 18; i <= 65; i++) {
                 let option = document.createElement("option");
                 option.text = i;
                 option.value = i;
                 selectAge.appendChild(option)
+                selectAgeWife.appendChild(option)
             }
             // Añadimos un evento de cambio al select
             paymentMethodSelect.addEventListener("change", function () {
