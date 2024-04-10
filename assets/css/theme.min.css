@@ -5731,7 +5731,7 @@ fieldset:disabled .btn {
 }
 .list-group-item {
     background-color: var(--gk-list-group-bg);
-    border: var(--gk-list-group-border-width) solid var(--gk-list-group-border-color);
+    /* border: var(--gk-list-group-border-width) solid var(--gk-list-group-border-color); */
     color: var(--gk-list-group-color);
     display: block;
     padding: var(--gk-list-group-item-padding-y) var(--gk-list-group-item-padding-x);
@@ -5768,7 +5768,7 @@ fieldset:disabled .btn {
     flex-direction: row
 }
 .list-group-horizontal>.list-group-item:first-child:not(:last-child) {
-    /* border-bottom-left-radius: var(--gk-list-group-border-radius); */
+    border-bottom-left-radius: var(--gk-list-group-border-radius);
     border-top-right-radius: 0
 }
 .list-group-horizontal>.list-group-item:last-child:not(:first-child) {
