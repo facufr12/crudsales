@@ -390,14 +390,14 @@
                                                         <!--Edad titular-->
                                                         <div class="col-md-6 col-12 pe-md-3 mb-2">
                                                             <select id="edad_titular" class="form-select"
-                                                                aria-label="Default select example" name="edad">
+                                                                aria-label="Default select example" name="edad" required>
                                                                 <option selected="">Edad Titular</option>
                                                             </select>
                                                         </div>
                                                         <!--Contratacion titular-->
                                                         <div class="col-md-6 col-12">
                                                             <select id="tipo_contratacion" class="form-select"
-                                                                aria-label="Default select example" name="contratación">
+                                                                aria-label="Default select example" name="contratación" required>
                                                                 <option selected="">Contratación</option>
                                                                 <option value="Particular">Particular</option>
                                                                 <option value="Recibo de Sueldo">Recibo de Sueldo
@@ -409,7 +409,7 @@
                                                         <div id="categoria_monotributo_section" class="col-md-6 col-12"
                                                             style="display: none">
                                                             <select id="categoria_monotributo"
-                                                                class="form-select" aria-label="Default select example">
+                                                                class="form-select" aria-label="Default select example" required>
                                                                 <option value="">Categoría Monotributo Titular</option>
                                                                 <option value="A">A</option>
                                                                 <option value="B">B</option>
@@ -432,7 +432,7 @@
                                                         <!--Estado civil-->
                                                         <div class="col-md-6 col-12 pe-md-3 mb-2">
                                                             <select id="estado_civil" class="form-select"
-                                                                aria-label="Default select example" name="grupo">
+                                                                aria-label="Default select example" name="grupo" required>
                                                                 <option selected="">Estado civil</option>
                                                                 <option value="Soltero">Soltero</option>
                                                                 <option value="Casado">Casado</option>
@@ -461,21 +461,21 @@
                                                 <!--Esposa-->
                                                 <div id="estado_civil_section" class="row gx-3" style="display: none;">
                                                     <div class="mb-3 col-12">
-                                                        <h4 class="mb-1">Conyugue - Esposa</h4>
+                                                        <h4 class="mb-1">Conyuge - Esposa</h4>
                                                     </div>
                                                     <div class="d-flex flex-wrap mt-md-3">
                                                         <!--Edad Esposa-->
                                                         <div class="col-md-6 col-12 pe-md-3 mb-2">
                                                             <select id="edad_esposa" class="form-select"
-                                                                aria-label="Default select example" name="edad">
-                                                                <option selected="">Edad Conyugue - Esposa</option>
+                                                                aria-label="Default select example" name="edad" required>
+                                                                <option selected="">Edad Conyuge - Esposa</option>
                                                             </select>
                                                         </div>
                                                         <!--Contratacion Esposa-->
                                                         <div class="col-md-6 col-12">
                                                             <select id="tipo_contratacion_esposa" class="form-select"
-                                                                aria-label="Default select example" name="contratación">
-                                                                <option selected="">Contratación Conyugue - Esposa
+                                                                aria-label="Default select example" name="contratación" required>
+                                                                <option selected="">Contratación Conyuge - Esposa
                                                                 </option>
                                                                 <option value="Particular">Particular</option>
                                                                 <option value="Recibo de Sueldo">Recibo de Sueldo
@@ -485,13 +485,13 @@
                                                         </div>
                                                         <!--Sueldo Esposa-->
                                                         <div id="sueldo_e" class="col-md-6 col-12" style="display: none">
-                                                            <input class="form-control" type="number" id="sueldo_esposa" placeholder="Sueldo Bruto Esposa - Conyugue" required />
+                                                            <input class="form-control" type="number" id="sueldo_esposa" placeholder="Sueldo Bruto Esposa - Conyuge" required />
                                                         </div>
                                                         <!--Categoria Monotributo Esposa-->
                                                         <div id="categoria_monotributo_esposa_section" class="col-md-6 col-12" style="display: none">
                                                             <select id="categoria_monotributo_esposa"
-                                                                class="form-select" aria-label="Default select example">
-                                                                <option value="">Categoría Monotributo Conyugue-Esposa</option>
+                                                                class="form-select" aria-label="Default select example" required>
+                                                                <option value="">Categoría Monotributo Conyuge-Esposa</option>
                                                                 <option value="A">A</option>
                                                                 <option value="B">B</option>
                                                                 <option value="C">C</option>
@@ -508,7 +508,7 @@
 
                                                 <!--Hijos-->
                                                 <div id="hijos_section" class="col-md-6 col-12" style="display: none;">
-                                                    <input type="number" id="cantidad_hijos" class="form-control" placeholder="Cantidad de Hijos" />
+                                                    <input type="number" id="cantidad_hijos" class="form-control" placeholder="Cantidad de Hijos" required/>
                                                     <div id="edades_hijos" class="col-md-6 col-12"></div>
                                                 </div>
                                             </div>

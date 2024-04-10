@@ -188,7 +188,7 @@ botonEnviar.addEventListener("click", function (event) {
     })
     .catch((error) => {
       console.error("Error al enviar los datos:");
-      console.log(error.message);
+      console.log(error);
     });
 });
 
@@ -216,8 +216,8 @@ function createCardQuote(quotes) {
     data.hijos = "Sin Hijos";
   }
   for (let key in quotes.WithDs) {
-    let quoteNoDs = parseFloat(quotes.NoDs[key]).toFixed(2);
-    let quoteWithDs = parseFloat(quotes.WithDs[key]).toFixed(2);
+    let quoteNoDs = parseFloat(quotes.NoDs[key]).toFixed(0);
+    let quoteWithDs = parseFloat(quotes.WithDs[key]).toFixed(0);
     let card = document.createElement("div");
     card.classList.add("col-xl-4", "col-lg-5");
     let descuentoTitular = "";
@@ -239,7 +239,6 @@ function createCardQuote(quotes) {
       parseInt(document.getElementById("edad_titular").value) <= 60
     ) {
       cardHtml = `
-      <div class="col-xl-4 col-lg-5">
         <div class="card mt-4 mt-lg-0">
           <div class="card-body">
             <div class="mb-4 d-flex justify-content-between align-items-center">
@@ -265,7 +264,7 @@ function createCardQuote(quotes) {
                 <span>Bonif. Af. online %${quotes.Discounts.Promo}</span>
                 <span class="text-success fw-semibold"> -$${parseFloat(
                   quoteNoDs * (quotes.Discounts.Promo / 100)
-                ).toFixed(2)}</span>
+                ).toFixed(0)}</span>
               </li>
               <li class="d-flex justify-content-between list-group-item px-0">
                 ${descuentoTitular}
@@ -276,8 +275,7 @@ function createCardQuote(quotes) {
               </li>
             </ul>
           </div>
-        </div>
-      </div>`;
+        </div>`;
     }
 
     if (
@@ -285,7 +283,6 @@ function createCardQuote(quotes) {
       parseInt(document.getElementById("edad_titular").value) > 60
     ) {
       cardHtml = `
-      <div class="col-xl-4 col-lg-5">
         <div class="card mt-4 mt-lg-0">
           <div class="card-body">
             <div class="mb-4 d-flex justify-content-between align-items-center">
@@ -316,8 +313,7 @@ function createCardQuote(quotes) {
               </li>
             </ul>
           </div>
-        </div>
-      </div>`;
+        </div>`;
     }
     if (estadoCivil === "Casado" || estadoCivil === "Concubinato") {
       if (parseInt(document.getElementById("edad_titular").value) <= 60) {
@@ -326,18 +322,17 @@ function createCardQuote(quotes) {
           document.getElementById("tipo_contratacion_esposa").value ===
           "Recibo de Sueldo"
         ) {
-          descuentoEsposa = `<span>Aportes Esposa/Conyugue RelDep</span>
-        <span class="text-success fw-semibold"> -$${quotes.Discounts.Wife.toFixed(2)}</span>`;
+          descuentoEsposa = `<span>Aportes Esposa/Conyuge RelDep</span>
+        <span class="text-success fw-semibold"> -$${quotes.Discounts.Wife.toFixed(0)}</span>`;
         } else if (
           document.getElementById("tipo_contratacion_esposa").value ===
           "Monotributo"
         ) {
-          descuentoEsposa = `<span>Aporte/Descuento Monotributo Esposa/Conyugue</span>
-        <span class="text-success fw-semibold"> -$${quotes.Discounts.Wife.toFixed(2)}</span>`;
+          descuentoEsposa = `<span>Aporte Monotributo Esposa/Conyuge</span>
+        <span class="text-success fw-semibold"> -$${quotes.Discounts.Wife.toFixed(0)}</span>`;
         }
 
         cardHtml = `
-      <div class="col-xl-4 col-lg-5">
         <div class="card mt-4 mt-lg-0">
           <div class="card-body">
             <div class="mb-4 d-flex justify-content-between align-items-center">
@@ -363,7 +358,7 @@ function createCardQuote(quotes) {
                 <span>Bonif. Af. online %${quotes.Discounts.Promo}</span>
                 <span class="text-success fw-semibold"> -$${parseFloat(
                   quoteNoDs * (quotes.Discounts.Promo / 100)
-                ).toFixed(2)}</span>
+                ).toFixed(0)}</span>
               </li>
               <li class="d-flex justify-content-between list-group-item px-0">
                 ${descuentoTitular}
@@ -377,8 +372,7 @@ function createCardQuote(quotes) {
               </li>
             </ul>
           </div>
-        </div>
-      </div>`;
+        </div>`;
       }
       if (parseInt(document.getElementById("edad_titular").value) > 60) {
         let descuentoEsposa = "";
@@ -386,17 +380,16 @@ function createCardQuote(quotes) {
           document.getElementById("tipo_contratacion_esposa").value ===
           "Recibo de Sueldo"
         ) {
-          descuentoEsposa = `<span>Aportes Esposa/Conyugue RelDep</span>
-        <span class="text-success fw-semibold"> -$${quotes.Discounts.Wife.toFixed(2)}</span>`;
+          descuentoEsposa = `<span>Aportes Esposa/Conyuge RelDep</span>
+        <span class="text-success fw-semibold"> -$${quotes.Discounts.Wife.toFixed(0)}</span>`;
         } else if (
           document.getElementById("tipo_contratacion_esposa").value ===
           "Monotributo"
         ) {
-          descuentoEsposa = `<span>Aporte/Descuento Monotributo Esposa/Conyugue</span>
-        <span class="text-success fw-semibold"> -$${quotes.Discounts.Wife.toFixed(2)}</span>`;
+          descuentoEsposa = `<span>Aporte/Descuento Monotributo Esposa/Conyuge</span>
+        <span class="text-success fw-semibold"> -$${quotes.Discounts.Wife.toFixed(0)}</span>`;
         }
         cardHtml = `
-      <div class="col-xl-4 col-lg-5">
         <div class="card mt-4 mt-lg-0">
           <div class="card-body">
             <div class="mb-4 d-flex justify-content-between align-items-center">
@@ -430,8 +423,7 @@ function createCardQuote(quotes) {
               </li>
             </ul>
           </div>
-        </div>
-      </div>`;
+        </div>`;
       }
     }
     card.innerHTML = cardHtml;
