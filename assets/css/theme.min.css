@@ -5768,7 +5768,7 @@ fieldset:disabled .btn {
     flex-direction: row
 }
 .list-group-horizontal>.list-group-item:first-child:not(:last-child) {
-    border-bottom-left-radius: var(--gk-list-group-border-radius);
+    /* border-bottom-left-radius: var(--gk-list-group-border-radius); */
     border-top-right-radius: 0
 }
 .list-group-horizontal>.list-group-item:last-child:not(:first-child) {
