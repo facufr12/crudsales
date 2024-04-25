@@ -127,7 +127,7 @@ botonEnviar.addEventListener("click", function (event) {
     jsonData.sons = false;
   }
   // Enviar los datos del formulario a la URL deseada
-  fetch("http://154.56.43.128:8080/quote/2", {
+  fetch("https://crudbackend.cober.online/quote/2", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
