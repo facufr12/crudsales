@@ -127,7 +127,7 @@ botonEnviar.addEventListener("click", function (event) {
     jsonData.sons = false;
   }
   // Enviar los datos del formulario a la URL deseada
-  fetch("https://c2a6-190-210-23-53.ngrok-free.app/quote/2", {
+  fetch("http://154.56.43.128:8080/quote/2", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
