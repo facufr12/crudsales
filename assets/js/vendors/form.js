@@ -225,12 +225,12 @@ function createCardQuote(quotes) {
       case "Recibo de Sueldo":
         descuentoTitular = `
       <span>Aportes Titular RelDep</span>
-      <span class="text-success fw-semibold"> -$${quotes.Discounts.Owner}</span>`;
+      <span class="text-success fw-semibold"> -$${parseFloat(quotes.Discounts.Owner).toFixed(0)}</span>`;
         break;
       case "Monotributo":
         descuentoTitular = `
         <span>Aporte/Descuento Monotributo</span>
-        <span class="text-success fw-semibold"> -$${quotes.Discounts.Owner}</span>`;
+        <span class="text-success fw-semibold"> -$${parseFloat(quotes.Discounts.Owner).toFixed(0)}</span>`;
         break;
     }
     let cardHtml = "";
