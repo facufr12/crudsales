@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "axios": "^1.7.3",
+    "express": "^4.19.2"
+  },
+  "name": "crudsales",
+  "version": "1.0.0",
+  "description": "- **Despliegue en Render:**\r   - [Enlace al Sitio Desplegado](https://crud-sales.onrender.com/)\r   - [Enlace al Panel de Render](https://dashboard.render.com/)",
+  "main": "fetchexcel.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
