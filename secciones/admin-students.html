@@ -846,1303 +846,121 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <!-- Tab -->
-                        <div class="tab-content">
-                            <!-- Tab Pane -->
-                            <div class="tab-pane fade show active" id="tabPaneGrid" role="tabpanel"
-                                aria-labelledby="tabPaneGrid">
-                                <div class="mb-4">
-                                    <input type="search" class="form-control" placeholder="Buscar prospectos">
-                                </div>
-                                <div class="row">
-                                    <!-- Card de cada prospecto -->
-                                    <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-                                        <!-- Card -->
-                                        <div class="card mb-4">
-                                            <!-- Card body -->
-                                            <div class="card-body">
-                                                <div class="text-start">
-                                                    <div class="position-relative">
-                                                        <!--
-                                                        <img src="../../assets/images/avatar/avatar-12.jpg"
-                                                            class="rounded-circle avatar-xl mb-3" alt="">
-                                                        -->
-                                                        <a href="#" class="position-absolute mt-8 ms-n5">
-                                                            <span class="status bg-success"></span>
-                                                        </a>
+                <style>
+                    .avatar-md {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                    }
+                    .status {
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                    }
+                    .card-body {
+                        padding: 1.5rem;
+                    }
+                    .badge {
+                        padding: 0.5rem 1rem;
+                        font-size: 0.75rem;
+                    }
+                    .form-select {
+                        padding: 0.5rem;
+                        font-size: 0.875rem;
+                    }
+                    .progress {
+                        height: 6px;
+                    }
+                    .progress-bar {
+                        line-height: 6px;
+                    }
+                    .card-header, .card-body {
+                        border: 1px solid #e9ecef;
+                        border-radius: 0.375rem;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="container mt-4">
+                    <div class="tab-content">
+                        <!-- Tab Pane -->
+                        <div class="tab-pane fade show active" id="tabPaneList" role="tabpanel" aria-labelledby="tabPaneList">
+                            <div class="mb-4">
+                                <input type="search" class="form-control" placeholder="Buscar prospectos" id="search">
+                            </div>
+                            <div class="row">
+                                <!-- Card de cada prospecto -->
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                                    <!-- Card -->
+                                    <div class="card mb-4">
+                                        <!-- Card body -->
+                                        <div class="card-body">
+                                            <div class="text-start">
+                                                <div class="position-relative">
+                                                    <img src="../../assets/images/avatar/avatar-12.jpg" class="rounded-circle avatar-md mb-3" alt="">
+                                                    <a href="#" class="position-absolute mt-8 ms-n5">
+                                                        <span class="status bg-success"></span>
+                                                    </a>
+                                                </div>
+                                                <h4 class="mb-0">Carlos</h4>
+                                                <p class="mb-0">
+                                                    <i class="fe fe-map-pin me-1 fs-6"></i>
+                                                    CABA
+                                                </p>
+                                            </div>
+                                            <div class="mt-4 p-0">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="w-100 py-2 px-3 border-top border-bottom">
+                                                        <h6 class="mb-0">Fecha de Ingreso:</h6>
+                                                        <p class="text-dark fs-6 fw-semibold mb-0">12/12/2023 02:05</p>
                                                     </div>
-                                                    <h4 class="mb-0">Carlos</h4>
-                                                    <p class="mb-0">
-                                                        <i class="fe fe-map-pin me-1 fs-6"></i>
-                                                        CABA
-                                                    </p>
-                                                </div>
-
-                                                <div class="mt-4 p-0">
-                                                    <div class="d-flex justify-content-between">
-                                                        <div class="w-100 py-2 px-3 border-top border-bottom">
-                                                            <h6 class="mb-0">Fecha de Ingreso:</h6>
-                                                            <p class="text-dark fs-6 fw-semibold mb-0">12/12/2023 02:05</p>
-                                                        </div>
-                                                        <div class=" w-50 py-3 ps-1 border-top border-bottom border-start d-flex justify-content-end">
-                                                            <h6 class="mb-0"></h6>
-                                                                <span class="badge bg-success-soft">Venta Cerrada</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="d-flex justify-content-between border-bottom py-2 mt-3">
-                                                    <span>Celular</span>
-                                                    <span class="text-dark">123456789</span>
-                                                </div>
-
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Correo</span>
-                                                    <span class="text-dark">carlos@gmail.com</span>
-                                                </div>
-                                                <!-- 
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Fecha Ingreso</span>
-                                                    <span class="text-dark">12/12/2023 02:05</span>
-                                                </div>
-                                                -->
-
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Edad</span>
-                                                    <span>34 Años</span>
-                                                </div>
-                                                
-                                                <div class="d-flex justify-content-between pt-2">
-                                                    <div class="pt-2">
-                                                        <span >Estado</span>
-                                                    </div>
-                                                    
-                                            
-                                                    <select class="form-select w-65 d-flex text-center" id="category">
-                                                        <option value="">Venta Cerrada</option>
-                                                        <option value="">Pago Pendiente</option>
-                                                        <option value="">En Espera</option>
-                                                        <option value="">Pasa de Vigencia</option>
-                                                        <option value="">Es Afiliado</option>
-                                                        <option value="">Duplicado</option>
-                                                        <option value="">Desestimado Por Cober</option>
-                                                        <option value="">No Le Interesa</option>
-                                                        <option value="">Rechazado</option>
-                                                    </select>
-        
-                                                    
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center mt-5">
-                                                     <!-- text cancel -->
-                                                     <!-- 
-                                                     <div>
-                                                        <span class="badge bg-danger-soft">Cancel</span>
-                                                    </div>
-                                                    -->
-                                                    <!-- text en progreso -->
-                                                    <!-- 
-                                                    <div>
-                                                        <span class="badge bg-info-soft">En Progreso</span>
-                                                    </div>
-                                                    -->
-                                                    <!-- text Finalizado -->
-                                                    <!-- 
-                                                    <div>
+                                                    <div class="w-50 py-3 ps-1 border-top border-bottom border-start d-flex justify-content-end">
+                                                        <h6 class="mb-0"></h6>
                                                         <span class="badge bg-success-soft">Venta Cerrada</span>
                                                     </div>
-                                                    -->
                                                 </div>
-                                                <!-- text -->
-                                                <!-- progress bar -->
-
-                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>100%</span>
-                                                    </div>
-                                                </div>
-                                                 <!-- progress bar -->
-                                                 <!-- 
-                                                <div class="progress progress-tooltip" style="height: 6px">
-                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>45%</span>
-                                                    </div>
-                                                </div>
-                                                -->
-
-                                                <!-- progress bar -->
-                                                <!-- 
-                                                <div class="progress progress-tooltip" style="height: 6px">
-                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>12%</span>
-                                                    </div>
-                                                </div>
-                                                -->
-
-                                                <!-- Ver detalles del prospecto -->
-                                                
-                                                <div class="d-flex justify-content-end mt-5">
-                                                    <a href="detalle-prospecto.html" class="btn btn-primary me-2">Detalles del Prospecto</a>
-                                                </div>
-                                                
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-                                        <!-- Card -->
-                                        <div class="card mb-4">
-                                            <!-- Card body -->
-                                            <div class="card-body">
-                                                <div class="text-start">
-                                                    <div class="position-relative">
-                                                        <!--
-                                                        <img src="../../assets/images/avatar/avatar-12.jpg"
-                                                            class="rounded-circle avatar-xl mb-3" alt="">
-                                                        -->
-                                                        <a href="#" class="position-absolute mt-8 ms-n5">
-                                                            <span class="status bg-success"></span>
-                                                        </a>
-                                                    </div>
-                                                    <h4 class="mb-0">[ $NombreyApellido ]</h4>
-                                                    <p class="mb-0">
-                                                        <i class="fe fe-map-pin me-1 fs-6"></i>
-                                                        [ $Localidad ]
-                                                    </p>
-                                                </div>
-
-                                                <div class="mt-4 p-0">
-                                                    <div class="d-flex justify-content-between">
-                                                        <div class="w-100 py-2 px-3 border-top border-bottom">
-                                                            <h6 class="mb-0">Fecha de Ingreso:</h6>
-                                                            <p class="text-dark fs-6 fw-semibold mb-0">12/12/2023 02:05</p>
-                                                        </div>
-                                                        <div class="w-50 py-3 ps-1 border-top border-bottom border-start d-flex justify-content-end">
-                                                            <h6 class="mb-0"></h6>
-                                                            <span class="badge pt-2" style="background-color: gray; color:white ">Duplicado</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-between border-bottom py-2 mt-3">
-                                                    <span>Celular</span>
-                                                    <span class="text-dark">[ $celular ]</span>
-                                                </div>
-
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Correo</span>
-                                                    <span class="text-dark">[ $correo ]</span>
-                                                </div>
-                                                <!-- 
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Fecha Ingreso</span>
-                                                    <span class="text-dark">[ $fecha ]</span>
-                                                </div>
-                                                -->
-
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Edad</span>
-                                                    <span>[ $edad ]</span>
-                                                </div>
-                                                
-                                                <div class="d-flex justify-content-between pt-2">
-                                                    <div class="pt-2">
-                                                        <span >Estado</span>
-                                                    </div>
-                                                    
-                                            
-                                                    <select class="form-select w-65 d-flex text-center" id="category">
-                                                        <option value="">Venta Cerrada</option>
-                                                        <option value="">Pago Pendiente</option>
-                                                        <option value="">En Espera</option>
-                                                        <option value="">Pasa de Vigencia</option>
-                                                        <option value="">Es Afiliado</option>
-                                                        <option value="">Duplicado</option>
-                                                        <option value="">Desestimado Por Cober</option>
-                                                        <option value="">No Le Interesa</option>
-                                                        <option value="">Rechazado</option>
-                                                    </select>
-        
-                                                    
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center mt-5">
-                                                     <!-- text cancel -->
-                                                     
-                                                     <div>
-                                                        
-                                                    </div>
-                                                    
-                                                    <!-- text en progreso -->
-                                                    <!-- 
-                                                    <div>
-                                                        <span class="badge bg-info-soft">En Progreso</span>
-                                                    </div>
-                                                    -->
-                                                    <!-- text Finalizado -->
-                                                    <!-- 
-                                                    <div>
-                                                        <span class="badge bg-success-soft">Finalizado</span>
-                                                    </div>
-                                                    -->
-                                                </div>
-                                                <!-- text -->
-                                                <!-- progress bar -->
-                                                <!-- 
-                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>100%</span>
-                                                    </div>
-                                                </div>
-                                                -->
-                                                 <!-- progress bar -->
-                                                 <!-- 
-                                                <div class="progress progress-tooltip" style="height: 6px">
-                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>45%</span>
-                                                    </div>
-                                                </div>
-                                                -->
-
-                                                <!-- progress bar -->
-                                                 
-                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
-                                                    <div class="progress-bar bg-gray" style="background-color: gray;" role="progressbar" style="width: 100%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>0%</span>
-                                                    </div>
-                                                </div>
-                                                
-
-                                                <!-- Ver detalles del prospecto -->
-                                                
-                                                <div class="d-flex justify-content-end mt-5">
-                                                    <a href="detalle-prospecto.html" class="btn btn-primary me-2">Detalles del Prospecto</a>
-                                                </div>
-                                                
+                                            <div class="d-flex justify-content-between border-bottom py-2 mt-3">
+                                                <span>Celular</span>
+                                                <span class="text-dark">123456789</span>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-                                        <!-- Card -->
-                                        <div class="card mb-4">
-                                            <!-- Card body -->
-                                            <div class="card-body">
-                                                <div class="text-start">
-                                                    <div class="position-relative">
-                                                        <!--
-                                                        <img src="../../assets/images/avatar/avatar-12.jpg"
-                                                            class="rounded-circle avatar-xl mb-3" alt="">
-                                                        -->
-                                                        <a href="#" class="position-absolute mt-8 ms-n5">
-                                                            <span class="status bg-success"></span>
-                                                        </a>
-                                                    </div>
-                                                    <h4 class="mb-0">[ $NombreyApellido ]</h4>
-                                                    <p class="mb-0">
-                                                        <i class="fe fe-map-pin me-1 fs-6"></i>
-                                                        [ $Localidad ]
-                                                    </p>
-                                                </div>
-
-                                                <div class="mt-4 p-0">
-                                                    <div class="d-flex justify-content-between">
-                                                        <div class="w-100 py-2 px-3 border-top border-bottom">
-                                                            <h6 class="mb-0">Fecha de Ingreso:</h6>
-                                                            <p class="text-dark fs-6 fw-semibold mb-0">12/12/2023 02:05</p>
-                                                        </div>
-                                                        <div class="w-50 py-3 ps-1 border-top border-bottom border-start d-flex justify-content-end">
-                                                            <h6 class="mb-0"></h6>
-                                                            <span class="badge pt-2" style="background-color: gray; color:white ">Duplicado</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-between border-bottom py-2 mt-3">
-                                                    <span>Celular</span>
-                                                    <span class="text-dark">[ $celular ]</span>
-                                                </div>
-
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Correo</span>
-                                                    <span class="text-dark">[ $correo ]</span>
-                                                </div>
-                                                <!-- 
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Fecha Ingreso</span>
-                                                    <span class="text-dark">[ $fecha ]</span>
-                                                </div>
-                                                -->
-
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Edad</span>
-                                                    <span>[ $edad ]</span>
-                                                </div>
-                                                
-                                                <div class="d-flex justify-content-between pt-2">
-                                                    <div class="pt-2">
-                                                        <span >Estado</span>
-                                                    </div>
-                                                    
-                                            
-                                                    <select class="form-select w-65 d-flex text-center" id="category">
-                                                        <option value="">Venta Cerrada</option>
-                                                        <option value="">Pago Pendiente</option>
-                                                        <option value="">En Espera</option>
-                                                        <option value="">Pasa de Vigencia</option>
-                                                        <option value="">Es Afiliado</option>
-                                                        <option value="">Duplicado</option>
-                                                        <option value="">Desestimado Por Cober</option>
-                                                        <option value="">No Le Interesa</option>
-                                                        <option value="">Rechazado</option>
-                                                    </select>
-        
-                                                    
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center mt-5">
-                                                     <!-- text cancel -->
-                                                     
-                                                     <div>
-                                                        
-                                                    </div>
-                                                    
-                                                    <!-- text en progreso -->
-                                                    <!-- 
-                                                    <div>
-                                                        <span class="badge bg-info-soft">En Progreso</span>
-                                                    </div>
-                                                    -->
-                                                    <!-- text Finalizado -->
-                                                    <!-- 
-                                                    <div>
-                                                        <span class="badge bg-success-soft">Finalizado</span>
-                                                    </div>
-                                                    -->
-                                                </div>
-                                                <!-- text -->
-                                                <!-- progress bar -->
-                                                <!-- 
-                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>100%</span>
-                                                    </div>
-                                                </div>
-                                                -->
-                                                 <!-- progress bar -->
-                                                 <!-- 
-                                                <div class="progress progress-tooltip" style="height: 6px">
-                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>45%</span>
-                                                    </div>
-                                                </div>
-                                                -->
-
-                                                <!-- progress bar -->
-                                                 
-                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
-                                                    <div class="progress-bar bg-gray" style="background-color: gray;" role="progressbar" style="width: 100%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>0%</span>
-                                                    </div>
-                                                </div>
-                                                
-
-                                                <!-- Ver detalles del prospecto -->
-                                                
-                                                <div class="d-flex justify-content-end mt-5">
-                                                    <a href="detalle-prospecto.html" class="btn btn-primary me-2">Detalles del Prospecto</a>
-                                                </div>
-                                                
+                                            <div class="d-flex justify-content-between border-bottom py-2">
+                                                <span>Correo</span>
+                                                <span class="text-dark">carlos@gmail.com</span>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-                                        <!-- Card -->
-                                        <div class="card mb-4">
-                                            <!-- Card body -->
-                                            <div class="card-body">
-                                                <div class="text-start">
-                                                    <div class="position-relative">
-                                                        <!--
-                                                        <img src="../../assets/images/avatar/avatar-12.jpg"
-                                                            class="rounded-circle avatar-xl mb-3" alt="">
-                                                        -->
-                                                        <a href="#" class="position-absolute mt-8 ms-n5">
-                                                            <span class="status bg-success"></span>
-                                                        </a>
-                                                    </div>
-                                                    <h4 class="mb-0">[ $NombreyApellido ]</h4>
-                                                    <p class="mb-0">
-                                                        <i class="fe fe-map-pin me-1 fs-6"></i>
-                                                        [ $Localidad ]
-                                                    </p>
-                                                </div>
-
-                                                <div class="mt-4 p-0">
-                                                    <div class="d-flex justify-content-between">
-                                                        <div class="w-100 py-2 px-3 border-top border-bottom">
-                                                            <h6 class="mb-0">Fecha de Ingreso:</h6>
-                                                            <p class="text-dark fs-6 fw-semibold mb-0">12/12/2023 02:05</p>
-                                                        </div>
-                                                        <div class="w-50 py-3 ps-1 border-top border-bottom border-start d-flex justify-content-end">
-                                                            <h6 class="mb-0"></h6>
-                                                            <span class="badge pt-2" style="background-color: gray; color:white ">Duplicado</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-between border-bottom py-2 mt-3">
-                                                    <span>Celular</span>
-                                                    <span class="text-dark">[ $celular ]</span>
-                                                </div>
-
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Correo</span>
-                                                    <span class="text-dark">[ $correo ]</span>
-                                                </div>
-                                                <!-- 
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Fecha Ingreso</span>
-                                                    <span class="text-dark">[ $fecha ]</span>
-                                                </div>
-                                                -->
-
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Edad</span>
-                                                    <span>[ $edad ]</span>
-                                                </div>
-                                                
-                                                <div class="d-flex justify-content-between pt-2">
-                                                    <div class="pt-2">
-                                                        <span >Estado</span>
-                                                    </div>
-                                                    
-                                            
-                                                    <select class="form-select w-65 d-flex text-center" id="category">
-                                                        <option value="">Venta Cerrada</option>
-                                                        <option value="">Pago Pendiente</option>
-                                                        <option value="">En Espera</option>
-                                                        <option value="">Pasa de Vigencia</option>
-                                                        <option value="">Es Afiliado</option>
-                                                        <option value="">Duplicado</option>
-                                                        <option value="">Desestimado Por Cober</option>
-                                                        <option value="">No Le Interesa</option>
-                                                        <option value="">Rechazado</option>
-                                                    </select>
-        
-                                                    
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center mt-5">
-                                                     <!-- text cancel -->
-                                                     
-                                                     <div>
-                                                        
-                                                    </div>
-                                                    
-                                                    <!-- text en progreso -->
-                                                    <!-- 
-                                                    <div>
-                                                        <span class="badge bg-info-soft">En Progreso</span>
-                                                    </div>
-                                                    -->
-                                                    <!-- text Finalizado -->
-                                                    <!-- 
-                                                    <div>
-                                                        <span class="badge bg-success-soft">Finalizado</span>
-                                                    </div>
-                                                    -->
-                                                </div>
-                                                <!-- text -->
-                                                <!-- progress bar -->
-                                                <!-- 
-                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>100%</span>
-                                                    </div>
-                                                </div>
-                                                -->
-                                                 <!-- progress bar -->
-                                                 <!-- 
-                                                <div class="progress progress-tooltip" style="height: 6px">
-                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>45%</span>
-                                                    </div>
-                                                </div>
-                                                -->
-
-                                                <!-- progress bar -->
-                                                 
-                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
-                                                    <div class="progress-bar bg-gray" style="background-color: gray;" role="progressbar" style="width: 100%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>0%</span>
-                                                    </div>
-                                                </div>
-                                                
-
-                                                <!-- Ver detalles del prospecto -->
-                                                
-                                                <div class="d-flex justify-content-end mt-5">
-                                                    <a href="detalle-prospecto.html" class="btn btn-primary me-2">Detalles del Prospecto</a>
-                                                </div>
-                                                
+                                            <div class="d-flex justify-content-between border-bottom py-2">
+                                                <span>Edad</span>
+                                                <span>34 Años</span>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-                                        <!-- Card -->
-                                        <div class="card mb-4">
-                                            <!-- Card body -->
-                                            <div class="card-body">
-                                                <div class="text-start">
-                                                    <div class="position-relative">
-                                                        <!--
-                                                        <img src="../../assets/images/avatar/avatar-12.jpg"
-                                                            class="rounded-circle avatar-xl mb-3" alt="">
-                                                        -->
-                                                        <a href="#" class="position-absolute mt-8 ms-n5">
-                                                            <span class="status bg-success"></span>
-                                                        </a>
-                                                    </div>
-                                                    <h4 class="mb-0">[ $NombreyApellido ]</h4>
-                                                    <p class="mb-0">
-                                                        <i class="fe fe-map-pin me-1 fs-6"></i>
-                                                        [ $Localidad ]
-                                                    </p>
+                                            <div class="d-flex justify-content-between pt-2">
+                                                <div class="pt-2">
+                                                    <span>Estado</span>
                                                 </div>
-
-                                                <div class="mt-4 p-0">
-                                                    <div class="d-flex justify-content-between">
-                                                        <div class="w-100 py-2 px-3 border-top border-bottom">
-                                                            <h6 class="mb-0">Fecha de Ingreso:</h6>
-                                                            <p class="text-dark fs-6 fw-semibold mb-0">12/12/2023 02:05</p>
-                                                        </div>
-                                                        <div class="w-50 py-3 ps-1 border-top border-bottom border-start d-flex justify-content-end">
-                                                            <h6 class="mb-0"></h6>
-                                                            <span class="badge pt-2" style="background-color: gray; color:white ">Duplicado</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-between border-bottom py-2 mt-3">
-                                                    <span>Celular</span>
-                                                    <span class="text-dark">[ $celular ]</span>
-                                                </div>
-
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Correo</span>
-                                                    <span class="text-dark">[ $correo ]</span>
-                                                </div>
-                                                <!-- 
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Fecha Ingreso</span>
-                                                    <span class="text-dark">[ $fecha ]</span>
-                                                </div>
-                                                -->
-
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Edad</span>
-                                                    <span>[ $edad ]</span>
-                                                </div>
-                                                
-                                                <div class="d-flex justify-content-between pt-2">
-                                                    <div class="pt-2">
-                                                        <span >Estado</span>
-                                                    </div>
-                                                    
-                                            
-                                                    <select class="form-select w-65 d-flex text-center" id="category">
-                                                        <option value="">Venta Cerrada</option>
-                                                        <option value="">Pago Pendiente</option>
-                                                        <option value="">En Espera</option>
-                                                        <option value="">Pasa de Vigencia</option>
-                                                        <option value="">Es Afiliado</option>
-                                                        <option value="">Duplicado</option>
-                                                        <option value="">Desestimado Por Cober</option>
-                                                        <option value="">No Le Interesa</option>
-                                                        <option value="">Rechazado</option>
-                                                    </select>
-        
-                                                    
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center mt-5">
-                                                     <!-- text cancel -->
-                                                     
-                                                     <div>
-                                                        
-                                                    </div>
-                                                    
-                                                    <!-- text en progreso -->
-                                                    <!-- 
-                                                    <div>
-                                                        <span class="badge bg-info-soft">En Progreso</span>
-                                                    </div>
-                                                    -->
-                                                    <!-- text Finalizado -->
-                                                    <!-- 
-                                                    <div>
-                                                        <span class="badge bg-success-soft">Finalizado</span>
-                                                    </div>
-                                                    -->
-                                                </div>
-                                                <!-- text -->
-                                                <!-- progress bar -->
-                                                <!-- 
-                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>100%</span>
-                                                    </div>
-                                                </div>
-                                                -->
-                                                 <!-- progress bar -->
-                                                 <!-- 
-                                                <div class="progress progress-tooltip" style="height: 6px">
-                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>45%</span>
-                                                    </div>
-                                                </div>
-                                                -->
-
-                                                <!-- progress bar -->
-                                                 
-                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
-                                                    <div class="progress-bar bg-gray" style="background-color: gray;" role="progressbar" style="width: 100%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>0%</span>
-                                                    </div>
-                                                </div>
-                                                
-
-                                                <!-- Ver detalles del prospecto -->
-                                                
-                                                <div class="d-flex justify-content-end mt-5">
-                                                    <a href="detalle-prospecto.html" class="btn btn-primary me-2">Detalles del Prospecto</a>
-                                                </div>
-                                                
+                                                <select class="form-select w-65 d-flex text-center" id="category">
+                                                    <option value="">Venta Cerrada</option>
+                                                    <option value="">Pago Pendiente</option>
+                                                    <option value="">En Espera</option>
+                                                    <option value="">Pasa de Vigencia</option>
+                                                    <option value="">Es Afiliado</option>
+                                                    <option value="">Duplicado</option>
+                                                    <option value="">Desestimado Por Cober</option>
+                                                    <option value="">No Le Interesa</option>
+                                                    <option value="">Rechazado</option>
+                                                </select>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-                                        <!-- Card -->
-                                        <div class="card mb-4">
-                                            <!-- Card body -->
-                                            <div class="card-body">
-                                                <div class="text-start">
-                                                    <div class="position-relative">
-                                                        <!--
-                                                        <img src="../../assets/images/avatar/avatar-12.jpg"
-                                                            class="rounded-circle avatar-xl mb-3" alt="">
-                                                        -->
-                                                        <a href="#" class="position-absolute mt-8 ms-n5">
-                                                            <span class="status bg-success"></span>
-                                                        </a>
-                                                    </div>
-                                                    <h4 class="mb-0">[ $NombreyApellido ]</h4>
-                                                    <p class="mb-0">
-                                                        <i class="fe fe-map-pin me-1 fs-6"></i>
-                                                        [ $Localidad ]
-                                                    </p>
+                                            <div class="d-flex align-items-center justify-content-center mt-5">
+                                                <div>
+                                                    <span class="badge bg-success-soft">Venta Cerrada</span>
                                                 </div>
-
-                                                <div class="mt-4 p-0">
-                                                    <div class="d-flex justify-content-between">
-                                                        <div class="w-100 py-2 px-3 border-top border-bottom">
-                                                            <h6 class="mb-0">Fecha de Ingreso:</h6>
-                                                            <p class="text-dark fs-6 fw-semibold mb-0">12/12/2023 02:05</p>
-                                                        </div>
-                                                        <div class="w-50 py-3 ps-1 border-top border-bottom border-start d-flex justify-content-end">
-                                                            <h6 class="mb-0"></h6>
-                                                            <span class="badge pt-2" style="background-color: gray; color:white ">Duplicado</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-between border-bottom py-2 mt-3">
-                                                    <span>Celular</span>
-                                                    <span class="text-dark">[ $celular ]</span>
-                                                </div>
-
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Correo</span>
-                                                    <span class="text-dark">[ $correo ]</span>
-                                                </div>
-                                                <!-- 
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Fecha Ingreso</span>
-                                                    <span class="text-dark">[ $fecha ]</span>
-                                                </div>
-                                                -->
-
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Edad</span>
-                                                    <span>[ $edad ]</span>
-                                                </div>
-                                                
-                                                <div class="d-flex justify-content-between pt-2">
-                                                    <div class="pt-2">
-                                                        <span >Estado</span>
-                                                    </div>
-                                                    
-                                            
-                                                    <select class="form-select w-65 d-flex text-center" id="category">
-                                                        <option value="">Venta Cerrada</option>
-                                                        <option value="">Pago Pendiente</option>
-                                                        <option value="">En Espera</option>
-                                                        <option value="">Pasa de Vigencia</option>
-                                                        <option value="">Es Afiliado</option>
-                                                        <option value="">Duplicado</option>
-                                                        <option value="">Desestimado Por Cober</option>
-                                                        <option value="">No Le Interesa</option>
-                                                        <option value="">Rechazado</option>
-                                                    </select>
-        
-                                                    
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center mt-5">
-                                                     <!-- text cancel -->
-                                                     
-                                                     <div>
-                                                        
-                                                    </div>
-                                                    
-                                                    <!-- text en progreso -->
-                                                    <!-- 
-                                                    <div>
-                                                        <span class="badge bg-info-soft">En Progreso</span>
-                                                    </div>
-                                                    -->
-                                                    <!-- text Finalizado -->
-                                                    <!-- 
-                                                    <div>
-                                                        <span class="badge bg-success-soft">Finalizado</span>
-                                                    </div>
-                                                    -->
-                                                </div>
-                                                <!-- text -->
-                                                <!-- progress bar -->
-                                                <!-- 
-                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>100%</span>
-                                                    </div>
-                                                </div>
-                                                -->
-                                                 <!-- progress bar -->
-                                                 <!-- 
-                                                <div class="progress progress-tooltip" style="height: 6px">
-                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>45%</span>
-                                                    </div>
-                                                </div>
-                                                -->
-
-                                                <!-- progress bar -->
-                                                 
-                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
-                                                    <div class="progress-bar bg-gray" style="background-color: gray;" role="progressbar" style="width: 100%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>0%</span>
-                                                    </div>
-                                                </div>
-                                                
-
-                                                <!-- Ver detalles del prospecto -->
-                                                
-                                                <div class="d-flex justify-content-end mt-5">
-                                                    <a href="detalle-prospecto.html" class="btn btn-primary me-2">Detalles del Prospecto</a>
-                                                </div>
-                                                
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-                                        <!-- Card -->
-                                        <div class="card mb-4">
-                                            <!-- Card body -->
-                                            <div class="card-body">
-                                                <div class="text-start">
-                                                    <div class="position-relative">
-                                                        <!--
-                                                        <img src="../../assets/images/avatar/avatar-12.jpg"
-                                                            class="rounded-circle avatar-xl mb-3" alt="">
-                                                        -->
-                                                        <a href="#" class="position-absolute mt-8 ms-n5">
-                                                            <span class="status bg-success"></span>
-                                                        </a>
-                                                    </div>
-                                                    <h4 class="mb-0">[ $NombreyApellido ]</h4>
-                                                    <p class="mb-0">
-                                                        <i class="fe fe-map-pin me-1 fs-6"></i>
-                                                        [ $Localidad ]
-                                                    </p>
+                                            <div class="progress progress-tooltip mt-5">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                    <span>100%</span>
                                                 </div>
-
-                                                <div class="mt-4 p-0">
-                                                    <div class="d-flex justify-content-between">
-                                                        <div class="w-100 py-2 px-3 border-top border-bottom">
-                                                            <h6 class="mb-0">Fecha de Ingreso:</h6>
-                                                            <p class="text-dark fs-6 fw-semibold mb-0">12/12/2023 02:05</p>
-                                                        </div>
-                                                        <div class="w-50 py-3 ps-1 border-top border-bottom border-start d-flex justify-content-end">
-                                                            <h6 class="mb-0"></h6>
-                                                            <span class="badge pt-2" style="background-color: gray; color:white ">Duplicado</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-between border-bottom py-2 mt-3">
-                                                    <span>Celular</span>
-                                                    <span class="text-dark">[ $celular ]</span>
-                                                </div>
-
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Correo</span>
-                                                    <span class="text-dark">[ $correo ]</span>
-                                                </div>
-                                                <!-- 
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Fecha Ingreso</span>
-                                                    <span class="text-dark">[ $fecha ]</span>
-                                                </div>
-                                                -->
-
-                                                <div class="d-flex justify-content-between border-bottom py-2">
-                                                    <span>Edad</span>
-                                                    <span>[ $edad ]</span>
-                                                </div>
-                                                
-                                                <div class="d-flex justify-content-between pt-2">
-                                                    <div class="pt-2">
-                                                        <span >Estado</span>
-                                                    </div>
-                                                    
-                                            
-                                                    <select class="form-select w-65 d-flex text-center" id="category">
-                                                        <option value="">Venta Cerrada</option>
-                                                        <option value="">Pago Pendiente</option>
-                                                        <option value="">En Espera</option>
-                                                        <option value="">Pasa de Vigencia</option>
-                                                        <option value="">Es Afiliado</option>
-                                                        <option value="">Duplicado</option>
-                                                        <option value="">Desestimado Por Cober</option>
-                                                        <option value="">No Le Interesa</option>
-                                                        <option value="">Rechazado</option>
-                                                    </select>
-        
-                                                    
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center mt-5">
-                                                     <!-- text cancel -->
-                                                     
-                                                     <div>
-                                                        
-                                                    </div>
-                                                    
-                                                    <!-- text en progreso -->
-                                                    <!-- 
-                                                    <div>
-                                                        <span class="badge bg-info-soft">En Progreso</span>
-                                                    </div>
-                                                    -->
-                                                    <!-- text Finalizado -->
-                                                    <!-- 
-                                                    <div>
-                                                        <span class="badge bg-success-soft">Finalizado</span>
-                                                    </div>
-                                                    -->
-                                                </div>
-                                                <!-- text -->
-                                                <!-- progress bar -->
-                                                <!-- 
-                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>100%</span>
-                                                    </div>
-                                                </div>
-                                                -->
-                                                 <!-- progress bar -->
-                                                 <!-- 
-                                                <div class="progress progress-tooltip" style="height: 6px">
-                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>45%</span>
-                                                    </div>
-                                                </div>
-                                                -->
-
-                                                <!-- progress bar -->
-                                                 
-                                                <div class="progress progress-tooltip mt-5" style="height: 6px">
-                                                    <div class="progress-bar bg-gray" style="background-color: gray;" role="progressbar" style="width: 100%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
-                                                        <span>0%</span>
-                                                    </div>
-                                                </div>
-                                                
-
-                                                <!-- Ver detalles del prospecto -->
-                                                
-                                                <div class="d-flex justify-content-end mt-5">
-                                                    <a href="detalle-prospecto.html" class="btn btn-primary me-2">Detalles del Prospecto</a>
-                                                </div>
-                                                
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    
-
-
-                                   <!-- Paginado de la sección -->
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <!-- Pagination -->
-                                        <nav>
-                                            <ul class="pagination justify-content-center mb-0">
-                                                <li class="page-item disabled">
-                                                    <a class="page-link mx-1 rounded" href="#">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
-                                                            fill="currentColor" class="bi bi-chevron-left"
-                                                            viewBox="0 0 16 16">
-                                                            <path fill-rule="evenodd"
-                                                                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z">
-                                                        </svg>
-                                                    </a>
-                                                </li>
-                                                <li class="page-item active">
-                                                    <a class="page-link mx-1 rounded" href="#">1</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a class="page-link mx-1 rounded" href="#">2</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a class="page-link mx-1 rounded" href="#">3</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a class="page-link mx-1 rounded" href="#">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
-                                                            fill="currentColor" class="bi bi-chevron-right"
-                                                            viewBox="0 0 16 16">
-                                                            <path fill-rule="evenodd"
-                                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
-                                                        </svg>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Tab Pane -->
-                            <div class="tab-pane fade" id="tabPaneList" role="tabpanel" aria-labelledby="tabPaneList">
-                                <!-- Card -->
-                                <div class="card">
-                                    <!-- Card Header -->
-                                    <div class="card-header">
-                                        <input type="search" class="form-control" placeholder="Buscar prospectos">
-                                    </div>
-                                    <!-- Table -->
-                                    <div class="table-responsive">
-                                        <table class="table mb-0 text-nowrap table-hover table-centered">
-                                            <thead class="table-light">
-                                                <tr>
-                                                    <th>Nombre y Apellido</th>
-                                                    <th>Celular</th>
-                                                    <th>Correo</th>
-                                                    <th>Fecha Ingreso</th>
-                                                    <th>Edad</th>
-                                                    <!-- <th>Action</th> -->
-                                                    <th>Localidad</th>
-                                                    <th>N° de Póliza</th>
-                                                    <th>Estado</th>
-                                                    <th>Modificar Estado</th>
-                                                    <th>Detalles del Prospecto</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="position-relative">
-                                                                <img src="../../assets/images/avatar/avatar-12.jpg"
-                                                                    alt="" class="rounded-circle avatar-md me-2">
-                                                                <a href="#" class="position-absolute mt-5 ms-n4">
-                                                                    <span class="status bg-success"></span>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="mb-0">Carlos</h5>
-                                                        </div>
-                                                    </td>
-                                                    <td>123456789</td>
-                                                    <td>carlos@gmail.com</td>
-                                                    <td>12/12/2023 02:05</td>
-                                                    <td>34 Años</td>
-                                                    <td>CABA</td>
-                                                    <td>1234567890</td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <div class="d-flex text-center h-50">
-                                                                <span class="badge bg-success-soft text-center">Venta Cerrada</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <select class="form-select d-flex text-start" id="category">
-                                                                <option value="">[ $Estado ]</option>
-                                                                <option value="">Venta Cerrada</option>
-                                                                <option value="">Pago Pendiente</option>
-                                                                <option value="">En Espera</option>
-                                                                <option value="">Pasa de Vigencia</option>
-                                                                <option value="">Es Afiliado</option>
-                                                                <option value="">Duplicado</option>
-                                                                <option value="">Desestimado Por Cober</option>
-                                                                <option value="">No Le Interesa</option>
-                                                                <option value="">Rechazado</option>
-                                                            </select>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-center">
-                                                            <a href="detalle-prospecto.html" class="btn btn-primary me-2">Ver Detalles del Prospecto</a>
-                                                        </div>
-                                                    </td>
-                                                    
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="position-relative">
-                                                                <img src="../../assets/images/avatar/avatar-13.jpg"
-                                                                    alt="" class="rounded-circle avatar-md me-2">
-                                                                <a href="#" class="position-absolute mt-5 ms-n4">
-                                                                    <span class="status bg-success"></span>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="mb-0">[ $NombreyApellido ]</h5>
-                                                        </div>
-                                                    </td>
-                                                    <td>[ $celular ]</td>
-                                                    <td>[ $correo ]</td>
-                                                    <td>[ $fecha ]</td>
-                                                    <td>[ $edad ]</td>
-                                                    <td>[ $Localidad ]</td>
-                                                    <td>[ $númeroPóliza ]</td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <div>
-                                                                <span class="badge bg-info-soft">Pago Pendiente</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <select class="form-select d-flex text-start" id="category">
-                                                                <option value="">[ $Estado ]</option>
-                                                                <option value="">Venta Cerrada</option>
-                                                                <option value="">Pago Pendiente</option>
-                                                                <option value="">En Espera</option>
-                                                                <option value="">Pasa de Vigencia</option>
-                                                                <option value="">Es Afiliado</option>
-                                                                <option value="">Duplicado</option>
-                                                                <option value="">Desestimado Por Cober</option>
-                                                                <option value="">No Le Interesa</option>
-                                                                <option value="">Rechazado</option>
-                                                            </select>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-center">
-                                                            <a href="detalle-prospecto.html" class="btn btn-primary me-2">Ver Detalles del Prospecto</a>
-                                                        </div>
-                                                    </td>
-                                                    
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="position-relative">
-                                                                <img src="../../assets/images/avatar/avatar-14.jpg"
-                                                                    alt="" class="rounded-circle avatar-md me-2">
-                                                                <a href="#" class="position-absolute mt-5 ms-n4">
-                                                                    <span class="status bg-success"></span>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="mb-0">[ $NombreyApellido ]</h5>
-                                                        </div>
-                                                    </td>
-                                                    <td>[ $celular ]</td>
-                                                    <td>[ $correo ]</td>
-                                                    <td>[ $fecha ]</td>
-                                                    <td>[ $edad ]</td>
-                                                    <td>[ $Localidad ]</td>
-                                                    <td>[ $númeroPóliza ]</td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <div>
-                                                                <span class="badge bg-danger-soft">No Le Interesa</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <select class="form-select d-flex text-start" id="category">
-                                                                <option value="">[ $Estado ]</option>
-                                                                <option value="">Venta Cerrada</option>
-                                                                <option value="">Pago Pendiente</option>
-                                                                <option value="">En Espera</option>
-                                                                <option value="">Pasa de Vigencia</option>
-                                                                <option value="">Es Afiliado</option>
-                                                                <option value="">Duplicado</option>
-                                                                <option value="">Desestimado Por Cober</option>
-                                                                <option value="">No Le Interesa</option>
-                                                                <option value="">Rechazado</option>
-                                                            </select>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-center">
-                                                            <a href="detalle-prospecto.html" class="btn btn-primary me-2">Ver Detalles del Prospecto</a>
-                                                        </div>
-                                                    </td>
-                                                    
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="position-relative">
-                                                                <img src="../../assets/images/avatar/avatar-15.jpg"
-                                                                    alt="" class="rounded-circle avatar-md me-2">
-                                                                <a href="#" class="position-absolute mt-5 ms-n4">
-                                                                    <span class="status bg-success"></span>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="mb-0">[ $NombreyApellido ]</h5>
-                                                        </div>
-                                                    </td>
-                                                    <td>[ $celular ]</td>
-                                                    <td>[ $correo ]</td>
-                                                    <td>[ $fecha ]</td>
-                                                    <td>[ $edad ]</td>
-                                                    <td>[ $Localidad ]</td>
-                                                    <td>[ $númeroPóliza ]</td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <div>
-                                                                <span class="badge bg-warning-soft">Pasa De Vigencia</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <select class="form-select d-flex text-start" id="category">
-                                                                <option value="">[ $Estado ]</option>
-                                                                <option value="">Venta Cerrada</option>
-                                                                <option value="">Pago Pendiente</option>
-                                                                <option value="">En Espera</option>
-                                                                <option value="">Pasa de Vigencia</option>
-                                                                <option value="">Es Afiliado</option>
-                                                                <option value="">Duplicado</option>
-                                                                <option value="">Desestimado Por Cober</option>
-                                                                <option value="">No Le Interesa</option>
-                                                                <option value="">Rechazado</option>
-                                                            </select>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-center">
-                                                            <a href="detalle-prospecto.html" class="btn btn-primary me-2">Ver Detalles del Prospecto</a>
-                                                        </div>
-                                                    </td>
-                                                    
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="position-relative">
-                                                                <img src="../../assets/images/avatar/avatar-16.jpg"
-                                                                    alt="" class="rounded-circle avatar-md me-2">
-                                                                <a href="#" class="position-absolute mt-5 ms-n4">
-                                                                    <span class="status bg-success"></span>
-                                                                </a>
-                                                            </div>
-                                                            <h5 class="mb-0">[ $NombreyApellido ]</h5>
-                                                        </div>
-                                                    </td>
-                                                    <td>[ $celular ]</td>
-                                                    <td>[ $correo ]</td>
-                                                    <td>[ $fecha ]</td>
-                                                    <td>[ $edad ]</td>
-                                                    <td>[ $Localidad ]</td>
-                                                    <td>[ $númeroPóliza ]</td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <div>
-                                                                <span class="badge bg-info-soft">Pago Pendiente</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <select class="form-select d-flex text-start" id="category">
-                                                                <option value="">[ $Estado ]</option>
-                                                                <option value="">Venta Cerrada</option>
-                                                                <option value="">Pago Pendiente</option>
-                                                                <option value="">En Espera</option>
-                                                                <option value="">Pasa de Vigencia</option>
-                                                                <option value="">Es Afiliado</option>
-                                                                <option value="">Duplicado</option>
-                                                                <option value="">Desestimado Por Cober</option>
-                                                                <option value="">No Le Interesa</option>
-                                                                <option value="">Rechazado</option>
-                                                            </select>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-center">
-                                                            <a href="detalle-prospecto.html" class="btn btn-primary me-2">Ver Detalles del Prospecto</a>
-                                                        </div>
-                                                    </td>
-                                                    
-                                                </tr>
-                                                
-                                            </tbody>
-                                        </table>
-                                        <div class="card-footer">
-                                            <nav>
-                                                <ul class="pagination justify-content-center">
-                                                    <li class="page-item disabled">
-                                                        <a class="page-link mx-1 rounded" href="#">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="10"
-                                                                height="10" fill="currentColor"
-                                                                class="bi bi-chevron-left" viewBox="0 0 16 16">
-                                                                <path fill-rule="evenodd"
-                                                                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z">
-                                                            </svg>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item active">
-                                                        <a class="page-link mx-1 rounded" href="#">1</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link mx-1 rounded" href="#">2</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link mx-1 rounded" href="#">3</a>
-                                                    </li>
-                                                   
-                                                    <li class="page-item">
-                                                        <a class="page-link mx-1 rounded" href="#">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="10"
-                                                                height="10" fill="currentColor"
-                                                                class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                                                <path fill-rule="evenodd"
-                                                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
-                                                            </svg>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
+                                            <div class="d-flex justify-content-end mt-5">
+                                                <a href="detalle-prospecto.html" class="btn btn-primary me-2">Detalles del Prospecto</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -2150,6 +968,129 @@
                         </div>
                     </div>
                 </div>
+            
+                <script>
+                    const apiUrl = 'http://127.0.0.1:3000/data'; // URL del servidor API
+            
+                    // Función para formatear la fecha
+                    function formatDate(dateString) {
+                        const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+                        return new Date(dateString).toLocaleDateString(undefined, options);
+                    }
+            
+                    // Función para obtener los datos y crear las tarjetas
+                    function fetchData() {
+                        fetch(apiUrl)
+                            .then(response => response.json())
+                            .then(data => {
+                                createCards(data);
+                            })
+                            .catch(error => console.error('Error fetching data:', error));
+                    }
+            
+                    // Función para crear las tarjetas
+                    function createCards(data) {
+                        const row = document.querySelector('.row'); // Asumiendo que hay un contenedor para las tarjetas
+                        row.innerHTML = ''; // Limpiar el contenedor antes de añadir nuevas tarjetas
+            
+                        data.forEach(person => {
+                            const cardHtml = 
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <div class="text-start">
+                                                <div class="position-relative">
+                                                    <img src="../../assets/images/avatar/avatar-12.jpg" class="rounded-circle avatar-md mb-3" alt="">
+                                                    <a href="#" class="position-absolute mt-8 ms-n5">
+                                                        <span class="status bg-success"></span>
+                                                    </a>
+                                                </div>
+                                                <h4 class="mb-0">${person.nombre}</h4>
+                                                <p class="mb-0">
+                                                    <i class="fe fe-map-pin me-1 fs-6"></i>
+                                                    ${person.Localidad}
+                                                </p>
+                                            </div>
+                                            <div class="mt-4 p-0">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="w-100 py-2 px-3 border-top border-bottom">
+                                                        <h6 class="mb-0">Fecha de Ingreso:</h6>
+                                                        <p class="text-dark fs-6 fw-semibold mb-0">${formatDate(person.Fecha)}</p>
+                                                    </div>
+                                                    <div class="w-50 py-3 ps-1 border-top border-bottom border-start d-flex justify-content-end">
+                                                        <h6 class="mb-0"></h6>
+                                                        <span class="badge bg-${getBadgeClass(person.Estado)}">${person.Estado || 'N/A'}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between border-bottom py-2 mt-3">
+                                                <span>Celular</span>
+                                                <span class="text-dark">${person.Celular}</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between border-bottom py-2">
+                                                <span>Correo</span>
+                                                <span class="text-dark">${person.Correo}</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between border-bottom py-2">
+                                                <span>Edad</span>
+                                                <span>${person.Edad} Años</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between pt-2">
+                                                <div class="pt-2">
+                                                    <span>Estado</span>
+                                                </div>
+                                                <select class="form-select w-65 d-flex text-center" id="category">
+                                                    <option value="">${person.Estado || 'Seleccionar Estado'}</option>
+                                                    <option value="Venta Cerrada">Venta Cerrada</option>
+                                                    <option value="Pago Pendiente">Pago Pendiente</option>
+                                                    <option value="En Espera">En Espera</option>
+                                                    <option value="Pasa de Vigencia">Pasa de Vigencia</option>
+                                                    <option value="Es Afiliado">Es Afiliado</option>
+                                                    <option value="Duplicado">Duplicado</option>
+                                                    <option value="Desestimado Por Cober">Desestimado Por Cober</option>
+                                                    <option value="No Le Interesa">No Le Interesa</option>
+                                                    <option value="Rechazado">Rechazado</option>
+                                                </select>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-center mt-5">
+                                                <div>
+                                                    <span class="badge bg-${getBadgeClass(person.Estado)}">${person.Estado || 'N/A'}</span>
+                                                </div>
+                                            </div>
+                                            <div class="progress progress-tooltip mt-5">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                    <span>100%</span>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-end mt-5">
+                                                <a href="detalle-prospecto.html" class="btn btn-primary me-2">Detalles del Prospecto</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ;
+                            row.insertAdjacentHTML('beforeend', cardHtml);
+                        });
+                    }
+            
+                    // Función para obtener la clase del badge basado en el estado
+                    function getBadgeClass(estado) {
+                        switch (estado) {
+                            case 'Venta Cerrada':
+                                return 'success-soft';
+                            case 'Pago Pendiente':
+                                return 'info-soft';
+                            case 'No Le Interesa':
+                                return 'danger-soft';
+                            default:
+                                return 'secondary-soft';
+                        }
+                    }
+            
+                    // Llamar a la función para obtener y mostrar los datos al cargar la página
+                    window.onload = fetchData;
+                </script>
+
             </section>
         </main>
     </div>
