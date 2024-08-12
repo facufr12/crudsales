@@ -840,7 +840,7 @@
                                     <button class="btn btn-outline-secondary" data-bs-toggle="tab"
                                         data-bs-target="#tabPaneList" role="tab" aria-controls="tabPaneList"
                                         aria-selected="false">
-                                        <span class="fe fe-list"></span>
+                                        <span class="fe fe-list"></span>    
                                     </button>
                                 </div>
 
@@ -884,6 +884,8 @@
                 </style>
             </head>
             <body>
+
+
                <div class="container mt-4">
         <div class="tab-content">
             <!-- Tab Pane -->
@@ -900,28 +902,30 @@
 
     <script>
         const apiUrl = 'http://127.0.0.1:3000/data'; // URL del servidor API
-
+        let globalData = []; // Variable global para almacenar los datos
+    
         // Función para formatear la fecha
         function formatDate(dateString) {
             const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
             return new Date(dateString).toLocaleDateString(undefined, options);
         }
-
+    
         // Función para obtener los datos y crear las tarjetas
         function fetchData() {
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
-                    createCards(data);
+                    globalData = data; // Almacena los datos en la variable global
+                    createCards(globalData); // Crea las tarjetas inicialmente
                 })
                 .catch(error => console.error('Error fetching data:', error));
         }
-
+    
         // Función para crear las tarjetas
         function createCards(data) {
             const row = document.getElementById('prospecto-container'); // Contenedor para las tarjetas
             row.innerHTML = ''; // Limpiar el contenedor antes de añadir nuevas tarjetas
-
+    
             data.forEach(person => {
                 const cardHtml = `
                     <div class="col-xl-4 col-lg-6 col-md-6 col-12">
@@ -953,58 +957,51 @@
                                         </div>
                                     </div>
                                 </div>
-                                    <div class="d-flex justify-content-between border-bottom py-2">
+                                <div class="d-flex justify-content-between border-bottom py-2">
                                     <span>Edad</span>
                                     <span class="text-dark">${person.Edad}</span>
                                 </div>
-                                   <div class="d-flex justify-content-between border-bottom py-2 mt-3">
+                                <div class="d-flex justify-content-between border-bottom py-2 mt-3">
                                     <span>Tipo de Afiliación</span>
                                     <span class="text-dark">${person.tipoafiliacion}</span>
-                                    
                                 </div>
-                                  <div class="d-flex justify-content-between border-bottom py-2 mt-3">
+                                <div class="d-flex justify-content-between border-bottom py-2 mt-3">
                                     <span>Grupo Familiar</span>
                                     <span class="text-dark">${person.grupofamiliar}</span>
-                                    
                                 </div>
                                 <div class="d-flex justify-content-between border-bottom py-2 mt-3">
                                     <span>Celular</span>
                                     <span class="text-dark">${person.Celular}</span>
-                                    
                                 </div>
-                                  <div class="d-flex justify-content-between border-bottom py-2 mt-3">
+                                <div class="d-flex justify-content-between border-bottom py-2 mt-3">
                                     <span>Vendedor</span>
                                     <span class="text-dark">${person.vendedor}</span>
-                                    
                                 </div>
-                                
                                 <div class="d-flex justify-content-between border-bottom py-2">
                                     <span>Correo</span>
                                     <span class="text-dark">${person.Correo}</span>
                                 </div>
-                              
                                 <div class="d-flex justify-content-between border-bottom py-2">
                                     <span>Hora</span>
                                     <span class="text-dark">${person.Hora}</span>
                                 </div>
-  
                                 <div class="d-flex justify-content-between border-bottom py-2">
                                     <span>Fecha asignación</span>
                                     <span class="text-dark">${person.fasignacioin}</span>
                                 </div>
-                               <div class="d-flex justify-content-between border-bottom py-2">
+                                <div class="d-flex justify-content-between border-bottom py-2">
                                     <span>Fecha asignación</span>
                                     <span class="text-dark">${person.Eprospecto}</span>
                                 </div>
-                             <div class="d-flex justify-content-between border-bottom py-2">
+                                <div class="d-flex justify-content-between border-bottom py-2">
                                     <span>Estado de Correo</span>
                                     <span class="text-dark">${person.Ecorreoasignacion}</span>
                                 </div>
-                          <div class="d-flex justify-content-between border-bottom py-2">
+                                <div class="d-flex justify-content-between border-bottom py-2">
                                     <span>Envío Wahtsapp</span>
                                     <span class="text-dark">${person.enviowhatsapp}</span>
                                 </div>
-                                 <div class="d-flex justify-content-between border-bottom py-2">
+                                <div class="d-flex justify-content-between border-bottom py-2">
                                     <span>Fecha de Envío WP</span>
                                     <span class="text-dark">${person.fechaenviowhatsapp}</span>
                                 </div>
@@ -1045,7 +1042,21 @@
                 row.insertAdjacentHTML('beforeend', cardHtml);
             });
         }
-
+    
+        // Función para filtrar las tarjetas
+        function filterCards(searchTerm) {
+            const filteredData = globalData.filter(person => {
+                return person.nombre.toLowerCase().includes(searchTerm) || person.Partido.toLowerCase().includes(searchTerm);
+            });
+            createCards(filteredData); // Crear las tarjetas filtradas
+        }
+    
+        // Agregar el evento de búsqueda
+        document.getElementById('search').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            filterCards(searchTerm); // Filtrar tarjetas en función del término de búsqueda
+        });
+    
         // Función para obtener la clase del badge basado en el estado
         function getBadgeClass(estado) {
             switch (estado) {
@@ -1059,11 +1070,11 @@
                     return 'secondary-soft';
             }
         }
-
+    
         // Llamar a la función para obtener y mostrar los datos al cargar la página
         window.onload = fetchData;
     </script>
-
+    
             </section>
         </main>
     </div>

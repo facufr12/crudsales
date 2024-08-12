@@ -16,7 +16,8 @@
 
     <!-- darkmode js -->
     <script src="../../assets/js/vendors/darkMode.js"></script>
-
+    
+    <script src="../fetchexcel.js"></script>
     <!-- Libs CSS -->
     <link href="../../assets/fonts/feather/feather.css" rel="stylesheet" />
     <link href="../../assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
@@ -565,26 +566,29 @@
                 -->
             </div>
         </nav>
-
         <!-- Page Content -->
         <main id="page-content">
+            {console.log(person)}
             <div class="header">
+                
                 <!-- navbar -->
                 <nav class="navbar-default navbar navbar-expand-lg">
                     <a id="nav-toggle" href="#">
                         <i class="fe fe-menu"></i>
                     </a>
                     <div class="ms-lg-3 d-none d-md-none d-lg-block">
-                        <!-- Form -->
-                        <form class="d-flex align-items-center">
-                            <span class="position-absolute ps-3 search-icon">
+                       <!-- Form -->
+                         <form class="d-flex align-items-center">
+                             <span class="position-absolute ps-3 search-icon">
                                 <i class="fe fe-search"></i>
-                            </span>
-                            <input type="search" class="form-control ps-6" placeholder="Buscar en el Dashboard" />
-                        </form>
+                             </span>
+                             <input type="search" class="form-control ps-6" placeholder="Buscar en el Dashboard" />
+                         </form>
                     </div>
                     <!--Navbar nav -->
                     <div class="ms-auto d-flex">
+                        
+                        
                         <div class="dropdown">
                             <button class="btn btn-light btn-icon rounded-circle d-flex align-items-center"
                                 type="button" aria-expanded="false" data-bs-toggle="dropdown"
@@ -615,7 +619,7 @@
                                     </button>
                                 </li>
                             </ul>
-                        </div>
+                         </div>
                         <ul class="navbar-nav navbar-right-wrap ms-2 d-flex nav-top-wrap">
                             <li class="dropdown stopevent">
                                 <a class="btn btn-light btn-icon rounded-circle indicator indicator-primary" href="#"
@@ -703,7 +707,6 @@
                                                     </div>
                                                 </div>
                                             </li>
-
                                         </ul>
                                         <div class="border-top px-3 pt-3 pb-0">
                                             <a href="#" class="text-link fw-semibold">Ver todas las notificaciones</a>
@@ -801,7 +804,6 @@
                     </div>
                 </nav>
             </div>
-
             <!-- Container fluid -->
             <section class="container-fluid p-4">
                 <div class="row">
@@ -831,7 +833,6 @@
                     </div>
                 </div>
                 <!-- row  -->
-                
                 <div class="row">
                     <div class="col-md-12 col-xl-8 col-12">
                         <div class="row">
@@ -841,8 +842,7 @@
                                     <div class="card-header">
                                         <h4 class="mb-0">Cotización</h4>
                                     </div>
-                                    <!-- card body -->
-
+                                    <!-- card body -->                                                                          
                                     <!-- row -->
                                     <div class="row">
                                         <!-- col -->
@@ -937,7 +937,7 @@
                                                     </div>
                                                     <div>
                                                         <div>
-                                                            <p class="text-dark mb-0 fw-semibold">[ $FechaIngreso ]</p>
+                                                            <p class="text-dark mb-0 fw-semibold">${item.nombre}</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1177,7 +1177,6 @@
 
     <!-- Theme JS -->
     <script src="../../assets/js/theme.min.js"></script>
-
 
     <script src="../../assets/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
 
