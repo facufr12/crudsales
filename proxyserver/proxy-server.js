@@ -5,7 +5,7 @@ const app = express();
 const port = 3000; // Verifica si este es el puerto correcto
 
 // URL de tu Google Apps Script
-const apiUrl = 'https://script.google.com/macros/s/AKfycbxsFN5zkc3x5MzDnVgQ5ZN0fXy3AEmoD7EselIyNc3SsNi_9Bd7TV7tMiSVhG2MDPrl/exec';
+const apiUrl = 'https://script.google.com/macros/s/AKfycbxAxcnkQ63YK_fhOhJKEaD_eLQEFRJJKHYcnlJ9EbrPOzdpBjyzs5fd7Y7iZd0pa-X4nA/exec';
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
