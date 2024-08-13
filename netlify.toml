@@ -1,0 +1,8 @@
+[build]
+  functions = "netlify/functions"
+  publish = "public"
+
+[[redirects]]
+  from = "/data"
+  to = "/.netlify/functions/proxy"
+  status = 200
