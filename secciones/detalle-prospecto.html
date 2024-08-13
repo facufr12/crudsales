@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    <!-- Wrapper -->
+    <!-- Wrapper --> 
     <div id="db-wrapper">
         <!-- navbar vertical -->
         <!-- Sidebar -->
@@ -568,7 +568,48 @@
         </nav>
         <!-- Page Content -->
         <main id="page-content">
-           
+            <script>
+                // Obtener el ID del prospecto desde la URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const id = urlParams.get('id');
+        
+                // Función para cargar los detalles del prospecto
+                function loadDetails(id) {
+                    // Aquí debes realizar una solicitud a tu backend para obtener los detalles del prospecto
+                    // Ejemplo de solicitud con Fetch API
+                    fetch(`path/to/your/api/endpoint/${id}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            // Mostrar los detalles en la página
+                            document.getElementById('details').innerHTML = `
+                                <h2>${data.nombre}</h2>
+                                <p><strong>Partido:</strong> ${data.Partido}</p>
+                                <p><strong>Fecha de Ingreso:</strong> ${formatDate(data.Fecha)}</p>
+                                <p><strong>Edad:</strong> ${data.Edad}</p>
+                                <p><strong>Tipo de Afiliación:</strong> ${data.tipoafiliacion}</p>
+                                <p><strong>Grupo Familiar:</strong> ${data.grupofamiliar}</p>
+                                <p><strong>Celular:</strong> ${data.Celular}</p>
+                                <p><strong>Vendedor:</strong> ${data.vendedor}</p>
+                                <p><strong>Correo:</strong> ${data.Correo}</p>
+                                <p><strong>Hora:</strong> ${data.Hora}</p>
+                                <p><strong>Fecha Asignación:</strong> ${data.fasignacioin}</p>
+                                <p><strong>Estado:</strong> ${data.Estado}</p>
+                            `;
+                        })
+                        .catch(error => console.error('Error:', error));
+                }
+        
+                // Cargar los detalles cuando la página se carga
+                if (id) {
+                    loadDetails(id);
+                }
+        
+                // Función para formatear la fecha (opcional)
+                function formatDate(dateString) {
+                    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                    return new Date(dateString).toLocaleDateString('es-ES', options);
+                }
+            </script>
             <div class="header">
                 
                 <!-- navbar -->
@@ -715,6 +756,7 @@
                                 </div>
                             </li>
                             <!-- List -->
+                             
                             <li class="dropdown ms-2">
                                 <a class="rounded-circle" href="#" role="button" id="dropdownUser"
                                     data-bs-toggle="dropdown" aria-expanded="false">

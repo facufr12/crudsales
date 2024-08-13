@@ -10,8 +10,12 @@ function formatDate(dateString) {
 // Función para obtener los datos y crear las tarjetas
 function fetchData() {
     fetch(apiUrl)
-        .then(response => response.json())
+        .then(response => {
+            console.log('Response:', response); // Verificar la respuesta
+            return response.json();
+        })
         .then(data => {
+            console.log('Fetched Data:', data); // Verificar los datos obtenidos
             globalData = data; // Almacena los datos en la variable global
             createCards(globalData); // Crea las tarjetas inicialmente
             createTable(globalData); // Crea la tabla inicialmente
@@ -21,6 +25,7 @@ function fetchData() {
 
 // Función para crear las tarjetas
 function createCards(data) {
+    console.log('Creating Cards with Data:', data); // Verificar los datos utilizados para crear tarjetas
     const row = document.getElementById('prospecto-container'); // Contenedor para las tarjetas
     row.innerHTML = ''; // Limpiar el contenedor antes de añadir nuevas tarjetas
 
@@ -141,8 +146,8 @@ function createCards(data) {
 }
 
 // Función para crear la tabla
-// Función para crear la tabla
 function createTable(data) {
+    console.log('Creating Table with Data:', data); // Verificar los datos utilizados para crear la tabla
     const tableContainer = document.getElementById('prospecto-table');
     tableContainer.innerHTML = `
         <table class="table mb-0 text-nowrap table-hover table-centered">
@@ -215,12 +220,13 @@ function createTable(data) {
     `;
 }
 
-
 // Función para filtrar las tarjetas y la tabla
 function filterCards(searchTerm) {
+    console.log('Filtering Data with Search Term:', searchTerm); // Verificar el término de búsqueda
     const filteredData = globalData.filter(person => {
         return person.nombre.toLowerCase().includes(searchTerm) || person.Partido.toLowerCase().includes(searchTerm);
     });
+    console.log('Filtered Data:', filteredData); // Verificar los datos filtrados
     createCards(filteredData); // Crear las tarjetas filtradas
     createTable(filteredData); // Crear la tabla filtrada
 }
