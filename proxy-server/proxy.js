@@ -5,7 +5,7 @@ const port = 3000; // Verifica si este es el puerto correcto
 
 // URL de tu Google Apps Script
 const apiUrl =
-  "https://script.google.com/macros/s/AKfycby42tPzSJqMNNmhR1D00eABpveBK1NaYPVVVCVbGQ3ZkShlfZjfR1FTuL-bntVeZnrYCA/exec";
+  "https://script.google.com/a/macros/grupocober.online/s/AKfycbw01ZQa0934ASBYt0d3jVPVNMdc1kSzn5QP2e9SwCh6_vzJjLl57qug0aq99dErPHFL1Q/exec";
 
 // Configurar CORS para permitir acceso desde cualquier origen
 app.use((req, res, next) => {
