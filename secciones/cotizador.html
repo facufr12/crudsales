@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <h2>Formulario Cotizador Cober</h2>
+
+    <form id="formulariooo">
+      <label for="nombre">Nombre completo:</label><br />
+      <input type="text" id="nombre" required /><br /><br />
+
+      <label for="localidad">Localidad:</label><br />
+      <select id="localidad" required>
+        <option value="">Seleccione una opción</option>
+        <option value="CABA">CABA</option>
+        <option value="GBA SUR">GBA SUR</option>
+        <option value="GBA NORTE">GBA NORTE</option>
+        <option value="GBA OESTE">GBA OESTE</option></select
+      ><br /><br />
+
+      <label for="edad">Edad:</label><br />
+      <input type="number" id="edad_titular" required /><br /><br />
+
+      <label for="estado_civil">Estado civil:</label><br />
+      <select id="estado_civil" required>
+        <option value="">Seleccione una opción</option>
+        <option value="Soltero">Soltero</option>
+        <option value="Casado">Casado</option>
+        <option value="Concubinato">Concubinato</option></select
+      ><br /><br />
+
+      <label for="tipo_contratacion">Tipo de contratación:</label><br />
+      <select id="tipo_contratacion" required>
+        <option value="">Seleccione una opción</option>
+        <option value="Particular">Particular</option>
+        <option value="Recibo de Sueldo">Recibo de Sueldo</option>
+        <option value="Monotributo">Monotributo</option></select
+      ><br /><br />
+      <div id="categoria_monotributo_section" style="display: none">
+        <label for="categoria_monotributo">Categoría de Monotributo:</label
+        ><br />
+        <select id="categoria_monotributo">
+          <option value="">Seleccione una categoría</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+          <option value="F">F</option>
+          <option value="G">G</option>
+          <option value="H">H</option>
+          <option value="I">I</option></select
+        ><br /><br />
+      </div>
+      <div id="sueldo" style="display: none">
+        <label for="sueldo_titular">Sueldo Bruto:</label><br />
+        <input type="number" id="sueldo_titular" required /><br /><br />
+      </div>
+
+      <label for="hijos" id="hijos">¿Tiene hijos?</label><br />
+      <input type="radio" id="hijos_si" name="hijos" value="true" required />
+      <label for="hijos_si">Sí</label>
+      <input type="radio" id="hijos_no" name="hijos" value="false" />
+      <label for="hijos_no">No</label><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" required /><br /><br />
+
+      <label for="celular">Celular:</label><br />
+      <input type="tel" id="celular" required /><br /><br />
+
+      <div id="hijos_section" style="display: none">
+        <label for="cantidad_hijos">Cantidad de hijos:</label><br />
+        <input type="number" id="cantidad_hijos" /><br /><br />
+        <div id="edades_hijos"></div>
+      </div>
+
+      <div id="estado_civil_section" style="display: none">
+        <label for="edad_esposa">Edad Esposa:</label><br />
+        <input type="number" id="edad_esposa" /><br /><br />
+
+        <label for="tipo_contratacion_esposa"
+          >Tipo de contratación esposa:</label
+        ><br />
+        <select id="tipo_contratacion_esposa">
+          <option value="">Seleccione una opción</option>
+          <option value="Particular">Particular</option>
+          <option value="Recibo de Sueldo">Recibo de Sueldo</option>
+          <option value="Monotributo">Monotributo</option></select
+        ><br /><br />
+        <div id="sueldo_e" style="display: none">
+            <label for="sueldo_esposa">Sueldo Bruto Esposa:</label><br />
+            <input type="number" id="sueldo_esposa"/><br /><br />
+          </div>
+        <div id="categoria_monotributo_esposa_section" style="display: none">
+          <label for="categoria_monotributo_esposa"
+            >Categoría de Monotributo esposa:</label
+          ><br />
+          <select id="categoria_monotributo_esposa">
+            <option value="">Seleccione una categoría</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+            <option value="H">H</option>
+            <option value="I">I</option></select
+          ><br /><br />
+        </div>
+      </div>
+      <input type="submit" value="Cotizar" />
+    </form>
+    <div id="cotizaciones">
+    </div>
+    <script src="../assets/js/vendors/form.js"></script>
+  </body>
+</html>
