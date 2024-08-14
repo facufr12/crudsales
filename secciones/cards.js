@@ -45,7 +45,7 @@ function createCards(data) {
                             <p class="mb-0">
                                 <i class="fe fe-map-pin me-1 fs-6"></i>
                                 ${person.Partido}
-                            </p>
+                            </p> 
                         </div>
                         <div class="mt-4 p-0">
                             <div class="d-flex justify-content-between">

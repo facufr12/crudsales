@@ -1,8 +1,18 @@
-// proxy-server.js
 const express = require("express");
-const fetch = require("node-fetch");
+const { google } = require("googleapis");
 const app = express();
 const port = 3000; // Verifica si este es el puerto correcto
+
+// Configuración de la autenticación con Google
+const clientId = "YOUR_CLIENT_ID";
+const clientSecret = "YOUR_CLIENT_SECRET";
+const redirectUri = "YOUR_REDIRECT_URI";
+
+const auth = new google.auth.GoogleAuth({
+  client_id: clientId,
+  client_secret: clientSecret,
+  redirect_uri: redirectUri,
+});
 
 // URL de tu Google Apps Script
 const apiUrl =
@@ -19,7 +29,17 @@ app.use((req, res, next) => {
 
 app.get("/data", async (req, res) => {
   try {
-    const response = await fetch(apiUrl);
+    // Autenticar con Google
+    const authClient = await auth.getClient();
+    const token = await authClient.getAccessToken();
+
+    // Agregar el token de acceso a la solicitud
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+
+    // Realizar la solicitud a la API de Google Apps Script
+    const response = await fetch(apiUrl, { headers });
     const data = await response.json();
     res.json(data);
   } catch (error) {
