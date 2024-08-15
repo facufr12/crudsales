@@ -32,6 +32,19 @@ function createCards(data) {
     row.innerHTML = ""; // Limpiar el contenedor antes de añadir nuevas tarjetas
 
     data.forEach(person => {
+        // Generar las iniciales del nombre
+        const initials = person.nombre.split(' ').map(n => n[0]).join('').toUpperCase();
+
+        // Crear un color de fondo aleatorio
+        const backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+
+        // Crear HTML para el avatar
+        const avatarHtml = `
+            <div class="avatar" style="background-color: ${backgroundColor}; color: white; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 24px; font-weight: bold;">
+                ${initials}
+            </div>
+        `;
+
         // Asegúrate de que person.evolución esté en el formato correcto
         let evolution = person.evolución || '0%';
 
@@ -58,8 +71,9 @@ function createCards(data) {
                     <div class="card-body">
                         <div class="text-start">
                             <div class="position-relative">
-                                <img src="../../assets/images/avatar/avatar-12.jpg" class="rounded-circle avatar-md mb-3" alt="">
-                                <a href="#" class="position-absolute mt-8 ms-n5">
+                                <!-- Aquí se inserta el avatar generado en lugar de la imagen -->
+                                ${avatarHtml}
+                                <a href="#" class="position-absolut mb-5 mt-8 ms-n5">
                                     <span class="status bg-success"></span>
                                 </a>
                             </div>
