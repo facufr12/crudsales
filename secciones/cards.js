@@ -24,15 +24,34 @@ function fetchData() {
         .catch(error => console.error("Error fetching data:", error));
 }
 
+// Función para crear las tarjetas
+// Función para crear las tarjetas
 function createCards(data) {
     console.log("Creating Cards with Data:", data); // Verificar los datos utilizados para crear tarjetas
     const row = document.getElementById("prospecto-container"); // Contenedor para las tarjetas
     row.innerHTML = ""; // Limpiar el contenedor antes de añadir nuevas tarjetas
 
     data.forEach(person => {
-        // Asegúrate de que person.evolución esté en el formato correcto (p.ej., "25%", "50%", "75%", "100%")
-        const evolution = person.evolución || '0%';
+        // Asegúrate de que person.evolución esté en el formato correcto
+        let evolution = person.evolución || '0%';
 
+        // Convertir el valor de evolución a una cadena
+        evolution = String(evolution);
+
+        // Convertir el valor de evolución a un porcentaje entero para el ancho de la barra de progreso
+        let evolutionValue;
+        if (evolution.endsWith('%')) {
+            // Si el valor ya está en porcentaje, eliminar el signo '%' y convertir a número
+            evolutionValue = parseInt(evolution, 10);
+        } else {
+            // Convertir valores decimales a porcentaje entero
+            evolutionValue = Math.round(parseFloat(evolution) * 100);
+        }
+
+        // Asegurarse de que el valor está dentro del rango de 0 a 100
+        evolutionValue = Math.max(0, Math.min(100, evolutionValue));
+
+        // Crear HTML para la tarjeta
         const cardHtml = `
             <div class="col-xl-4 col-lg-6 col-md-6 col-12">
                 <div class="card mb-4">
@@ -92,8 +111,8 @@ function createCards(data) {
                             </select>
                         </div>
                         <div class="progress progress-tooltip mt-5">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: ${evolution};" aria-valuenow="${parseInt(evolution, 10)}" aria-valuemin="0" aria-valuemax="100">
-                                <span>${evolution}</span>
+                            <div class="progress-bar bg-success" role="progressbar" style="width: ${evolutionValue}%" aria-valuenow="${evolutionValue}" aria-valuemin="0" aria-valuemax="100">
+                                <span>${evolutionValue}%</span>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end mt-5">
@@ -104,9 +123,12 @@ function createCards(data) {
             </div>
         `;
 
+        // Insertar el HTML en el contenedor
         row.insertAdjacentHTML("beforeend", cardHtml);
     });
 }
+
+
 // Llamar a fetchData de forma periódica
 setInterval(fetchData, 6000); // Actualizar cada 60 segundos (60000 ms)
 
