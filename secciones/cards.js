@@ -1,36 +1,36 @@
-const apiUrl = 'http://127.0.0.1:3000/data'; // URL del servidor API
-let globalData = []; // Variable global para almacenar los datos
+const apiUrl = "https://script.google.com/macros/s/AKfycbzpYoYeg-qF0NM7Gc55eDaJAqkWksr4DEhSlboheZJQNZ6zTHIhy1wq3411oy4ugRnM/exec "; // URL del servidor API
 
 // Función para formatear la fecha
 function formatDate(dateString) {
-    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
+  const options = { year: "numeric", month: "2-digit", day: "2-digit" };
+  return new Date(dateString).toLocaleDateString(undefined, options);
 }
 
 // Función para obtener los datos y crear las tarjetas
 function fetchData() {
-    fetch(apiUrl)
-        .then(response => {
-            console.log('Response:', response); // Verificar la respuesta
-            return response.json();
-        })
-        .then(data => {
-            console.log('Fetched Data:', data); // Verificar los datos obtenidos
-            globalData = data; // Almacena los datos en la variable global
-            createCards(globalData); // Crea las tarjetas inicialmente
-            createTable(globalData); // Crea la tabla inicialmente
-        })
-        .catch(error => console.error('Error fetching data:', error));
+  fetch(apiUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Fetched Data:", data); // Verificar los datos obtenidos
+      createCards(data); // Crea las tarjetas
+      // Si también necesitas crear la tabla, descomenta la siguiente línea:
+      // createTable(data);
+    })
+    .catch((error) => console.error("Error fetching data:", error));
 }
 
 // Función para crear las tarjetas
 function createCards(data) {
-    console.log('Creating Cards with Data:', data); // Verificar los datos utilizados para crear tarjetas
-    const row = document.getElementById('prospecto-container'); // Contenedor para las tarjetas
-    row.innerHTML = ''; // Limpiar el contenedor antes de añadir nuevas tarjetas
-
-    data.forEach(person => {
-        const cardHtml = `
+  console.log("Creating Cards with Data:", data); // Verificar los datos utilizados para crear tarjetas
+  const row = document.getElementById("prospecto-container"); // Contenedor para las tarjetas
+  row.innerHTML = ""; // Limpiar el contenedor antes de añadir nuevas tarjetas
+  data.forEach((person) => {
+    const cardHtml = `
             <div class="col-xl-4 col-lg-6 col-md-6 col-12">
                 <div class="card mb-4">
                     <div class="card-body">
@@ -51,11 +51,15 @@ function createCards(data) {
                             <div class="d-flex justify-content-between">
                                 <div class="w-100 py-2 px-3 border-top border-bottom">
                                     <h6 class="mb-0">Fecha de Ingreso:</h6>
-                                    <p class="text-dark fs-6 fw-semibold mb-0">${formatDate(person.Fecha)}</p>
+                                    <p class="text-dark fs-6 fw-semibold mb-0">${formatDate(
+                                      person.Fecha
+                                    )}</p>
                                 </div>
                                 <div class="w-50 py-3 ps-1 border-top border-bottom border-start d-flex justify-content-end">
                                     <h6 class="mb-0"></h6>
-                                    <span class="badge bg-${getBadgeClass(person.Estado)}">${person.Estado || 'N/A'}</span>
+                                    <span class="badge bg-${getBadgeClass(
+                                      person.Estado
+                                    )}">${person.Estado || "N/A"}</span>
                                 </div>
                             </div>
                         </div>
@@ -65,11 +69,15 @@ function createCards(data) {
                         </div>
                         <div class="d-flex justify-content-between border-bottom py-2 mt-3">
                             <span>Tipo de Afiliación</span>
-                            <span class="text-dark">${person.tipoafiliacion}</span>
+                            <span class="text-dark">${
+                              person.tipoafiliacion
+                            }</span>
                         </div>
                         <div class="d-flex justify-content-between border-bottom py-2 mt-3">
                             <span>Grupo Familiar</span>
-                            <span class="text-dark">${person.grupofamiliar}</span>
+                            <span class="text-dark">${
+                              person.grupofamiliar
+                            }</span>
                         </div>
                         <div class="d-flex justify-content-between border-bottom py-2 mt-3">
                             <span>Celular</span>
@@ -89,7 +97,9 @@ function createCards(data) {
                         </div>
                         <div class="d-flex justify-content-between border-bottom py-2">
                             <span>Fecha asignación</span>
-                            <span class="text-dark">${person.fasignacioin}</span>
+                            <span class="text-dark">${
+                              person.fasignacioin
+                            }</span>
                         </div>
                         <div class="d-flex justify-content-between border-bottom py-2">
                             <span>Fecha asignación</span>
@@ -97,22 +107,30 @@ function createCards(data) {
                         </div>
                         <div class="d-flex justify-content-between border-bottom py-2">
                             <span>Estado de Correo</span>
-                            <span class="text-dark">${person.Ecorreoasignacion}</span>
+                            <span class="text-dark">${
+                              person.Ecorreoasignacion
+                            }</span>
                         </div>
                         <div class="d-flex justify-content-between border-bottom py-2">
-                            <span>Envío Wahtsapp</span>
-                            <span class="text-dark">${person.enviowhatsapp}</span>
+                            <span>Envío WhatsApp</span>
+                            <span class="text-dark">${
+                              person.enviowhatsapp
+                            }</span>
                         </div>
                         <div class="d-flex justify-content-between border-bottom py-2">
                             <span>Fecha de Envío WP</span>
-                            <span class="text-dark">${person.fechaenviowhatsapp}</span>
+                            <span class="text-dark">${
+                              person.fechaenviowhatsapp
+                            }</span>
                         </div>
                         <div class="d-flex justify-content-between pt-2">
                             <div class="pt-2">
                                 <span>Estado</span>
                             </div>
                             <select class="form-select w-65 d-flex text-center" id="category">
-                                <option value="">${person.Estado || 'Seleccionar Estado'}</option>
+                                <option value="">${
+                                  person.Estado || "Seleccionar Estado"
+                                }</option>
                                 <option value="Venta Cerrada">Venta Cerrada</option>
                                 <option value="Pago Pendiente">Pago Pendiente</option>
                                 <option value="En Espera">En Espera</option>
@@ -126,7 +144,9 @@ function createCards(data) {
                         </div>
                         <div class="d-flex align-items-center justify-content-center mt-5">
                             <div>
-                                <span class="badge bg-${getBadgeClass(person.Estado)}">${person.Estado || 'N/A'}</span>
+                                <span class="badge bg-${getBadgeClass(
+                                  person.Estado
+                                )}">${person.Estado || "N/A"}</span>
                             </div>
                         </div>
                         <div class="progress progress-tooltip mt-5">
@@ -141,15 +161,15 @@ function createCards(data) {
                 </div>
             </div>
         `;
-        row.insertAdjacentHTML('beforeend', cardHtml);
-    });
+    row.insertAdjacentHTML("beforeend", cardHtml);
+  });
 }
 
 // Función para crear la tabla
 function createTable(data) {
-    console.log('Creating Table with Data:', data); // Verificar los datos utilizados para crear la tabla
-    const tableContainer = document.getElementById('prospecto-table');
-    tableContainer.innerHTML = `
+  console.log("Creating Table with Data:", data); // Verificar los datos utilizados para crear la tabla
+  const tableContainer = document.getElementById("prospecto-table");
+  tableContainer.innerHTML = `
         <table class="table mb-0 text-nowrap table-hover table-centered">
             <thead class="table-light">
                 <tr>
@@ -166,7 +186,9 @@ function createTable(data) {
                 </tr>
             </thead>
             <tbody>
-                ${data.map(person => `
+                ${data
+                  .map(
+                    (person) => `
                     <tr>
                         <td>
                             <div class="d-flex align-items-center">
@@ -184,18 +206,24 @@ function createTable(data) {
                         <td>${formatDate(person.Fecha)}</td>
                         <td>${person.Edad}</td>
                         <td>${person.Partido}</td>
-                        <td>${person.NumeroPoliza || 'N/A'}</td>
+                        <td>${person.NumeroPoliza || "N/A"}</td>
                         <td>
                             <div class="d-flex">
                                 <div class="d-flex text-center h-50">
-                                    <span class="badge bg-${getBadgeClass(person.Estado)}">${person.Estado || 'N/A'}</span>
+                                    <span class="badge bg-${getBadgeClass(
+                                      person.Estado
+                                    )}">${person.Estado || "N/A"}</span>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="d-flex">
-                                <select class="form-select d-flex text-start" id="category-${person.id}">
-                                    <option value="">${person.Estado || 'Seleccionar Estado'}</option>
+                                <select class="form-select d-flex text-start" id="category-${
+                                  person.id
+                                }">
+                                    <option value="">${
+                                      person.Estado || "Seleccionar Estado"
+                                    }</option>
                                     <option value="Venta Cerrada">Venta Cerrada</option>
                                     <option value="Pago Pendiente">Pago Pendiente</option>
                                     <option value="En Espera">En Espera</option>
@@ -214,7 +242,9 @@ function createTable(data) {
                             </div>
                         </td>
                     </tr>
-                `).join('')}
+                `
+                  )
+                  .join("")}
             </tbody>
         </table>
     `;
@@ -222,55 +252,58 @@ function createTable(data) {
 
 // Función para filtrar las tarjetas y la tabla
 function filterCards(searchTerm) {
-    console.log('Filtering Data with Search Term:', searchTerm); // Verificar el término de búsqueda
-    const filteredData = globalData.filter(person => {
-        return person.nombre.toLowerCase().includes(searchTerm) || person.Partido.toLowerCase().includes(searchTerm);
-    });
-    console.log('Filtered Data:', filteredData); // Verificar los datos filtrados
-    createCards(filteredData); // Crear las tarjetas filtradas
-    createTable(filteredData); // Crear la tabla filtrada
+  console.log("Filtering Data with Search Term:", searchTerm); // Verificar el término de búsqueda
+  const filteredData = globalData.filter((person) => {
+    return (
+      person.nombre.toLowerCase().includes(searchTerm) ||
+      person.Partido.toLowerCase().includes(searchTerm)
+    );
+  });
+  console.log("Filtered Data:", filteredData); // Verificar los datos filtrados
+  createCards(filteredData); // Crear las tarjetas filtradas
+  createTable(filteredData); // Crear la tabla filtrada
 }
 
 // Función para obtener la clase del badge basado en el estado
 function getBadgeClass(estado) {
-    switch (estado) {
-        case 'Venta Cerrada':
-            return 'success-soft';
-        case 'Pago Pendiente':
-            return 'info-soft';
-        case 'No Le Interesa':
-            return 'danger-soft';
-        default:
-            return 'secondary-soft';
-    }
+  switch (estado) {
+    case "Venta Cerrada":
+      return "success-soft";
+    case "Pago Pendiente":
+      return "info-soft";
+    case "No Le Interesa":
+      return "danger-soft";
+    default:
+      return "secondary-soft";
+  }
 }
 
 // Función para manejar el cambio de vista
 function toggleView(view) {
-    const cardContainer = document.getElementById('prospecto-container');
-    const tableContainer = document.getElementById('prospecto-table');
-    
-    if (view === 'cards') {
-        cardContainer.classList.remove('d-none');
-        tableContainer.classList.add('d-none');
-    } else {
-        cardContainer.classList.add('d-none');
-        tableContainer.classList.remove('d-none');
-    }
+  const cardContainer = document.getElementById("prospecto-container");
+  const tableContainer = document.getElementById("prospecto-table");
+
+  if (view === "cards") {
+    cardContainer.classList.remove("d-none");
+    tableContainer.classList.add("d-none");
+  } else {
+    cardContainer.classList.add("d-none");
+    tableContainer.classList.remove("d-none");
+  }
 }
 
 // Agregar los eventos de los botones de vista
-document.getElementById('viewCards').addEventListener('click', () => {
-    toggleView('cards');
+document.getElementById("viewCards").addEventListener("click", () => {
+  toggleView("cards");
 });
-document.getElementById('viewTable').addEventListener('click', () => {
-    toggleView('table');
+document.getElementById("viewTable").addEventListener("click", () => {
+  toggleView("table");
 });
 
 // Agregar el evento de búsqueda
-document.getElementById('search').addEventListener('input', function() {
-    const searchTerm = this.value.toLowerCase();
-    filterCards(searchTerm); // Filtrar tarjetas y tabla en función del término de búsqueda
+document.getElementById("search").addEventListener("input", function () {
+  const searchTerm = this.value.toLowerCase();
+  filterCards(searchTerm); // Filtrar tarjetas y tabla en función del término de búsqueda
 });
 
 // Llamar a la función para obtener y mostrar los datos al cargar la página
