@@ -1,36 +1,39 @@
-const apiUrl = "https://script.google.com/macros/s/AKfycbzpYoYeg-qF0NM7Gc55eDaJAqkWksr4DEhSlboheZJQNZ6zTHIhy1wq3411oy4ugRnM/exec "; // URL del servidor API
+const apiUrl = "https://script.googleusercontent.com/a/macros/grupocober.online/echo?user_content_key=p5VIUw817A3ruGqccmKb7Vl_togX4_FkW5wODZPa9oNVsyyVvWNVy7npqQmOED3AOO2Pw2qtkR4jfX6JUFweAoYTP8WfJECMOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKAMvgmFF6Zo6ewm7a-wb37p24oBiCXIgg4Vf-dR8dyPOSygQuMMGugn56ZkmZNBt5Xw8kC4BatO2onnV50Jl2yu5dj4m6L6dblcdwgRrRA4aoFrAiSvR_bN448sI_il3PVcy6pr-Oj0FQ&lib=MSmCyi5M1QFWbYo20HW2AZnFr3qi2vAlX ";
 
 // Función para formatear la fecha
 function formatDate(dateString) {
-  const options = { year: "numeric", month: "2-digit", day: "2-digit" };
-  return new Date(dateString).toLocaleDateString(undefined, options);
+    const options = { year: "numeric", month: "2-digit", day: "2-digit" };
+    return new Date(dateString).toLocaleDateString(undefined, options);
 }
 
 // Función para obtener los datos y crear las tarjetas
 function fetchData() {
-  fetch(apiUrl)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Fetched Data:", data); // Verificar los datos obtenidos
-      createCards(data); // Crea las tarjetas
-      // Si también necesitas crear la tabla, descomenta la siguiente línea:
-      // createTable(data);
-    })
-    .catch((error) => console.error("Error fetching data:", error));
+    console.log('Fetching data...');
+    const urlWithTimestamp = `${apiUrl}&timestamp=${new Date().getTime()}`;
+    fetch(urlWithTimestamp)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched Data:", data); // Verificar los datos obtenidos
+            createCards(data); // Crea las tarjetas
+        })
+        .catch(error => console.error("Error fetching data:", error));
 }
 
-// Función para crear las tarjetas
 function createCards(data) {
-  console.log("Creating Cards with Data:", data); // Verificar los datos utilizados para crear tarjetas
-  const row = document.getElementById("prospecto-container"); // Contenedor para las tarjetas
-  row.innerHTML = ""; // Limpiar el contenedor antes de añadir nuevas tarjetas
-  data.forEach((person) => {
-    const cardHtml = `
+    console.log("Creating Cards with Data:", data); // Verificar los datos utilizados para crear tarjetas
+    const row = document.getElementById("prospecto-container"); // Contenedor para las tarjetas
+    row.innerHTML = ""; // Limpiar el contenedor antes de añadir nuevas tarjetas
+
+    data.forEach(person => {
+        // Asegúrate de que person.evolución esté en el formato correcto (p.ej., "25%", "50%", "75%", "100%")
+        const evolution = person.evolución || '0%';
+
+        const cardHtml = `
             <div class="col-xl-4 col-lg-6 col-md-6 col-12">
                 <div class="card mb-4">
                     <div class="card-body">
@@ -42,24 +45,12 @@ function createCards(data) {
                                 </a>
                             </div>
                             <h4 class="mb-0">${person.nombre}</h4>
-                            <p class="mb-0">
-                                <i class="fe fe-map-pin me-1 fs-6"></i>
-                                ${person.Partido}
-                            </p> 
                         </div>
                         <div class="mt-4 p-0">
                             <div class="d-flex justify-content-between">
                                 <div class="w-100 py-2 px-3 border-top border-bottom">
                                     <h6 class="mb-0">Fecha de Ingreso:</h6>
-                                    <p class="text-dark fs-6 fw-semibold mb-0">${formatDate(
-                                      person.Fecha
-                                    )}</p>
-                                </div>
-                                <div class="w-50 py-3 ps-1 border-top border-bottom border-start d-flex justify-content-end">
-                                    <h6 class="mb-0"></h6>
-                                    <span class="badge bg-${getBadgeClass(
-                                      person.Estado
-                                    )}">${person.Estado || "N/A"}</span>
+                                    <p class="text-dark fs-6 fw-semibold mb-0">${formatDate(person.Fecha)}</p>
                                 </div>
                             </div>
                         </div>
@@ -69,68 +60,26 @@ function createCards(data) {
                         </div>
                         <div class="d-flex justify-content-between border-bottom py-2 mt-3">
                             <span>Tipo de Afiliación</span>
-                            <span class="text-dark">${
-                              person.tipoafiliacion
-                            }</span>
+                            <span class="text-dark">${person.tipoafiliacion}</span>
                         </div>
                         <div class="d-flex justify-content-between border-bottom py-2 mt-3">
                             <span>Grupo Familiar</span>
-                            <span class="text-dark">${
-                              person.grupofamiliar
-                            }</span>
+                            <span class="text-dark">${person.grupofamiliar}</span>
                         </div>
                         <div class="d-flex justify-content-between border-bottom py-2 mt-3">
                             <span>Celular</span>
                             <span class="text-dark">${person.Celular}</span>
                         </div>
-                        <div class="d-flex justify-content-between border-bottom py-2 mt-3">
-                            <span>Vendedor</span>
-                            <span class="text-dark">${person.vendedor}</span>
-                        </div>
                         <div class="d-flex justify-content-between border-bottom py-2">
-                            <span>Correo</span>
-                            <span class="text-dark">${person.Correo}</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <span>Hora</span>
-                            <span class="text-dark">${person.Hora}</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <span>Fecha asignación</span>
-                            <span class="text-dark">${
-                              person.fasignacioin
-                            }</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <span>Fecha asignación</span>
-                            <span class="text-dark">${person.Eprospecto}</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <span>Estado de Correo</span>
-                            <span class="text-dark">${
-                              person.Ecorreoasignacion
-                            }</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <span>Envío WhatsApp</span>
-                            <span class="text-dark">${
-                              person.enviowhatsapp
-                            }</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <span>Fecha de Envío WP</span>
-                            <span class="text-dark">${
-                              person.fechaenviowhatsapp
-                            }</span>
+                            <span>Estado Prospecto</span>
+                            <span class="text-dark">${person.estado}</span>
                         </div>
                         <div class="d-flex justify-content-between pt-2">
                             <div class="pt-2">
                                 <span>Estado</span>
                             </div>
                             <select class="form-select w-65 d-flex text-center" id="category">
-                                <option value="">${
-                                  person.Estado || "Seleccionar Estado"
-                                }</option>
+                                <option value="">${person.estado || "Seleccionar Estado"}</option>
                                 <option value="Venta Cerrada">Venta Cerrada</option>
                                 <option value="Pago Pendiente">Pago Pendiente</option>
                                 <option value="En Espera">En Espera</option>
@@ -142,16 +91,9 @@ function createCards(data) {
                                 <option value="Rechazado">Rechazado</option>
                             </select>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center mt-5">
-                            <div>
-                                <span class="badge bg-${getBadgeClass(
-                                  person.Estado
-                                )}">${person.Estado || "N/A"}</span>
-                            </div>
-                        </div>
                         <div class="progress progress-tooltip mt-5">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                <span>100%</span>
+                            <div class="progress-bar bg-success" role="progressbar" style="width: ${evolution};" aria-valuenow="${parseInt(evolution, 10)}" aria-valuemin="0" aria-valuemax="100">
+                                <span>${evolution}</span>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end mt-5">
@@ -161,9 +103,15 @@ function createCards(data) {
                 </div>
             </div>
         `;
-    row.insertAdjacentHTML("beforeend", cardHtml);
-  });
+
+        row.insertAdjacentHTML("beforeend", cardHtml);
+    });
 }
+// Llamar a fetchData de forma periódica
+setInterval(fetchData, 6000); // Actualizar cada 60 segundos (60000 ms)
+
+// Inicializar la primera carga de datos
+fetchData();
 
 // Función para crear la tabla
 function createTable(data) {
