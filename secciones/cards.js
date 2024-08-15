@@ -40,7 +40,7 @@ function createCards(data) {
 
         // Crear HTML para el avatar
         const avatarHtml = `
-            <div class="avatar" style="background-color: ${backgroundColor}; color: white; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 24px; font-weight: bold;">
+            <div class="avatar" style="background-color: ${backgroundColor}; color: white; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 24px; font-weight: bold;">
                 ${initials}
             </div>
         `;
@@ -144,7 +144,7 @@ function createCards(data) {
 
 
 // Llamar a fetchData de forma periódica
-setInterval(fetchData, 6000); // Actualizar cada 60 segundos (60000 ms)
+setInterval(fetchData, 30000); // Actualizar cada 60 segundos (60000 ms)
 
 // Inicializar la primera carga de datos
 fetchData();
