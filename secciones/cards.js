@@ -1,11 +1,14 @@
+let globalData = []; // Variable global para almacenar los datos obtenidos
+
 // Fetch al JSON generado del Sheets
-const apiUrl = "https://script.googleusercontent.com/a/macros/grupocober.online/echo?user_content_key=p5VIUw817A3ruGqccmKb7Vl_togX4_FkW5wODZPa9oNVsyyVvWNVy7npqQmOED3AOO2Pw2qtkR4jfX6JUFweAoYTP8WfJECMOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKAMvgmFF6Zo6ewm7a-wb37p24oBiCXIgg4Vf-dR8dyPOSygQuMMGugn56ZkmZNBt5Xw8kC4BatO2onnV50Jl2yu5dj4m6L6dblcdwgRrRA4aoFrAiSvR_bN448sI_il3PVcy6pr-Oj0FQ&lib=MSmCyi5M1QFWbYo20HW2AZnFr3qi2vAlX ";
+const apiUrl = "https://script.googleusercontent.com/a/macros/grupocober.online/echo?user_content_key=p5VIUw817A3ruGqccmKb7Vl_togX4_FkW5wODZPa9oNVsyyVvWNVy7npqQmOED3AOO2Pw2qtkR4jfX6JUFweAoYTP8WfJECMOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKAMvgmFF6Zo6ewm7a-wb37p24oBiCXIgg4Vf-dR8dyPOSygQuMMGugn56ZkmZNBt5Xw8kC4BatO2onnV50Jl2yu5dj4m6L6dblcdwgRrRA4aoFrAiSvR_bN448sI_il3PVcy6pr-Oj0FQ&lib=MSmCyi5M1QFWbYo20HW2AZnFr3qi2vAlX";
 
 // Función para formatear la fecha
 function formatDate(dateString) {
     const options = { year: "numeric", month: "2-digit", day: "2-digit" };
     return new Date(dateString).toLocaleDateString(undefined, options);
 }
+
 // Función para obtener los datos y crear las tarjetas
 function fetchData() {
     console.log('Fetching data...');
@@ -19,10 +22,13 @@ function fetchData() {
         })
         .then(data => {
             console.log("Fetched Data:", data); // Verificar los datos obtenidos
-            createCards(data); // Crea las tarjetas
+            globalData = data; // Almacenar los datos globalmente
+            createCards(data); // Crear las tarjetas
+            createTable(data); // Crear la tabla
         })
         .catch(error => console.error("Error fetching data:", error));
 }
+
 // Función para crear las tarjetas
 function createCards(data) {
     console.log("Creating Cards with Data:", data); // Verificar los datos utilizados para crear tarjetas
@@ -42,6 +48,7 @@ function createCards(data) {
                 ${initials}
             </div>
         `;
+
         // Asegúrate de que person.evolución esté en el formato correcto
         let evolution = person.evolución || '0%';
 
@@ -59,6 +66,7 @@ function createCards(data) {
         }
         // Asegurarse de que el valor está dentro del rango de 0 a 100
         evolutionValue = Math.max(0, Math.min(100, evolutionValue));
+        
         // Crear HTML para la tarjeta
         const cardHtml = `
             <div class="col-xl-4 col-lg-6 col-md-6 col-12">
@@ -72,6 +80,7 @@ function createCards(data) {
                                     <span class="status bg-success"></span>
                                 </a>
                             </div>
+                            <h6 class="text-uppercase mb-1">${person.Partido || 'SIN PARTIDO'}</h6> <!-- Aquí se añade el Partido en mayúsculas -->
                             <h4 class="mb-0">${person.nombre}</h4>
                         </div>
                         <div class="mt-4 p-0">
@@ -136,8 +145,9 @@ function createCards(data) {
         row.insertAdjacentHTML("beforeend", cardHtml);
     });
 }
+
 // Llamar a fetchData de forma periódica
-setInterval(fetchData, 30000); // Actualizar cada 60 segundos (60000 ms)
+setInterval(fetchData, 60000); // Actualizar cada 60 segundos (60000 ms)
 
 // Inicializar la primera carga de datos
 fetchData();
@@ -240,6 +250,7 @@ function filterCards(searchTerm) {
   createCards(filteredData); // Crear las tarjetas filtradas
   createTable(filteredData); // Crear la tabla filtrada
 }
+
 // Función para obtener la clase del badge basado en el estado
 function getBadgeClass(estado) {
   switch (estado) {
@@ -253,6 +264,7 @@ function getBadgeClass(estado) {
       return "secondary-soft";
   }
 }
+
 // Función para manejar el cambio de vista
 function toggleView(view) {
   const cardContainer = document.getElementById("prospecto-container");
@@ -266,6 +278,7 @@ function toggleView(view) {
     tableContainer.classList.remove("d-none");
   }
 }
+
 // Agregar los eventos de los botones de vista
 document.getElementById("viewCards").addEventListener("click", () => {
   toggleView("cards");
