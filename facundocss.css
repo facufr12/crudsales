@@ -1,0 +1,12 @@
+.table-custom thead {
+    background-color: #754ffe;
+    color: white;
+}
+
+.table-custom th {
+    color: white;
+}
+
+.table-custom td, .table-custom th {
+    border: 1px solid #ddd; /* Opcional, para bordes en las celdas */
+}
