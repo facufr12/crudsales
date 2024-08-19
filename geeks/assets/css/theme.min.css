@@ -5,7 +5,6 @@
     line-height: 1rem;
     width: 1rem
 }
-
 .icon-xs {
     height: 1.5rem;
     line-height: 1.5rem;
@@ -382,7 +381,7 @@ a:hover .text-primary-hover {
     --gk-border-style: solid;
     --gk-border-color: var(--gk-border-color);
     --gk-border-color-translucent: #cbd5e1;
-    --gk-border-radius: 0.375rem;
+    --gk-border-radius: 30px;
     --gk-border-radius-sm: 0.25rem;
     --gk-border-radius-lg: 0.5rem;
     --gk-border-radius-xl: 2rem;
@@ -4599,7 +4598,7 @@ fieldset:disabled .btn {
     --gk-navbar-toggler-font-size: 1.09375rem;
     --gk-navbar-toggler-icon-bg: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23754ffe' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     --gk-navbar-toggler-border-color: rgba(var(--gk-emphasis-color-rgb), 0.15);
-    --gk-navbar-toggler-border-radius: 0.375rem;
+    --gk-navbar-toggler-border-radius: 30px;
     --gk-navbar-toggler-focus-width: 0.25rem;
     --gk-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
     align-items: center;
@@ -5008,7 +5007,7 @@ fieldset:disabled .btn {
     --gk-card-subtitle-color: ;
     --gk-card-border-width: var(--gk-border-width);
     --gk-card-border-color: var(--gk-border-color);
-    --gk-card-border-radius: 0.5rem;
+    --gk-card-border-radius: 30px;
     --gk-card-box-shadow: ;
     --gk-card-inner-border-radius: calc(0.5rem - var(--gk-border-width));
     --gk-card-cap-padding-y: 1rem;
@@ -5024,7 +5023,7 @@ fieldset:disabled .btn {
     background-clip: border-box;
     background-color: var(--gk-card-bg);
     border: var(--gk-card-border-width) solid var(--gk-card-border-color);
-    border-radius: var(--gk-card-border-radius);
+    border-radius: 40px;
     color: var(--gk-body-color);
     display: flex;
     flex-direction: column;
@@ -5057,6 +5056,7 @@ fieldset:disabled .btn {
 .card-body {
     color: var(--gk-card-color);
     flex: 1 1 auto;
+    border-radius:20px
     padding: var(--gk-card-spacer-y) var(--gk-card-spacer-x)
 }
 .card-title {
@@ -5082,7 +5082,7 @@ fieldset:disabled .btn {
     padding: var(--gk-card-cap-padding-y) var(--gk-card-cap-padding-x)
 }
 .card-header:first-child {
-    border-radius: var(--gk-card-inner-border-radius) var(--gk-card-inner-border-radius) 0 0
+    border-radius: 1rem;
 }
 .card-footer {
     background-color: var(--gk-card-cap-bg);
@@ -5153,7 +5153,7 @@ fieldset:disabled .btn {
     }
     .card-group>.card:not(:last-child) .card-header,
     .card-group>.card:not(:last-child) .card-img-top {
-        border-top-right-radius: 0
+        border-top-right-radius: 20px
     }
     .card-group>.card:not(:last-child) .card-footer,
     .card-group>.card:not(:last-child) .card-img-bottom {
