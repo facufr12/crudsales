@@ -397,7 +397,7 @@ function createCardQuote(quotes) {
             </div>
             <div class="d-md-flex">
               <div>
-                <img src="../assets/images/Zipper.PNG" alt="" class="+img-4by3-xl rounded" width="120px" />
+                <img src="../assets/images/Zipper.PNG" alt="" class="+img-4by3-xl rounded" width=120px" />
               </div>
               <div class="ms-md-4 mt-2">
                 <h4 class="mb-1 text-primary-hover">${key}</h4>

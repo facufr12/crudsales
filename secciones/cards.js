@@ -1,3 +1,5 @@
+
+
 let globalData = []; // Variable global para almacenar los datos obtenidos
 
 // Fetch al JSON generado del Sheets
@@ -153,9 +155,12 @@ const cardHtml = `
          <div class="d-flex justify-content-between border-bottom py-2 mt-3">
   <span>Celular</span>
   <span class="text-dark d-flex align-items-center">
-    <a href="https://wa.me/${person.Celular}" target="_blank" rel="noopener noreferrer">
-      <img src="/icons/wpicon.png" alt="WhatsApp" class="icon-img" />
-    </a>
+
+<a href="https://wa.me/+54${person.Celular}" target="_blank" rel="noopener noreferrer">
+  <img src="/icons/wpicon.svg" alt="WhatsApp" class="icon-img" />
+</a>
+
+
   </span>
 </div>
               <div class="d-flex justify-content-between pt-2">
