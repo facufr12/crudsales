@@ -10,28 +10,21 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="Codescandy" />
-
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="../../../assets/images/favicon.ico" />
-
     <!-- darkmode js -->
     <script src="../../../assets/js/vendors/darkMode.js"></script>
-
     <!-- Libs CSS -->
     <link href="../../../assets/fonts/feather/feather.css" rel="stylesheet" />
     <link href="../../../assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link href="../../../assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
-
     <!-- Theme CSS -->
     <link rel="stylesheet" href="../../../assets/css/theme.min.css">
-
     <link rel="canonical" href="add-customer.html">
     <title>Cober - Medicina Privada</title>
 </head>
-
 <body>
-    <!-- Wrapper -->
-     
+    <!-- Wrapper -->     
     <div id="db-wrapper">
         <!-- navbar vertical -->
         <!-- Sidebar -->
@@ -54,12 +47,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link " href="admin-dashboard.html">Overview</a>
                                 </li>
-                       
                             </ul>
                         </div>
                     </li>
-                   
-
                     <li class="nav-item">
                         <a class="nav-link " href="#" data-bs-toggle="collapse" data-bs-target="#navProfile"
                             aria-expanded="false" aria-controls="navProfile">
@@ -68,7 +58,6 @@
                         </a>
                         <div id="navProfile" class="collapse  show " data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column">
-                            
                                 <li class="nav-item">
                                     <a class="nav-link  active " href="admin-students.html">Prospectos</a>
                                 </li>
@@ -77,13 +66,10 @@
                     </li>
                     <li class="nav-item">
                         <div class="nav-divider"></div>
-                    </li>
-                
-                </ul>
-              
+                    </li>             
+                </ul>        
             </div>
         </nav>
-
         <!-- Page Content -->
         <main id="page-content">
             <div class="header">
@@ -201,7 +187,7 @@
                                                                 <div class="ms-3">
                                                                     <h5 class="fw-bold mb-1">[ $NombreyApellido ]</h5>
                                                                     <p class="mb-3">Se cambió estado a "Venta cerrada"
-                                                                    </p>
+                                                                    </p> 
                                                                     <span class="fs-6">
                                                                         <span>
                                                                             <span
@@ -221,7 +207,6 @@
                                                     </div>
                                                 </div>
                                             </li>
-
                                         </ul>
                                         <div class="border-top px-3 pt-3 pb-0">
                                             <a href="#" class="text-link fw-semibold">Ver todas las notificaciones</a>
@@ -319,7 +304,6 @@
                     </div>
                 </nav>
             </div>
-
             <!-- Container fluid -->
             <section class="container-fluid p-4">
                 <div class="row">
@@ -334,16 +318,12 @@
                                         <li class="breadcrumb-item">
                                             <a href="admin-dashboard.html">Dashboard</a>
                                         </li>
-
                                         <li class="breadcrumb-item">
                                             <a href="admin-students.html">Usuario</a>
                                         </li>
-
                                         <li class="breadcrumb-item">
                                             <a href="admin-students.html">Prospectos</a>
                                         </li>
-
-
                                         <li class="breadcrumb-item active" aria-current="page">Agregar Prospecto</li>
                                     </ol>
                                 </nav>
@@ -359,13 +339,12 @@
                                 <!-- card body -->
                                 <div class="card-body">
                                     <h4 class="mb-4">Datos del Prospecto</h4>
-                        
                                     <!-- row -->
                                     <div class="row gx-3">
                                         <!-- input -->
                                         <div class="mb-3 col-md-12">
                                             <label class="form-label" for="nombre">Nombre y Apellido</label>
-                                            <input type="text" class="form-control" placeholder="[ $NombreYApellido ]" id="nombre" required>
+                                            <input type="text" class="form-control" placeholder="[ $nombre ]" id="nombre" required>
                                             <div class="invalid-feedback">Por favor, debe agregar su nombre</div>
                                         </div>
                                         <!-- input -->
@@ -377,7 +356,7 @@
                                         <!-- input -->
                                         <div class="mb-3 col-md-12">
                                             <label class="form-label" for="tipoafiliacion">Tipo Afiliación</label>
-                                            <input type="text" class="form-control" placeholder="[ $Afiliacion ]" id="tipoafiliacion" required>
+                                            <input type="text" class="form-control" placeholder="[ $tipoafiliacion ]" id="tipoafiliacion" required>
                                             <div class="invalid-feedback">Por favor, Ingrese su Afiliación</div>
                                         </div>
                                         <!-- input -->
@@ -402,8 +381,6 @@
                                             <div class="invalid-feedback">Por favor, debe agregar un Partido</div>
                                         </div>
                                         <!-- input -->
-                                     
-                        
                                 <div class="d-flex justify-content-center pb-3">
                                     <!-- buttons -->
                                     <a href="#" class="btn btn-outline-primary me-2">Cancelar</a>
@@ -411,37 +388,53 @@
                                 </div>
                             </div>
                         </form>
-                        
                         <script>
                             document.getElementById('prospectForm').addEventListener('submit', function (event) {
                                 event.preventDefault(); // Evitar el envío por defecto del formulario
                             
                                 // Obtener los valores del formulario
                                 const data = {
-                                    "Nombre y Apellido": document.getElementById('nombre').value,
+                                    "nombre": document.getElementById('nombre').value,
                                     "Edad": document.getElementById('Edad').value,
-                                    "Tipo Afiliación": document.getElementById('tipoafiliacion').value,
-                                    "Grupo Familiar": document.getElementById('grupofamiliar').value,
+                                    "tipoafiliacion": document.getElementById('tipoafiliacion').value,
+                                    "grupofamiliar": document.getElementById('grupofamiliar').value,
                                     "Celular": document.getElementById('Celular').value,
                                     "Correo": document.getElementById('Correo').value,
                                     "Partido": document.getElementById('Partido').value,
-                                   
                                 };
                             
+                                console.log('Data being sent:', data);
+                            
+                                // Verifica si todos los campos necesarios tienen un valor antes de enviar
+                                for (let key in data) {
+                                    if (!data[key]) {
+                                        alert(`Por favor completa el campo: ${key}`);
+                                        return;
+                                    }
+                                }
+                            
                                 // Enviar los datos al Google Apps Script
-                                fetch('https://script.googleusercontent.com/macros/echo?user_content_key=gIdVyLfZVXlhTXU4uuU2XnPLpnrRfk1hzAl8XVeXlYzMlieUYvq5IGabbou2u0IOGMsVD0EV5clmds2lgJVbW3P1RmrawUZEm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnGl29ebRzV5W6uyGQ719j1FkITB3Rt2REr1pZZbDsf3A25jJWAnGi-e7pGUVOMvitr1rG2gmFWXHZjyC-rd-UKymlTLhpyY2jg&lib=MSmCyi5M1QFWbYo20HW2AZnFr3qi2vAlX', {
+                                fetch('https://script.google.com/macros/s/AKfycbwGk76iswl4Yw9ltRsmMr-uBCoS8Hrw4ef_Mn4VfCBcXb3GYUZMiyVFVwh-W5fF0Tpn/exec', {
                                     method: 'POST',
+                                    mode: 'no-cors',  // Corregido de 'no-corfs' a 'cors'
                                     headers: {
                                         'Content-Type': 'application/json',
                                     },
                                     body: JSON.stringify(data),
                                 })
-                                .then(response => response.json())
-                                .then(result => {
-                                    if (result.success) {
-                                        alert('Datos guardados exitosamente');
-                                    } else {
-                                        alert('Error: ' + result.error);
+                                .then(response => response.text())  // Leer como texto primero
+                                .then(text => {
+                                    console.log('Raw response:', text);  // Ver la respuesta cruda en la consola
+                            
+                                    try {
+                                        const result = JSON.parse(text);
+                                        if (result.success) {
+                                            alert('Datos guardados exitosamente');
+                                        } else {
+                                            alert('Error: ' + result.error);
+                                        }
+                                    } catch (error) {
+                                        throw new Error('Error parsing JSON: ' + text);
                                     }
                                 })
                                 .catch(error => {
@@ -449,8 +442,9 @@
                                     alert('Error al guardar los datos');
                                 });
                             });
-                            </script>
                             
+                            
+                            </script>
                     </div>
                 </div>
             </section>
@@ -471,6 +465,5 @@
     <script src="../../../assets/js/vendors/validation.js"></script>
 </body>
 
-<!-- Mirrored from geeksui.codescandy.com/geeks/pages/dashboard/ecommerce/add-customer.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Dec 2023 18:26:44 GMT -->
 
 </html>
