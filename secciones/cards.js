@@ -75,125 +75,128 @@ function createCards(data) {
     evolutionValue = Math.max(0, Math.min(100, evolutionValue));
 
     // Definir el color de la barra y el texto en función del valor de evolución
-    let barColor;
-    let textColor;
+   // Determina el color de la barra y el color del texto basado en el valor de evolución
+let barColor;
+let textColor;
 
-    switch (evolutionValue) {
-      case 0:
+switch (evolutionValue) {
+    case 0:
         barColor = "red";
-        textColor = "red";
+        textColor = "white"; // Asegúrate de que el texto sea blanco
         break;
-      case 25:
+    case 25:
         barColor = "yellow";
-        textColor = "yellow"; // Ajuste del color del texto para contraste
+        textColor = "white"; // Asegúrate de que el texto sea blanco
         break;
-      case 50:
+    case 50:
         barColor = "green";
-        textColor = "green"; // Ajuste del color del texto para contraste
+        textColor = "white"; // Asegúrate de que el texto sea blanco
         break;
-      case 75:
+    case 75:
         barColor = "blue";
-        textColor = "blue"; // Ajuste del color del texto para contraste
+        textColor = "white"; // Asegúrate de que el texto sea blanco
         break;
-      case 100:
+    case 100:
         barColor = "#754ffe";
-        textColor = "#754ffe"; // Ajuste del color del texto para contraste
+        textColor = "white"; // Asegúrate de que el texto sea blanco
         break;
-      default:
+    default:
         barColor = "grey"; // Color por defecto
         textColor = "grey"; // Ajuste del color del texto para contraste
         break;
-    }
+}
 
-    // Crear HTML para la tarjeta con los estilos de la barra de progreso
-    const cardHtml = `
-      <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-          <div class="card mb-4">
-              <div class="card-body">
-                  <div class="text-start">
-                      <div class="position-relative">
-                          <!-- Aquí se inserta el avatar generado en lugar de la imagen -->
-                          <div class="avatar" style="background-color: ${avatarBackgroundColor}; color: white; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 24px; font-weight: bold; margin-bottom: 15px;">
-                              ${initials}
-                          </div>
-                          <a href="#" class="position-absolute mb-5 mt-8 ms-n5">
-                              <span class="status bg-success"></span>
-                          </a>
+// Crear HTML para la tarjeta con los estilos de la barra de progreso
+const cardHtml = `
+  <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+      <div class="card mb-4">
+          <div class="card-body">
+              <div class="text-start">
+                  <div class="position-relative">
+                      <!-- Aquí se inserta el avatar generado en lugar de la imagen -->
+                      <div class="avatar" style="background-color: ${avatarBackgroundColor}; color: white; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 24px; font-weight: bold; margin-bottom: 15px;">
+                          ${initials}
                       </div>
-                      <h6 class="text-uppercase mb-1" style="color: #754ffe;">${
-                        person.Partido || "SIN PARTIDO"
-                      }</h6> <!-- Aquí se añade el Partido en mayúsculas con el color deseado -->
-                      <h4 class="mb-0">${person.nombre}</h4>
+                      <a href="#" class="position-absolute mb-5 mt-8 ms-n5">
+                          <span class="status bg-success"></span>
+                      </a>
                   </div>
-                  <div class="mt-4 p-0">
-                      <div class="d-flex justify-content-between">
-                          <div class="w-100 py-2 px-3 border-top border-bottom">
-                              <h6 class="mb-0">Fecha de Ingreso:</h6>
-                              <p class="text-dark fs-6 fw-semibold mb-0">${formatDate(
-                                person.Fecha
-                              )}</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="d-flex justify-content-between border-bottom py-2">
-                      <span>Edad</span>
-                      <span class="text-dark">${person.Edad}</span>
-                  </div>
-                  <div class="d-flex justify-content-between border-bottom py-2 mt-3">
-                      <span>Tipo de Afiliación</span>
-                      <span class="text-dark">${person.tipoafiliacion}</span>
-                  </div>
-                  <div class="d-flex justify-content-between border-bottom py-2 mt-3">
-                      <span>Grupo Familiar</span>
-                      <span class="text-dark">${person.grupofamiliar}</span>
-                  </div>
-                  <div class="d-flex justify-content-between border-bottom py-2 mt-3">
-                      <span>Celular</span>
-                      <span class="text-dark">${person.Celular}</span>
-                  </div>
-                  <div class="d-flex justify-content-between border-bottom py-2">
-                      <span>Estado Prospecto</span>
-                      <span class="text-dark">${person.estado}</span>
-                  </div>
-                  <div class="d-flex justify-content-between pt-2">
-                      <div class="pt-2">
-                          <span>Estado</span>
-                      </div>
-                      <select class="form-select w-65 d-flex text-center" id="category">
-                          <option value="">${
-                            person.estado || "Seleccionar Estado"
-                          }</option>
-                          <option value="Venta Cerrada">Venta Cerrada</option>
-                          <option value="Pago Pendiente">Pago Pendiente</option>
-                          <option value="En Espera">En Espera</option>
-                          <option value="Pasa de Vigencia">Pasa de Vigencia</option>
-                          <option value="Es Afiliado">Es Afiliado</option>
-                          <option value="Duplicado">Duplicado</option>
-                          <option value="Desestimado Por Cober">Desestimado Por Cober</option>
-                          <option value="No Le Interesa">No Le Interesa</option>
-                          <option value="Rechazado">Rechazado</option>
-                      </select>
-                  </div>
-                  <div class="progress progress-tooltip mt-5">
-                      <div class="progress-bar" role="progressbar" style="width: ${evolutionValue}%; background-color: ${barColor};" aria-valuenow="${evolutionValue}" aria-valuemin="0" aria-valuemax="100">
-                          <span style="color: ${textColor};">${evolutionValue}%</span>
-                      </div>
-                  </div>
-                  
-                <div class="d-flex justify-content-end mt-5">
-    <a href="cotizador2.html" class="btn btn-secondary me-2">
-        Cotizar
-                                                          <i class="fe fe-credit-card ms-2"></i>
-    </a>
-    <a href="detalle-prospecto.html" class="btn btn-primary">
-        Detalles del Prospecto
-    </a>
-</div>
-
+                  <h6 class="text-uppercase mb-1" style="color: #754ffe;">${
+                    person.Partido || "SIN PARTIDO"
+                  }</h6> <!-- Aquí se añade el Partido en mayúsculas con el color deseado -->
+                  <h4 class="mb-0">${person.nombre}</h4>
               </div>
+              <div class="mt-4 p-0">
+                  <div class="d-flex justify-content-between">
+                      <div class="w-100 py-2 px-3 border-top border-bottom">
+                          <h6 class="mb-0">Fecha de Ingreso:</h6>
+                          <p class="text-dark fs-6 fw-semibold mb-0">${formatDate(
+                            person.Fecha
+                          )}</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="d-flex justify-content-between border-bottom py-2">
+                  <span>Edad</span>
+                  <span class="text-dark">${person.Edad}</span>
+              </div>
+              <div class="d-flex justify-content-between border-bottom py-2 mt-3">
+                  <span>Tipo de Afiliación</span>
+                  <span class="text-dark">${person.tipoafiliacion}</span>
+              </div>
+              <div class="d-flex justify-content-between border-bottom py-2 mt-3">
+                  <span>Grupo Familiar</span>
+                  <span class="text-dark">${person.grupofamiliar}</span>
+              </div>
+         <div class="d-flex justify-content-between border-bottom py-2 mt-3">
+  <span>Celular</span>
+  <span class="text-dark d-flex align-items-center">
+    <a href="https://wa.me/${person.Celular}" target="_blank" rel="noopener noreferrer">
+      <img src="/icons/wpicon.png" alt="WhatsApp" class="icon-img" />
+    </a>
+  </span>
+</div>
+              <div class="d-flex justify-content-between pt-2">
+                  <div class="pt-2">
+                      <span>Estado</span>
+                  </div>
+                  <select class="form-select w-65 d-flex text-center" id="category">
+                      <option value="">${
+                        person.estado || "Seleccionar Estado"
+                      }</option>
+                      <option value="Venta Cerrada">Venta Cerrada</option>
+                      <option value="Pago Pendiente">Pago Pendiente</option>
+                      <option value="En Espera">En Espera</option>
+                      <option value="Pasa de Vigencia">Pasa de Vigencia</option>
+                      <option value="Es Afiliado">Es Afiliado</option>
+                      <option value="Duplicado">Duplicado</option>
+                      <option value="Desestimado Por Cober">Desestimado Por Cober</option>
+                      <option value="No Le Interesa">No Le Interesa</option>
+                      <option value="Rechazado">Rechazado</option>
+                  </select>
+              </div>
+              <div class="progress progress-tooltip mt-5">
+                  <div class="progress-bar" role="progressbar" style="width: ${evolutionValue}%; background-color: ${barColor};" aria-valuenow="${evolutionValue}" aria-valuemin="0" aria-valuemax="100">
+                      <span style="color: ${textColor};">${evolutionValue}%</span>
+                  </div>
+              </div>
+              
+              
+            <div class="d-flex justify-content-end mt-5">
+              <!--  Button Cotizar Ocultado
+              <a href="cotizador2.html" class="btn btn-secondary me-2">
+                  Cotizar
+                  <i class="fe fe-credit-card ms-2"></i>
+              </a>
+              -->
+              <a href="detalle-prospecto.html" class="btn btn-primary">
+                  Detalles del Prospecto
+              </a>
+          </div>
           </div>
       </div>
-  `;
+  </div>`;
+
 
     // Insertar el HTML en el contenedor
     row.insertAdjacentHTML("beforeend", cardHtml);

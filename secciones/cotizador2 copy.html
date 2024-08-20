@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Codescandy" />
+    
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico" />
+    
+    <!-- darkmode js -->
+    <script src="../../../assets/js/vendors/darkMode.js"></script>
+    
+    <link rel="stylesheet" href="../../../assets/libs/bs-stepper/dist/css/bs-stepper.min.css" />
+    <!-- Libs CSS -->
+    <link href="../../../assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="../../../assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="../../../assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../../../assets/css/theme.min.css">
+
+    <link rel="canonical" href="checkout.html" />
+    <title>Medicina Prepaga Precios. COBER | Medicina Privada.</title>
+</head>
+
+<body>
+    <!-- Wrapper -->
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        <!-- Sidebar -->
+        <nav class="navbar-vertical navbar">
+            <div class="vh-100" data-simplebar>
+                <!-- Brand logo -->
+                <a class="navbar-brand" href="../../index.html">
+                    <img src="../../assets/images/logo-cober-ale.svg" alt="Geeks" />
+                </a>
+                <!-- Navbar nav -->
+                <ul class="navbar-nav flex-column" id="sideNavbar">
+                    <li class="nav-item">
+                        <a class="nav-link " href="#" data-bs-toggle="collapse" data-bs-target="#navDashboard"
+                            aria-expanded="false" aria-controls="navDashboard">
+                            <i class="nav-icon fe fe-home me-2"></i>
+                            Dashboard
+                        </a>
+                        <div id="navDashboard" class="collapse  show " data-bs-parent="#sideNavbar">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link  active " href="admin-dashboard.html">Overview</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Nav item -->
+                    <li class="nav-item">
+                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse" data-bs-target="#navProfile"
+                            aria-expanded="false" aria-controls="navProfile">
+                            <i class="nav-icon fe fe-user me-2"></i>
+                            Usuario
+                        </a>
+                        <div id="navProfile" class="collapse " data-bs-parent="#sideNavbar">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link " href="admin-students.html">Prospectos</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+                    <!-- Nav item -->
+                    <li class="nav-item">
+                        <div class="nav-divider"></div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <main id="page-content">
+            <div class="header">
+                <!-- navbar -->
+                <nav class="navbar-default navbar navbar-expand-lg">
+                    <a id="nav-toggle" href="#">
+                        <i class="fe fe-menu"></i>
+                    </a>
+                    <div class="ms-lg-3 d-none d-md-none d-lg-block">
+                        <!-- Form -->
+                        <form class="d-flex align-items-center">
+                            <span class="position-absolute ps-3 search-icon">
+                                <i class="fe fe-search"></i>
+                            </span>
+                            <input type="search" class="form-control ps-6" placeholder="Buscar en el Dashboard" />
+                        </form>
+                    </div>
+                    <!--Navbar nav -->
+                    <div class="ms-auto d-flex">
+                        <div class="dropdown">
+                            <button class="btn btn-light btn-icon rounded-circle d-flex align-items-center"
+                                type="button" aria-expanded="false" data-bs-toggle="dropdown"
+                                aria-label="Toggle theme (auto)">
+                                <i class="bi theme-icon-active"></i>
+                                <span class="visually-hidden bs-theme-text">Toggle theme</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bs-theme-text">
+                                <li>
+                                    <button type="button" class="dropdown-item d-flex align-items-center"
+                                        data-bs-theme-value="light" aria-pressed="false">
+                                        <i class="bi theme-icon bi-sun-fill"></i>
+                                        <span class="ms-2">Light</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-flex align-items-center"
+                                        data-bs-theme-value="dark" aria-pressed="false">
+                                        <i class="bi theme-icon bi-moon-stars-fill"></i>
+                                        <span class="ms-2">Dark</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-flex align-items-center active"
+                                        data-bs-theme-value="auto" aria-pressed="true">
+                                        <i class="bi theme-icon bi-circle-half"></i>
+                                        <span class="ms-2">Auto</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="navbar-nav navbar-right-wrap ms-2 d-flex nav-top-wrap">
+                            <li class="dropdown stopevent">
+                                <a class="btn btn-light btn-icon rounded-circle indicator indicator-primary" href="#"
+                                    role="button" id="dropdownNotification" data-bs-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="fe fe-bell"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg"
+                                    aria-labelledby="dropdownNotification">
+                                    <div>
+                                        <div
+                                            class="border-bottom px-3 pb-3 d-flex justify-content-between align-items-center">
+                                            <span class="h4 mb-0">Notificaciones</span>
+                                            <a href="# ">
+                                                <span class="align-middle">
+                                                    <i class="fe fe-settings me-1"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <!-- List group -->
+                                        <ul class="list-group list-group-flush" data-simplebar
+                                            style="max-height: 300px">
+                                            <li class="list-group-item bg-light">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <a class="text-body" href="#">
+                                                            <div class="d-flex">
+                                                                <img src="../../assets/images/avatar/avatar-1.jpg"
+                                                                    alt="" class="avatar-md rounded-circle" />
+                                                                <div class="ms-3">
+                                                                    <h5 class="fw-bold mb-1">Carlos</h5>
+                                                                    <p class="mb-3">Se cambió estado a "Venta Cerrada"
+                                                                    </p>
+                                                                    <span class="fs-6">
+                                                                        <span>
+                                                                            <span
+                                                                                class="fe fe-thumbs-up text-success me-1"></span>
+                                                                            Hace 2 horas
+                                                                        </span>
+                                                                        <span class="ms-1">2:19 PM</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-auto text-center me-2">
+                                                        <a href="#" class="badge-dot bg-info" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top" title="Mark as read"></a>
+                                                        <div>
+                                                            <a href="#" class="bg-transparent" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Remove">
+                                                                <i class="fe fe-x"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <a class="text-body" href="#">
+                                                            <div class="d-flex">
+                                                                <img src="../../assets/images/avatar/avatar-2.jpg"
+                                                                    alt="" class="avatar-md rounded-circle" />
+                                                                <div class="ms-3">
+                                                                    <h5 class="fw-bold mb-1">[ $NombreyApellido ]</h5>
+                                                                    <p class="mb-3">Se cambió estado a "Venta cerrada"
+                                                                    </p>
+                                                                    <span class="fs-6">
+                                                                        <span>
+                                                                            <span
+                                                                                class="fe fe-thumbs-up text-success me-1"></span>
+                                                                            12/12/2023
+                                                                        </span>
+                                                                        <span class="ms-1">02:05 PM</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-auto text-center me-2">
+                                                        <a href="#" class="badge-dot bg-secondary"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Mark as unread"></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                        <div class="border-top px-3 pt-3 pb-0">
+                                            <a href="#" class="text-link fw-semibold">Ver todas las notificaciones</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- List -->
+                            <li class="dropdown ms-2">
+                                <a class="rounded-circle" href="#" role="button" id="dropdownUser"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="avatar avatar-md avatar-indicators avatar-online">
+                                        <img alt="avatar" src="../../assets/images/avatar/avatar-1.jpg"
+                                            class="rounded-circle" />
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
+                                    <div class="dropdown-item">
+                                        <div class="d-flex">
+                                            <div class="avatar avatar-md avatar-indicators avatar-online">
+                                                <img alt="avatar" src="../../assets/images/avatar/avatar-1.jpg"
+                                                    class="rounded-circle" />
+                                            </div>
+                                            <div class="ms-3 lh-1">
+                                                <h5 class="mb-1">[$Vendedor]</h5>
+                                                <p class="mb-0">[$CorreoVendedor]</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <ul class="list-unstyled">
+                                        <li class="dropdown-submenu dropstart-lg">
+                                            <a class="dropdown-item dropdown-list-group-item dropdown-toggle" href="#">
+                                                <i class="fe fe-circle me-2"></i>
+                                                Estado
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <span class="badge-dot bg-success me-2"></span>
+                                                        En línea
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <span class="badge-dot bg-secondary me-2"></span>
+                                                        Desconectado
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <span class="badge-dot bg-warning me-2"></span>
+                                                        En suspenso
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <span class="badge-dot bg-danger me-2"></span>
+                                                        Ocupado
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="admin-dashboard.html">
+                                                <i class="fe fe-user me-2"></i>
+                                                Overview
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="admin-students.html">
+                                                <i class="fe fe-star me-2"></i>
+                                                Prospectos
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="fe fe-settings me-2"></i>
+                                                Configuración
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="dropdown-divider"></div>
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a class="dropdown-item" href="../../index.html">
+                                                <i class="fe fe-power me-2"></i>
+                                                Cerrar Sesión
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Container fluid -->
+            <section class="container-fluid p-4">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <!-- Page header -->
+                        <div class="border-bottom pb-3 mb-3">
+                            <div class="mb-2 mb-lg-0">
+                                <h1 class="mb-0 h2 fw-bold">Formulario Cotizador</h1>
+                                <!-- Breadcrumb -->
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="admin-students.html">Cotizar</a>
+                                        </li>
+
+                                        <li class="breadcrumb-item active" aria-current="page">Formulario Cotizador</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- row -->
+
+                <div id="cotizaciones" class="d-flex flex-md-row2 flex-column-reverse gap-3">
+                    <div class="col-xl-8 col-lg-7 col-12">
+                        <!-- stepper -->
+                        <div id="stepperForm" class="bs-stepper">
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <!-- Stepper Button -->
+                                    <div class="bs-stepper-header p-0 bg-transparent" role="tablist">
+                                        <div class="step" data-target="#test-l-1">
+                                            <button type="button" class="step-trigger" role="tab"
+                                                id="stepperFormtrigger1" aria-controls="test-l-1">
+                                                <span class="bs-stepper-circle p-2 me-2"><i
+                                                        class="fe fe-user"></i></span>
+                                                <span class="bs-stepper-label">Generar Cotización</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Formulario cotizador-->
+                                <div class="card-body">
+                                    <!-- Stepper content -->
+                                    <div class="bs-stepper-content">
+                                        <form onSubmit="return false">
+                                            <!-- Content one -->
+                                            <div id="test-l-1" role="tabpanel" class="bs-stepper-pane fade"
+                                                aria-labelledby="stepperFormtrigger1">
+                                                <!-- input -->
+                                                <!-- heading -->
+                                                <div class="mb-5">
+                                                    <h3 class="mb-1">Composición del Grupo</h3>
+                                                    <p class="mb-0"> </p>
+                                                </div>
+                                                <!-- row -->
+
+                                                <!--Titular-->
+                                                <div class="row gx-3">
+                                                    <div class="mb-3 col-12">
+                                                        <h4 class="mb-1">Titular</h4>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap mt-md-3">
+                                                        <!--Edad titular-->
+                                                        <div class="col-md-6 col-12 pe-md-3 mb-2">
+                                                            <select id="edad_titular" class="form-select"
+                                                                aria-label="Default select example" name="edad" required>
+                                                                <option selected="">Edad Titular</option>
+                                                            </select>
+                                                        </div>
+                                                        <!--Contratacion titular-->
+                                                        <div class="col-md-6 col-12">
+                                                            <select id="tipo_contratacion" class="form-select"
+                                                                aria-label="Default select example" name="contratación" required>
+                                                                <option selected="">Contratación</option>
+                                                                <option value="Particular">Particular</option>
+                                                                <option value="Recibo de Sueldo">Recibo de Sueldo
+                                                                </option>
+                                                                <option value="Monotributo">Monotributo</option>
+                                                            </select>
+                                                        </div>
+                                                        <!--Categoria Monotributo Titular-->
+                                                        <div id="categoria_monotributo_section" class="col-md-6 col-12"
+                                                            style="display: none">
+                                                            <select id="categoria_monotributo"
+                                                                class="form-select" aria-label="Default select example" required>
+                                                                <option value="">Categoría Monotributo Titular</option>
+                                                                <option value="A">A</option>
+                                                                <option value="B">B</option>
+                                                                <option value="C">C</option>
+                                                                <option value="D">D</option>
+                                                                <option value="E">E</option>
+                                                                <option value="F">F</option>
+                                                                <option value="G">G</option>
+                                                                <option value="H">H</option>
+                                                                <option value="I">I</option>
+                                                            </select>
+                                                        </div>
+                                                        <!--Sueldo Titular-->
+                                                        <div id="sueldo" class="col-md-6 col-12" style="display: none">
+                                                            <input class="form-control" type="number" id="sueldo_titular" placeholder="Sueldo Bruto" required />
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="d-flex flex-wrap mt-md-3">
+                                                        <!--Estado civil-->
+                                                        <div class="col-md-6 col-12 pe-md-3 mb-2">
+                                                            <select id="estado_civil" class="form-select"
+                                                                aria-label="Default select example" name="grupo" required>
+                                                                <option selected="">Estado civil</option>
+                                                                <option value="Soltero">Soltero</option>
+                                                                <option value="Casado">Casado</option>
+                                                                <option value="Concubinato">Concubinato</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col-md-6 col-12">
+                                                            <label class="form-label" for="">¿Tiene hijos?</label>
+                                                            <input class="form-check-input" type="radio"
+                                                                name="decJurMedicacionFormularioAfiliacion"
+                                                                id="hijos_si" value="true">
+                                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                                Si
+                                                            </label>
+                                                            <input class="form-check-input" type="radio"
+                                                                name="decJurMedicacionFormularioAfiliacion"
+                                                                id="hijos_no" value="false">
+                                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--Esposa-->
+                                                <div id="estado_civil_section" class="row gx-3" style="display: none;">
+                                                    <div class="mb-3 col-12">
+                                                        <h4 class="mb-1">Conyuge - Esposa</h4>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap mt-md-3">
+                                                        <!--Edad Esposa-->
+                                                        <div class="col-md-6 col-12 pe-md-3 mb-2">
+                                                            <select id="edad_esposa" class="form-select"
+                                                                aria-label="Default select example" name="edad" required>
+                                                                <option selected="">Edad Conyuge - Esposa</option>
+                                                            </select>
+                                                        </div>
+                                                        <!--Contratacion Esposa-->
+                                                        <div class="col-md-6 col-12">
+                                                            <select id="tipo_contratacion_esposa" class="form-select"
+                                                                aria-label="Default select example" name="contratación" required>
+                                                                <option selected="">Contratación Conyuge - Esposa
+                                                                </option>
+                                                                <option value="Particular">Particular</option>
+                                                                <option value="Recibo de Sueldo">Recibo de Sueldo
+                                                                </option>
+                                                                <option value="Monotributo">Monotributo</option>
+                                                            </select>
+                                                        </div>
+                                                        <!--Sueldo Esposa-->
+                                                        <div id="sueldo_e" class="col-md-6 col-12" style="display: none">
+                                                            <input class="form-control" type="number" id="sueldo_esposa" placeholder="Sueldo Bruto Esposa - Conyuge" required />
+                                                        </div>
+                                                        <!--Categoria Monotributo Esposa-->
+                                                        <div id="categoria_monotributo_esposa_section" class="col-md-6 col-12" style="display: none">
+                                                            <select id="categoria_monotributo_esposa"
+                                                                class="form-select" aria-label="Default select example" required>
+                                                                <option value="">Categoría Monotributo Conyuge-Esposa</option>
+                                                                <option value="A">A</option>
+                                                                <option value="B">B</option>
+                                                                <option value="C">C</option>
+                                                                <option value="D">D</option>
+                                                                <option value="E">E</option>
+                                                                <option value="F">F</option>
+                                                                <option value="G">G</option>
+                                                                <option value="H">H</option>
+                                                                <option value="I">I</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--Hijos-->
+                                                <div id="hijos_section" class="col-md-6 col-12" style="display: none;">
+                                                    <input type="number" id="cantidad_hijos" class="form-control" placeholder="Cantidad de Hijos" required/>
+                                                    <div id="edades_hijos" class="col-md-6 col-12"></div>
+                                                </div>
+                                            </div>
+                                            <br> <br>
+                                            <div class="d-flex justify-content-between">
+
+                                                <!-- Button -->
+                                                <button id="cotizar" class="btn btn-primary" type="button">
+                                                    Cotizar
+                                                    <i class="fe fe-credit-card ms-2"></i>
+                                                </button>
+                                            </div>
+                                    </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    <!-- card cotizacion -->
+                    <!-- <div class="col-xl-4 col-lg-5">
+                        <div class="card mt-4 mt-lg-0">
+                            <div class="card-body">
+                                <div class="mb-4 d-flex justify-content-between align-items-center">
+                                    <h4 class="mb-1">Cotización Plan</h4>
+                                </div>
+                                <div class="d-md-flex">
+                                    <div>
+                                        <img src="../assets/images/Zipper.PNG" alt="" class="+img-4by3-xl rounded"
+                                            width="120px" />
+                                    </div>
+                                    <div class="ms-md-4 mt-2">
+                                        <h4 class="mb-1 text-primary-hover">Zipper</h4>
+                                        <h5>Individual. 34 años. Sin Hijos</h5>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body border-top pt-2">
+                                <ul class="list-group list-group-flush mb-0">
+                                    <li class="d-flex justify-content-between list-group-item px-0">
+                                        <span>Subtotal</span>
+                                        <span class="text-dark fw-semibold"><del>$174415</del></span>
+                                    </li>
+                                    <li class="d-flex justify-content-between list-group-item px-0">
+                                        <span>Bonif. Af. online 40%</span>
+                                        <span class="text-success fw-semibold"> -$42000</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between list-group-item px-0">
+                                        <span>Aportes Titular RelDep</span>
+                                        <span class="text-success fw-semibold"> -$13000</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between list-group-item px-0 pb-0">
+                                        <span class="fs-3 fw-semibold text-dark">Cuota Mensual</span>
+                                        <span class="fs-3 fw-semibold text-dark">$99000</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>  -->
+                    
+                    <!-- card cotizacion -->
+                    <!-- <div class="col-xl-4 col-lg-5">
+                        <div class="card mt-4 mt-lg-0">
+                            <div class="card-body">
+                                <div class="mb-4 d-flex justify-content-between align-items-center">
+                                    <h4 class="mb-1">Cotización Plan</h4>
+                                </div>
+
+                                <div class="d-md-flex">
+                                    <div>
+                                        <img src="../assets/images/Zipper.PNG" alt="" class="+img-4by3-xl rounded"
+                                            width="120px" />
+                                    </div>
+                                    <div class="ms-md-4 mt-2">
+                                        <h4 class="mb-1 text-primary-hover">Zipper</h4>
+                                        <h5>Individual. 34 años. Sin Hijos</h5>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card-body border-top pt-2">
+                                <ul class="list-group list-group-flush mb-0">
+                                    <li class="d-flex justify-content-between list-group-item px-0">
+                                        <span>Subtotal</span>
+                                        <span class="text-dark fw-semibold"><del>$174415</del></span>
+                                    </li>
+                                    <li class="d-flex justify-content-between list-group-item px-0">
+                                        <span>Bonif. Af. online 40%</span>
+                                        <span class="text-success fw-semibold"> -$42000</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between list-group-item px-0">
+                                        <span>Aportes Titular RelDep</span>
+                                        <span class="text-success fw-semibold"> -$13000</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between list-group-item px-0 pb-0">
+                                        <span class="fs-3 fw-semibold text-dark">Cuota Mensual</span>
+                                        <span class="fs-3 fw-semibold text-dark">$99000</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>  -->
+                    
+                    </div>
+                </div>
+    </div>
+
+
+    </section>
+    </main>
+    </div>
+
+
+
+    <!-- Scripts -->
+
+
+    <!-- Libs JS -->
+    <script src="../../../assets/libs/%40popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../../assets/libs/simplebar/dist/simplebar.min.js"></script>
+
+    <!-- Theme JS -->
+    <script src="../../../assets/js/theme.min.js"></script>
+
+
+    <script src="../../../assets/libs/bs-stepper/dist/js/bs-stepper.min.js"></script>
+    <script src="../../../assets/js/vendors/beStepper.js"></script>
+    <script src="../../../assets/libs/imask/dist/imask.min.js"></script>
+    <script src="../../../assets/js/vendors/inputmask.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const paymentMethodSelect = document.getElementById("paymentMethod");
+            const cardDetailsDiv = document.getElementById("cardDetails");
+            const selectAge = document.getElementById("edad_titular")
+            const selectAgeWife = document.getElementById("edad_esposa")
+            for (let i = 18; i <= 65; i++) {
+                let option = document.createElement("option");
+                option.text = i;
+                option.value = i;
+                selectAge.appendChild(option)
+            }
+
+            for (let i = 18; i <= 65; i++) {
+                let option = document.createElement("option");
+                option.text = i;
+                option.value = i;
+                selectAgeWife.appendChild(option)
+            }
+            // Añadimos un evento de cambio al select
+           /* paymentMethodSelect.addEventListener("change", function () {
+                // Se habilita los inputs para los datos de la tarjeta de crédito.
+                cardDetailsDiv.style.display = (paymentMethodSelect.value === "1" || paymentMethodSelect.value === "2") ? "block" : "none";
+            }); 
+
+            // Validación de vencimiento de fecha
+            const expiryDateInput = document.getElementById("expirydate");
+            expiryDateInput.addEventListener("input", function () {
+                // Formateo de fecha
+                const inputValue = expiryDateInput.value.replace(/\D/g, '');
+                if (inputValue.length > 2) {
+                    expiryDateInput.value = inputValue.slice(0, 2) + '-' + inputValue.slice(2);
+                }
+            }); */
+        });
+    </script>
+    <script src="../assets/js/vendors/form.js"></script>
+</body>
+
+</html>

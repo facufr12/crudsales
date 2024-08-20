@@ -5029,9 +5029,9 @@ fieldset:disabled .btn {
     --gk-card-subtitle-color: ;
     --gk-card-border-width: var(--gk-border-width);
     --gk-card-border-color: var(--gk-border-color);
-    --gk-card-border-radius: 0.5rem;
+    --gk-card-border-radius: 1.5rem;
     --gk-card-box-shadow: ;
-    --gk-card-inner-border-radius: calc(0.5rem - var(--gk-border-width));
+    --gk-card-inner-border-radius: calc(2.5rem - var(--gk-border-width));
     --gk-card-cap-padding-y: 1rem;
     --gk-card-cap-padding-x: 1.5rem;
     --gk-card-cap-bg: var(--gk-card-background);
