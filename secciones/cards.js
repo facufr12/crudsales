@@ -126,16 +126,18 @@ const cardHtml = `
                   }</h6> <!-- Aquí se añade el Partido en mayúsculas con el color deseado -->
                   <h4 class="mb-0">${person.nombre}</h4>
               </div>
-              <div class="mt-4 p-0">
-                  <div class="d-flex justify-content-between">
-                      <div class="w-100 py-2 px-3 border-top border-bottom">
-                          <h6 class="mb-0">Fecha de Ingreso:</h6>
-                          <p class="text-dark fs-6 fw-semibold mb-0">${formatDate(
-                            person.Fecha
-                          )}</p>
-                      </div>
-                  </div>
-              </div>
+            <div class="mt-4 p-0">
+  <div class="d-flex justify-content-between">
+    <div class="w-100 py-2 px-3 border-top border-bottom">
+      <h6 class="mb-0">Fecha de Ingreso:</h6>
+      <p class="text-dark fs-6 fw-semibold mb-0">${formatDate(person.Fecha)}</p>
+    </div>
+    <div class="w-100 py-2 px-3 border-top border-bottom">
+      <h6 class="mb-0">Hora de Ingreso:</h6>
+      <p class="text-dark fs-6 fw-semibold mb-0">${person.Hora}</p>
+    </div>
+  </div>
+</div>
               <div class="d-flex justify-content-between border-bottom py-2">
                   <span>Edad</span>
                   <span class="text-dark">${person.Edad}</span>
