@@ -1,13 +1,13 @@
 .icon-img {
-    width: 70%; /* Ajusta el tamaño en relación al contenedor */
-    height: auto; /* Mantiene la proporción del ícono */
-  }
+  width: 70%; /* Ajusta el tamaño en relación al contenedor */
+  height: auto; /* Mantiene la proporción del ícono */
+}
 
-  .spinner-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px; /* Ajusta según sea necesario */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Ajusta según sea necesario */
 }
 
 .avatar-md {
@@ -37,6 +37,22 @@
 .progress-bar {
   line-height: 6px;
 }
-.card-header, .card-body {
+.card-header,
+.card-body {
   border-radius: 1.5rem;
+}
+#cotizaciones {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en la siguiente fila */
+  gap: 20px; /* Espacio entre las tarjetas */
+  padding: 10px; /* Espacio alrededor del contenedor */
+  box-sizing: border-box;
+}
+
+.card {
+  flex: 1 1 calc(50% - 20px); /* Ocupa el 50% del ancho del contenedor menos el espacio entre tarjetas */
+  box-sizing: border-box;
+  padding: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Espacio entre las filas de tarjetas */
 }
