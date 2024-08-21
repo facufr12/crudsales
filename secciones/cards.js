@@ -1,12 +1,9 @@
-
-
 let globalData = []; // Variable global para almacenar los datos obtenidos
 let currentPage = 1; // Página actual
 const cardsPerPage = 9; // Número de tarjetas por página
 
 // Fetch al JSON generado del Sheets
-const apiUrl =
-  "https://script.googleusercontent.com/macros/echo?user_content_key=gIdVyLfZVXlhTXU4uuU2XnPLpnrRfk1hzAl8XVeXlYzMlieUYvq5IGabbou2u0IOGMsVD0EV5clmds2lgJVbW3P1RmrawUZEm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnGl29ebRzV5W6uyGQ719j1FkITB3Rt2REr1pZZbDsf3A25jJWAnGi-e7pGUVOMvitr1rG2gmFWXHZjyC-rd-UKymlTLhpyY2jg&lib=MSmCyi5M1QFWbYo20HW2AZnFr3qi2vAlX";
+const apiUrl = "https://script.googleusercontent.com/macros/echo?user_content_key=gIdVyLfZVXlhTXU4uuU2XnPLpnrRfk1hzAl8XVeXlYzMlieUYvq5IGabbou2u0IOGMsVD0EV5clmds2lgJVbW3P1RmrawUZEm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnGl29ebRzV5W6uyGQ719j1FkITB3Rt2REr1pZZbDsf3A25jJWAnGi-e7pGUVOMvitr1rG2gmFWXHZjyC-rd-UKymlTLhpyY2jg&lib=MSmCyi5M1QFWbYo20HW2AZnFr3qi2vAlX";
 
 // Función para formatear la fecha
 function formatDate(dateString) {
@@ -32,9 +29,9 @@ function fetchData() {
     .then((data) => {
       console.log("Fetched Data:", data); // Verificar los datos obtenidos
       globalData = data; // Almacenar los datos globalmente
+      createCards(globalData, currentPage); // Crear las tarjetas para la página actual
+      createTable(globalData); // Crear la tabla
       updatePagination(); // Actualizar la paginación
-      createCards(data, currentPage); // Crear las tarjetas para la página actual
-      createTable(data); // Crear la tabla
 
       // Actualizar el número total de prospectos
       document.getElementById("prospectCount").textContent = `(${data.length})`;
@@ -241,6 +238,7 @@ function updatePagination() {
       if (page !== currentPage) {
         currentPage = page;
         createCards(globalData, currentPage); // Mostrar las tarjetas para la página actual
+        updatePagination(); // Actualizar la paginación para reflejar el cambio de página
       }
     });
   });
@@ -402,6 +400,3 @@ document.getElementById("search").addEventListener("input", function () {
 
 // Llamar a la función para obtener y mostrar los datos al cargar la página
 window.onload = fetchData;
-
-
-
