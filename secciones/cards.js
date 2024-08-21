@@ -1,6 +1,8 @@
 
 
 let globalData = []; // Variable global para almacenar los datos obtenidos
+let currentPage = 1; // Página actual
+const cardsPerPage = 9; // Número de tarjetas por página
 
 // Fetch al JSON generado del Sheets
 const apiUrl =
@@ -12,7 +14,6 @@ function formatDate(dateString) {
   return new Date(dateString).toLocaleDateString(undefined, options);
 }
 
-// Función para obtener los datos y crear las tarjetas
 // Función para obtener los datos y crear las tarjetas
 function fetchData() {
   console.log("Fetching data...");
@@ -31,8 +32,12 @@ function fetchData() {
     .then((data) => {
       console.log("Fetched Data:", data); // Verificar los datos obtenidos
       globalData = data; // Almacenar los datos globalmente
-      createCards(data); // Crear las tarjetas
+      updatePagination(); // Actualizar la paginación
+      createCards(data, currentPage); // Crear las tarjetas para la página actual
       createTable(data); // Crear la tabla
+
+      // Actualizar el número total de prospectos
+      document.getElementById("prospectCount").textContent = `(${data.length})`;
     })
     .catch((error) => console.error("Error fetching data:", error))
     .finally(() => {
@@ -41,13 +46,17 @@ function fetchData() {
     });
 }
 
-// Función para crear las tarjetas
-function createCards(data) {
+// Función para crear las tarjetas con paginación
+function createCards(data, page) {
   console.log("Creating Cards with Data:", data); // Verificar los datos utilizados para crear tarjetas
   const row = document.getElementById("prospecto-container"); // Contenedor para las tarjetas
   row.innerHTML = ""; // Limpiar el contenedor antes de añadir nuevas tarjetas
 
-  data.forEach((person) => {
+  const start = (page - 1) * cardsPerPage;
+  const end = start + cardsPerPage;
+  const paginatedData = data.slice(start, end);
+
+  paginatedData.forEach((person) => {
     // Generar las iniciales del nombre
     const initials = person.nombre
       .split(" ")
@@ -77,136 +86,163 @@ function createCards(data) {
     evolutionValue = Math.max(0, Math.min(100, evolutionValue));
 
     // Definir el color de la barra y el texto en función del valor de evolución
-   // Determina el color de la barra y el color del texto basado en el valor de evolución
-let barColor;
-let textColor;
+    let barColor;
+    let textColor;
 
-switch (evolutionValue) {
-    case 0:
-        barColor = "red";
-        textColor = "white"; // Asegúrate de que el texto sea blanco
-        break;
-    case 25:
-        barColor = "yellow";
-        textColor = "white"; // Asegúrate de que el texto sea blanco
-        break;
-    case 50:
-        barColor = "green";
-        textColor = "white"; // Asegúrate de que el texto sea blanco
-        break;
-    case 75:
-        barColor = "blue";
-        textColor = "white"; // Asegúrate de que el texto sea blanco
-        break;
-    case 100:
-        barColor = "#754ffe";
-        textColor = "white"; // Asegúrate de que el texto sea blanco
-        break;
-    default:
-        barColor = "grey"; // Color por defecto
-        textColor = "grey"; // Ajuste del color del texto para contraste
-        break;
-}
+    switch (evolutionValue) {
+        case 0:
+            barColor = "red";
+            textColor = "white";
+            break;
+        case 25:
+            barColor = "yellow";
+            textColor = "white";
+            break;
+        case 50:
+            barColor = "green";
+            textColor = "white";
+            break;
+        case 75:
+            barColor = "blue";
+            textColor = "white";
+            break;
+        case 100:
+            barColor = "#754ffe";
+            textColor = "white";
+            break;
+        default:
+            barColor = "grey";
+            textColor = "grey";
+            break;
+    }
 
-// Crear HTML para la tarjeta con los estilos de la barra de progreso
-const cardHtml = `
-  <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-      <div class="card mb-4">
-          <div class="card-body">
-              <div class="text-start">
-                  <div class="position-relative">
-                      <!-- Aquí se inserta el avatar generado en lugar de la imagen -->
-                      <div class="avatar" style="background-color: ${avatarBackgroundColor}; color: white; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 24px; font-weight: bold; margin-bottom: 15px;">
-                          ${initials}
+    // Crear HTML para la tarjeta con los estilos de la barra de progreso
+    const cardHtml = `
+      <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+          <div class="card mb-4">
+              <div class="card-body">
+                  <div class="text-start">
+                      <div class="position-relative">
+                          <div class="avatar" style="background-color: ${avatarBackgroundColor}; color: white; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 24px; font-weight: bold; margin-bottom: 15px;">
+                              ${initials}
+                          </div>
+                          <a href="#" class="position-absolute mb-5 mt-8 ms-n5">
+                              <span class="status bg-success"></span>
+                          </a>
                       </div>
-                      <a href="#" class="position-absolute mb-5 mt-8 ms-n5">
-                          <span class="status bg-success"></span>
-                      </a>
+                      <h6 class="text-uppercase mb-1" style="color: #754ffe;">${
+                        person.Partido || "SIN PARTIDO"
+                      }</h6>
+                      <h4 class="mb-0">${person.nombre}</h4>
                   </div>
-                  <h6 class="text-uppercase mb-1" style="color: #754ffe;">${
-                    person.Partido || "SIN PARTIDO"
-                  }</h6> <!-- Aquí se añade el Partido en mayúsculas con el color deseado -->
-                  <h4 class="mb-0">${person.nombre}</h4>
-              </div>
-            <div class="mt-4 p-0">
-  <div class="d-flex justify-content-between">
-    <div class="w-100 py-2 px-3 border-top border-bottom">
-      <h6 class="mb-0">Fecha de Ingreso:</h6>
-      <p class="text-dark fs-6 fw-semibold mb-0">${formatDate(person.Fecha)}</p>
-    </div>
-    <div class="w-100 py-2 px-3 border-top border-bottom">
-      <h6 class="mb-0">Hora de Ingreso:</h6>
-      <p class="text-dark fs-6 fw-semibold mb-0">${person.Hora}</p>
-    </div>
-  </div>
-</div>
-              <div class="d-flex justify-content-between border-bottom py-2">
-                  <span>Edad</span>
-                  <span class="text-dark">${person.Edad}</span>
-              </div>
-              <div class="d-flex justify-content-between border-bottom py-2 mt-3">
-                  <span>Tipo de Afiliación</span>
-                  <span class="text-dark">${person.tipoafiliacion}</span>
-              </div>
-              <div class="d-flex justify-content-between border-bottom py-2 mt-3">
-                  <span>Grupo Familiar</span>
-                  <span class="text-dark">${person.grupofamiliar}</span>
-              </div>
-         <div class="d-flex justify-content-between border-bottom py-2 mt-3">
-  <span>Celular</span>
-  <span class="text-dark d-flex align-items-center">
-
-<a href="https://wa.me/+54${person.Celular}" target="_blank" rel="noopener noreferrer">
-  <img src="/icons/wpicon.svg" alt="WhatsApp" class="icon-img" />
-</a>
-
-
-  </span>
-</div>
-              <div class="d-flex justify-content-between pt-2">
-                  <div class="pt-2">
-                      <span>Estado</span>
-                  </div>
-                  <select class="form-select w-65 d-flex text-center" id="category">
-                      <option value="">${
-                        person.estado || "Seleccionar Estado"
-                      }</option>
-                      <option value="Venta Cerrada">Venta Cerrada</option>
-                      <option value="Pago Pendiente">Pago Pendiente</option>
-                      <option value="En Espera">En Espera</option>
-                      <option value="Pasa de Vigencia">Pasa de Vigencia</option>
-                      <option value="Es Afiliado">Es Afiliado</option>
-                      <option value="Duplicado">Duplicado</option>
-                      <option value="Desestimado Por Cober">Desestimado Por Cober</option>
-                      <option value="No Le Interesa">No Le Interesa</option>
-                      <option value="Rechazado">Rechazado</option>
-                  </select>
-              </div>
-              <div class="progress progress-tooltip mt-5">
-                  <div class="progress-bar" role="progressbar" style="width: ${evolutionValue}%; background-color: ${barColor};" aria-valuenow="${evolutionValue}" aria-valuemin="0" aria-valuemax="100">
-                      <span style="color: ${textColor};">${evolutionValue}%</span>
-                  </div>
-              </div>
-              
-              
-            <div class="d-flex justify-content-end mt-5">
-              <!--  Button Cotizar Ocultado
-              <a href="cotizador2.html" class="btn btn-secondary me-2">
-                  Cotizar
-                  <i class="fe fe-credit-card ms-2"></i>
-              </a>
-              -->
-              <a href="detalle-prospecto.html" class="btn btn-primary">
-                  Detalles del Prospecto
-              </a>
-          </div>
-          </div>
+                <div class="mt-4 p-0">
+    <div class="d-flex justify-content-between">
+      <div class="w-100 py-2 px-3 border-top border-bottom">
+        <h6 class="mb-0">Fecha de Ingreso:</h6>
+        <p class="text-dark fs-6 fw-semibold mb-0">${formatDate(person.Fecha)}</p>
       </div>
-  </div>`;
-
+      <div class="w-100 py-2 px-3 border-top border-bottom">
+        <h6 class="mb-0">Hora de Ingreso:</h6>
+        <p class="text-dark fs-6 fw-semibold mb-0">${person.Hora}</p>
+      </div>
+    </div>
+    </div>
+                  <div class="d-flex justify-content-between border-bottom py-2">
+                      <span>Edad</span>
+                      <span class="text-dark">${person.Edad}</span>
+                  </div>
+                  <div class="d-flex justify-content-between border-bottom py-2 mt-3">
+                      <span>Tipo de Afiliación</span>
+                      <span class="text-dark">${person.tipoafiliacion}</span>
+                  </div>
+                  <div class="d-flex justify-content-between border-bottom py-2 mt-3">
+                      <span>Grupo Familiar</span>
+                      <span class="text-dark">${person.grupofamiliar}</span>
+                  </div>
+             <div class="d-flex justify-content-between border-bottom py-2 mt-3">
+    <span>Celular</span>
+    <span class="text-dark d-flex align-items-center">
+  <a href="https://wa.me/+54${person.Celular}" target="_blank" rel="noopener noreferrer">
+    <img src="/icons/wpicon.svg" alt="WhatsApp" class="icon-img" />
+  </a>
+    </span>
+</div>
+                  <div class="d-flex justify-content-between pt-2">
+                      <div class="pt-2">
+                          <span>Estado</span>
+                      </div>
+                      <select class="form-select w-65 d-flex text-center" id="category">
+                          <option value="">${
+                            person.estado || "Seleccionar Estado"
+                          }</option>
+                          <option value="Venta Cerrada">Venta Cerrada</option>
+                          <option value="Pago Pendiente">Pago Pendiente</option>
+                          <option value="En Espera">En Espera</option>
+                          <option value="Pasa de Vigencia">Pasa de Vigencia</option>
+                          <option value="Es Afiliado">Es Afiliado</option>
+                          <option value="Duplicado">Duplicado</option>
+                          <option value="Desestimado Por Cober">Desestimado Por Cober</option>
+                          <option value="No Le Interesa">No Le Interesa</option>
+                          <option value="Rechazado">Rechazado</option>
+                      </select>
+                  </div>
+                  
+                  <div class="progress progress-tooltip mt-5">
+                      <div class="progress-bar" role="progressbar" style="width: ${evolutionValue}%; background-color: ${barColor};" aria-valuenow="${evolutionValue}" aria-valuemin="0" aria-valuemax="100">
+                          <span style="color: ${textColor};">${evolutionValue}%</span>
+                      </div>
+                  </div>
+                  
+                  
+                <div class="d-flex justify-content-end mt-5">
+                  <a href="detalle-prospecto.html" class="btn btn-primary">
+                      Detalles del Prospecto
+                  </a>
+              </div>
+              </div>
+          </div>
+      </div>`;
 
     // Insertar el HTML en el contenedor
     row.insertAdjacentHTML("beforeend", cardHtml);
+  });
+}
+
+// Función para actualizar los controles de paginación
+function updatePagination() {
+  const totalPages = Math.ceil(globalData.length / cardsPerPage);
+  const paginationContainer = document.getElementById("pagination");
+
+  let paginationHtml = `
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+  `;
+
+  for (let i = 1; i <= totalPages; i++) {
+    paginationHtml += `
+      <li class="page-item ${i === currentPage ? "active" : ""}">
+        <a class="page-link" href="#" data-page="${i}">${i}</a>
+      </li>
+    `;
+  }
+
+  paginationHtml += `
+      </ul>
+    </nav>
+  `;
+
+  paginationContainer.innerHTML = paginationHtml;
+
+  // Agregar evento a los botones de paginación
+  document.querySelectorAll("#pagination .page-link").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      const page = parseInt(event.target.dataset.page, 10);
+      if (page !== currentPage) {
+        currentPage = page;
+        createCards(globalData, currentPage); // Mostrar las tarjetas para la página actual
+      }
+    });
   });
 }
 
@@ -318,7 +354,7 @@ function filterCards(searchTerm) {
     );
   });
   console.log("Filtered Data:", filteredData); // Verificar los datos filtrados
-  createCards(filteredData); // Crear las tarjetas filtradas
+  createCards(filteredData, currentPage); // Crear las tarjetas filtradas
   createTable(filteredData); // Crear la tabla filtrada
 }
 
@@ -366,3 +402,6 @@ document.getElementById("search").addEventListener("input", function () {
 
 // Llamar a la función para obtener y mostrar los datos al cargar la página
 window.onload = fetchData;
+
+
+

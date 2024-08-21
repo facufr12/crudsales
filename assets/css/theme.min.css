@@ -5029,7 +5029,7 @@ fieldset:disabled .btn {
     --gk-card-subtitle-color: ;
     --gk-card-border-width: var(--gk-border-width);
     --gk-card-border-color: var(--gk-border-color);
-    --gk-card-border-radius: 1.5rem;
+    --gk-card-border-radius: 2.5rem;
     --gk-card-box-shadow: ;
     --gk-card-inner-border-radius: calc(2.5rem - var(--gk-border-width));
     --gk-card-cap-padding-y: 1rem;
