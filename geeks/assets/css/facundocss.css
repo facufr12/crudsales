@@ -43,10 +43,11 @@
 }
 #cotizaciones {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+  grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Tamaño mínimo de las tarjetas */
   gap: 20px; /* Espacio entre las tarjetas */
-  padding: 0; /* Sin padding adicional, ajusta si es necesario */
+  padding: 0; /* Sin padding adicional */
   box-sizing: border-box;
+  justify-content: center; /* Centra el grid dentro del contenedor */
 }
 
 .card {
@@ -56,6 +57,5 @@
   border-radius: 8px; /* Opcional: redondear bordes */
   background-color: #fff; /* Asegúrate de que el fondo sea blanco */
   overflow: hidden; /* Asegura que el contenido no se desborde */
-  /* Ajusta el tamaño de la tarjeta si es necesario */
-  height: auto; /* Asegura que la tarjeta ajuste su altura automáticamente */
+  height: 100%; /* Asegura que la tarjeta ajuste su altura automáticamente */
 }
