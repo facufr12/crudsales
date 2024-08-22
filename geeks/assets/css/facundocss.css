@@ -42,17 +42,20 @@
   border-radius: 1.5rem;
 }
 #cotizaciones {
-  display: flex;
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan en la siguiente fila */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
   gap: 20px; /* Espacio entre las tarjetas */
-  padding: 10px; /* Espacio alrededor del contenedor */
+  padding: 0; /* Sin padding adicional, ajusta si es necesario */
   box-sizing: border-box;
 }
 
 .card {
-  flex: 1 1 calc(50% - 20px); /* Ocupa el 50% del ancho del contenedor menos el espacio entre tarjetas */
   box-sizing: border-box;
-  padding: auto;
+  padding: 20px; /* Ajusta el padding si es necesario */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px; /* Espacio entre las filas de tarjetas */
+  border-radius: 8px; /* Opcional: redondear bordes */
+  background-color: #fff; /* Asegúrate de que el fondo sea blanco */
+  overflow: hidden; /* Asegura que el contenido no se desborde */
+  /* Ajusta el tamaño de la tarjeta si es necesario */
+  height: auto; /* Asegura que la tarjeta ajuste su altura automáticamente */
 }
