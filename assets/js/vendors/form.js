@@ -178,6 +178,7 @@ function createCardQuote(quotes) {
           ).toFixed(0)}</span>`;
 
           const cardHtml = `
+          
           <div class="card mt-2 mt-lg-0">
             <div class="card-body">
               <div class="mb-4 d-flex justify-content-between align-items-center">
@@ -209,12 +210,18 @@ function createCardQuote(quotes) {
                   <span class="text-dark fw-semibold me-2">$${quoteWithDs}</span>
                   <div class="icon-shape icon-lg bg-light-danger text-danger rounded-circle">
                     <i class="fe fe-shopping-cart fs-3"></i>
+                    
                   </div>
                 </li>
+                
               </ul>
             </div>
+              <a href="detalle-prospecto.html" class="btn btn-primary">
+                      Enviar Cotización -->
+                  </a>
           </div>`;
     
+          
         quotesContainer.insertAdjacentHTML("beforeend", cardHtml);
       });
     }
