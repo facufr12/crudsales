@@ -29,6 +29,22 @@
 
     <link rel="canonical" href="admin-students.html">
     <title>Cober - Medicina Privada</title>
+    <style>
+        .avatar {
+            background-color: #754ffe;
+            color: white;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -79,7 +95,7 @@
                             </ul>
                         </div>
                     </li>
-                    
+               
                
                     <li class="nav-item">
                         <div class="nav-divider"></div>
@@ -88,6 +104,7 @@
                 </ul>
             
             </div>
+            
         </nav>
 
         <!-- Page Content -->
@@ -113,10 +130,10 @@
                       
                         <ul class="navbar-nav navbar-right-wrap ms-2 d-flex nav-top-wrap">
                             <li class="dropdown stopevent">
-                                <a class="btn btn-light btn-icon rounded-circle indicator indicator-primary" href="#"
+                               <!--  <a class="btn btn-light btn-icon rounded-circle indicator indicator-primary" href="#"
                                     role="button" id="dropdownNotification" data-bs-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
-                                    <i class="fe fe-bell"></i>
+                                    <i class="fe fe-bell"></i>-->
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg"
                                     aria-labelledby="dropdownNotification">
@@ -138,8 +155,8 @@
                                                     <div class="col">
                                                         <a class="text-body" href="#">
                                                             <div class="d-flex">
-                                                                <img src="../../assets/images/avatar/avatar-1.jpg"
-                                                                    alt="" class="avatar-md rounded-circle" />
+                                                                <img src=""
+                                                                    alt="" class="" />
                                                                 <div class="ms-3">
                                                                     <h5 class="fw-bold mb-1">Carlos</h5>
                                                                     <p class="mb-3">Se cambió estado a "Venta Cerrada"
@@ -173,7 +190,7 @@
                                                     <div class="col">
                                                         <a class="text-body" href="#">
                                                             <div class="d-flex">
-                                                                <img src="../../assets/images/avatar/avatar-2.jpg"
+                                                                <img src=""
                                                                     alt="" class="avatar-md rounded-circle" />
                                                                 <div class="ms-3">
                                                                     <h5 class="fw-bold mb-1">[ $NombreyApellido ]</h5>
@@ -208,18 +225,16 @@
                             </li>
                             <!-- List -->
                             <li class="dropdown ms-2">
-                                <a class="rounded-circle" href="#" role="button" id="dropdownUser"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <div class="avatar avatar-md avatar-indicators avatar-online">
-                                        <img alt="avatar" src="../../assets/images/avatar/avatar-1.jpg"
-                                            class="rounded-circle" />
+                                <a class="rounded-circle" href="#" role="button" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div id="avatar-container" class="">
+                                        <!-- Avatar se insertará aquí -->
                                     </div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
                                     <div class="dropdown-item">
                                         <div class="d-flex">
                                             <div class="avatar avatar-md avatar-indicators avatar-online">
-                                                <img alt="avatar" src="../../assets/images/avatar/avatar-1.jpg"
+                                                <img alt="avatar" src=""
                                                     class="rounded-circle" />
                                             </div>
                                             <div class="ms-3 lh-1">
@@ -390,7 +405,7 @@
                         <!-- Tab Pane -->
                         <div class="tab-pane fade show active" id="tabPaneList" role="tabpanel" aria-labelledby="tabPaneList">
                             <div class="mb-4">
-                                <input type="search" class="form-control" placeholder="Buscar prospectos" id="search">
+                                <input type="search" class="form-control" placeholder="Buscar prospectos por Nombre" id="search">
                                 <!-- Spinner HTML -->
                                 <div id="loading-spinner" class="d-none spinner-container">
                                     <div class="spinner-border" role="status">
@@ -418,6 +433,23 @@
 
     <!-- Scripts -->
     <!-- Libs JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const avatarContainer = document.getElementById('avatar-container');
+            const avatarBackgroundColor = "#754ffe";
+            const initials = "FF";
+
+            // Crear el HTML del avatar
+            const avatarHTML = `
+                <div class="avatar" style="background-color: ${avatarBackgroundColor};">
+                    ${initials}
+                </div>
+            `;
+
+            // Insertar el avatar en el contenedor
+            avatarContainer.innerHTML = avatarHTML;
+        });
+    </script>
      <script src="cards.js"></script>
     <script src="../fetchexcel.js"></script>
     <script src="../../assets/libs/%40popperjs/core/dist/umd/popper.min.js"></script>

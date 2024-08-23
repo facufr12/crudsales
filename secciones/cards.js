@@ -61,6 +61,9 @@ function createCards(data, page) {
       .join("")
       .toUpperCase();
 
+
+
+      
     // Definir el color de fondo del avatar
     const avatarBackgroundColor = "#754ffe";
 
