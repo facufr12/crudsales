@@ -41,8 +41,9 @@ function updateContratacion() {
     tipoContratacion === "Monotributo" ? "block" : "none";
   document.getElementById("sueldo").style.display =
     tipoContratacion === "Recibo de Sueldo" ? "block" : "none";
-  if (tipoContratacion !== "Recibo de Sueldo")
+  if (tipoContratacion !== "Recibo de Sueldo") {
     document.getElementById("sueldo_titular").value = 0;
+  }
 }
 
 document
@@ -59,8 +60,9 @@ function updateContratacionEsposa() {
   ).style.display = tipoContratacionEsposa === "Monotributo" ? "block" : "none";
   document.getElementById("sueldo_e").style.display =
     tipoContratacionEsposa === "Recibo de Sueldo" ? "block" : "none";
-  if (tipoContratacionEsposa !== "Recibo de Sueldo")
+  if (tipoContratacionEsposa !== "Recibo de Sueldo") {
     document.getElementById("sueldo_esposa").value = 0;
+  }
 }
 
 document
@@ -75,7 +77,7 @@ function updateHijosEdades() {
       let cantidad = parseInt(this.value, 10);
       let edadesHtml = "";
       for (let i = 0; i < cantidad; i++) {
-        edadesHtml += `<input class="form-control" type="number" id="edad_hijo_${
+        edadesHtml += `<input class="form-control mb-2" type="number" id="edad_hijo_${
           i + 1
         }" name="edad_hijo_${i + 1}" placeholder="Edad Hijo ${
           i + 1
@@ -122,6 +124,7 @@ document.getElementById("cotizar").addEventListener("click", function (event) {
   } else {
     jsonData.sons = false;
   }
+
   fetch("https://crudbackend.cober.online/quote/2", {
     method: "POST",
     headers: {
@@ -145,6 +148,7 @@ document.getElementById("cotizar").addEventListener("click", function (event) {
 function createCardQuote(quotes) {
   const quotesContainer = document.getElementById("cotizaciones");
   quotesContainer.innerHTML = ""; // Limpiar contenedor antes de agregar nuevas tarjetas
+
   const estadoCivil = document.getElementById("estado_civil").value;
   const data = {
     cobertura: estadoCivil === "Soltero" ? "Individual" : "Matrimonio",
@@ -177,51 +181,52 @@ function createCardQuote(quotes) {
             descuentos.Wife
           ).toFixed(0)}</span>`;
 
-          const cardHtml = `
-          
-          <div class="card mt-2 mt-lg-0">
-            <div class="card-body">
-              <div class="mb-4 d-flex justify-content-between align-items-center">
-                <h4 class="mb-1">Cotización Plan</h4>
-              </div>
-              <div class="d-md-flex">
-                <div><img src="../assets/images/Zipper.PNG" alt="" class="img-4by3-xl rounded" width="120px" /></div>
-                <div class="ms-md-4 mt-2">
-                  <h4 class="mb-1 text-primary-hover">${key}</h4>
-                  <h5>${data.cobertura}. ${data.edad}. ${data.hijos}</h5>
-                </div>
-              </div>
+    const cardHtml = `
+      <div class="card mt-2 mt-lg-0">
+        <div class="card-body">
+          <div class="mb-4 d-flex justify-content-between align-items-center">
+            <h4 class="mb-1">Cotización Plan</h4>
+          </div>
+          <div class="d-md-flex">
+            <div><img src="../assets/images/Zipper.PNG" alt="" class="img-4by3-xl rounded" width="120px" /></div>
+            <div class="ms-md-4 mt-2">
+              <h4 class="mb-1 text-primary-hover">${key}</h4>
+              <h5>${data.cobertura}. ${data.edad}. ${data.hijos}</h5>
             </div>
-            <div class="card-body border-top pt-2">
-              <ul class="list-group list-group-flush mb-0">
-                <li class="d-flex justify-content-between list-group-item px-0">
-                  <span>Subtotal</span>
-                  <span class="text-dark fw-semibold"><del>$${quoteNoDs}</del></span>
-                </li>
-                <li class="d-flex align-items-center list-group-item px-0">
-                  <span class="me-2">Descuento</span>
-                  <div class="icon-shape icon-lg bg-light-success text-success rounded-circle me-2">
-                    <i class="fe fe-pie-chart fs-3"></i>
-                  </div>
-                  <span class="text-success fw-semibold"> -$${parseFloat(descuentos.Total).toFixed(0)}</span>
-                </li>
-                <li class="d-flex align-items-center list-group-item px-0">
-                  <span class="me-2">Total a Pagar</span>
-                  <span class="text-dark fw-semibold me-2">$${quoteWithDs}</span>
-                  <div class="icon-shape icon-lg bg-light-danger text-danger rounded-circle">
-                    <i class="fe fe-shopping-cart fs-3"></i>
-                    
-                  </div>
-                </li>
-                
-              </ul>
-            </div>
-              <a href="detalle-prospecto.html" class="btn btn-primary">
-                      Enviar Cotización -->
-                  </a>
-          </div>`;
-    
-          
-        quotesContainer.insertAdjacentHTML("beforeend", cardHtml);
-      });
-    }
+          </div>
+        </div>
+        <div class="card-body border-top pt-2">
+          <ul class="list-group list-group-flush mb-0">
+            <li class="d-flex justify-content-between list-group-item px-0">
+              <span>Subtotal</span>
+              <span class="text-dark fw-semibold"><del>$${quoteNoDs}</del></span>
+            </li>
+         <li class="d-flex justify-content-between list-group-item px-0 align-items-center">
+  <span class="me-2">Descuento</span>
+  <div class="ms-auto d-flex align-items-center">
+    <div class="icon-shape icon-lg bg-light-success text-success rounded-circle me-2">
+      <i class="fe fe-pie-chart fs-3"></i>
+    </div>
+    <span class="text-success fw-semibold"> -$${parseFloat(
+      descuentos.Total
+    ).toFixed(0)}</span>
+  </div>
+</li>
+
+            <li class="d-flex align-items-center list-group-item px-0">
+              <span class="me-2">Total a Pagar</span>
+              <span class="text-dark fw-semibold me-2">$${quoteWithDs}</span>
+              <div class="icon-shape icon-lg bg-light-danger text-danger rounded-circle">
+                <i class="fe fe-shopping-cart fs-3"></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="detalle-prospecto.html" class="btn btn-primary">
+          Enviar Cotización -->
+        </a>
+      </div>`;
+
+    quotesContainer.insertAdjacentHTML("beforeend", cardHtml);
+  });
+}

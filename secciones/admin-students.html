@@ -33,8 +33,8 @@
         .avatar {
             background-color: #754ffe;
             color: white;
-            width: 70px;
-            height: 70px;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -44,6 +44,7 @@
             margin-bottom: 15px;
             margin-top: 10px;
         }
+    
     </style>
 </head>
 
@@ -226,8 +227,8 @@
                             <!-- List -->
                             <li class="dropdown ms-2">
                                 <a class="rounded-circle" href="#" role="button" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <div id="avatar-container" class="">
-                                        <!-- Avatar se insertará aquí -->
+                                    <div class="avatar-foto d-flex align-items-center justify-content-center">
+                                        <span id="avatarText" class="avatar-foto-text"></span>
                                     </div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
@@ -387,7 +388,7 @@
                                         data-bs-target="#tabPaneList" role="tab" aria-controls="tabPaneList"
                                         aria-selected="false">
                                         <span class="fe fe-list"></span>    
-                                    </button>
+                                     </button>
                                 </div>
                             </div>
                             
@@ -403,15 +404,32 @@
                 <div class="container mt-4">
                     <div class="tab-content">
                         <!-- Tab Pane -->
-                        <div class="tab-pane fade show active" id="tabPaneList" role="tabpanel" aria-labelledby="tabPaneList">
-                            <div class="mb-4">
-                                <input type="search" class="form-control" placeholder="Buscar prospectos por Nombre" id="search">
+                            
+                            <div class="tab-pane fade show active" id="tabPaneList" role="tabpanel" aria-labelledby="tabPaneList">
+                                <div class="mb-4">
+                                    <input type="search" class="form-control" placeholder="Buscar prospectos por Nombre" id="search">
+                                    <select id="stateFilter" class="form-select">
+                                        
+                                        <option value="">Seleccionar Estado</option>
+                                        <option value="no">no contesta</option>
+                                        <option value="Venta Cerrada">Venta Cerrada</option>
+                                        <option value="Pago Pendiente">Pago Pendiente</option>
+                                        <option value="En Espera">En Espera</option>
+                                        <option value="Pasa de Vigencia">Pasa de Vigencia</option>
+                                        <option value="Es Afiliado">Es Afiliado</option>
+                                        <option value="Duplicado">Duplicado</option>
+                                        <option value="Desestimado Por Cober">Desestimado Por Cober</option>
+                                        <option value="No Le Interesa">No Le Interesa</option>
+                                        <option value="Rechazado">Rechazado</option>
+                                      </select>
+                                      
                                 <!-- Spinner HTML -->
                                 <div id="loading-spinner" class="d-none spinner-container">
                                     <div class="spinner-border" role="status">
                                         <span class="visually-hidden">Loading...</span>
                                     </div>
                                 </div>
+                                
                             </div>
                 
                             <div id="prospecto-container" class="row">
@@ -430,24 +448,22 @@
             </section>
         </main>
     </div>
-
+   
     <!-- Scripts -->
     <!-- Libs JS -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const avatarContainer = document.getElementById('avatar-container');
-            const avatarBackgroundColor = "#754ffe";
-            const initials = "FF";
+        document.addEventListener("DOMContentLoaded", () => {
+            const avatarText = document.getElementById('avatarText');
 
-            // Crear el HTML del avatar
-            const avatarHTML = `
-                <div class="avatar" style="background-color: ${avatarBackgroundColor};">
-                    ${initials}
-                </div>
-            `;
+            // Recuperar las iniciales del localStorage
+            const userInitials = localStorage.getItem('userInitials');
 
-            // Insertar el avatar en el contenedor
-            avatarContainer.innerHTML = avatarHTML;
+            if (userInitials) {
+                // Actualizar el contenido del span con las iniciales
+                avatarText.textContent = userInitials;
+            } else {
+                console.log('No se encontraron iniciales de usuario en localStorage.');
+            }
         });
     </script>
      <script src="cards.js"></script>

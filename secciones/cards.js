@@ -10,10 +10,8 @@ function formatDate(dateString) {
   const options = { year: "numeric", month: "2-digit", day: "2-digit" };
   return new Date(dateString).toLocaleDateString(undefined, options);
 }
-
 // Función para obtener los datos y crear las tarjetas
 function fetchData() {
-  console.log("Fetching data...");
 
   // Mostrar el spinner
   document.getElementById("loading-spinner").classList.remove("d-none");
@@ -27,7 +25,6 @@ function fetchData() {
       return response.json();
     })
     .then((data) => {
-      console.log("Fetched Data:", data); // Verificar los datos obtenidos
       globalData = data; // Almacenar los datos globalmente
       createCards(globalData, currentPage); // Crear las tarjetas para la página actual
       createTable(globalData); // Crear la tabla
@@ -42,10 +39,8 @@ function fetchData() {
       document.getElementById("loading-spinner").classList.add("d-none");
     });
 }
-
 // Función para crear las tarjetas con paginación
 function createCards(data, page) {
-  console.log("Creating Cards with Data:", data); // Verificar los datos utilizados para crear tarjetas
   const row = document.getElementById("prospecto-container"); // Contenedor para las tarjetas
   row.innerHTML = ""; // Limpiar el contenedor antes de añadir nuevas tarjetas
 
@@ -59,11 +54,7 @@ function createCards(data, page) {
       .split(" ")
       .map((n) => n[0])
       .join("")
-      .toUpperCase();
-
-
-
-      
+      .toUpperCase();      
     // Definir el color de fondo del avatar
     const avatarBackgroundColor = "#754ffe";
 
@@ -115,7 +106,6 @@ function createCards(data, page) {
             textColor = "grey";
             break;
     }
-
     // Crear HTML para la tarjeta con los estilos de la barra de progreso
     const cardHtml = `
       <div class="col-xl-4 col-lg-6 col-md-6 col-12">
@@ -163,7 +153,7 @@ function createCards(data, page) {
     <span>Celular</span>
     <span class="text-dark d-flex align-items-center">
   <a href="https://wa.me/+54${person.Celular}" target="_blank" rel="noopener noreferrer">
-    <img src="/icons/wpicon.svg" alt="WhatsApp" class="icon-img" />
+    <img src="/icons/wpiconss.svg" alt="WhatsApp" class="icon-img" />
   </a>
     </span>
 </div>
@@ -192,8 +182,7 @@ function createCards(data, page) {
                           <span style="color: ${textColor};">${evolutionValue}%</span>
                       </div>
                   </div>
-                  
-                  
+        
                 <div class="d-flex justify-content-end mt-5">
                   <a href="detalle-prospecto.html" class="btn btn-primary">
                       Detalles del Prospecto
@@ -202,12 +191,10 @@ function createCards(data, page) {
               </div>
           </div>
       </div>`;
-
     // Insertar el HTML en el contenedor
     row.insertAdjacentHTML("beforeend", cardHtml);
   });
 }
-
 // Función para actualizar los controles de paginación
 function updatePagination() {
   const totalPages = Math.ceil(globalData.length / cardsPerPage);
@@ -254,7 +241,6 @@ fetchData();
 
 // Función para crear la tabla
 function createTable(data) {
-  console.log("Creating Table with Data:", data); // Verificar los datos utilizados para crear la tabla
   const tableContainer = document.getElementById("prospecto-table");
 
   tableContainer.innerHTML = `
@@ -285,7 +271,6 @@ function createTable(data) {
 
               // Establecer el color de fondo del avatar
               const backgroundColor = "#754ffe"; // Puedes personalizar esto si deseas un color diferente por persona
-
               return `
               <tr>
                 <td>
