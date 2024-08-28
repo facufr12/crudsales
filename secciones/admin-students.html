@@ -449,23 +449,15 @@
         </main>
     </div>
    
+
+
+
+        <!-- Icono AVATAR-->
+    <script src="../assets/js/vendors/avatarlogin.js"></script>
     <!-- Scripts -->
     <!-- Libs JS -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const avatarText = document.getElementById('avatarText');
+   
 
-            // Recuperar las iniciales del localStorage
-            const userInitials = localStorage.getItem('userInitials');
-
-            if (userInitials) {
-                // Actualizar el contenido del span con las iniciales
-                avatarText.textContent = userInitials;
-            } else {
-                console.log('No se encontraron iniciales de usuario en localStorage.');
-            }
-        });
-    </script>
      <script src="cards.js"></script>
     <script src="../fetchexcel.js"></script>
     <script src="../../assets/libs/%40popperjs/core/dist/umd/popper.min.js"></script>

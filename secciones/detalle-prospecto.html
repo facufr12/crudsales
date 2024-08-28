@@ -727,29 +727,8 @@
   <script src="../../../assets/libs/bs-stepper/dist/js/bs-stepper.min.js"></script>
   <script src="../../../assets/js/vendors/beStepper.js"></script>
   <script src="../../../assets/libs/imask/dist/imask.min.js"></script>
-  <script src="../../../assets/js/vendors/inputmask.js"></script>
-  <script>
-      document.addEventListener("DOMContentLoaded", function () {
-
-          const paymentMethodSelect = document.getElementById("paymentMethod");
-          const cardDetailsDiv = document.getElementById("cardDetails");
-          const selectAge = document.getElementById("edad_titular")
-          const selectAgeWife = document.getElementById("edad_esposa")
-          for (let i = 18; i <= 65; i++) {
-              let option = document.createElement("option");
-              option.text = i;
-              option.value = i;
-              selectAge.appendChild(option)
-          }
-          for (let i = 18; i <= 65; i++) {
-              let option = document.createElement("option");
-              option.text = i;
-              option.value = i;
-              selectAgeWife.appendChild(option)
-          }
- 
-      });
-  </script>
+  
+  <script src="/assets/js/vendors/formdata.js"></script>
   <script src="../assets/js/vendors/form.js"></script>
   <!-- Mirrored from geeksui.codescandy.com/geeks/pages/dashboard/project-overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Dec 2023 18:26:36 GMT -->
 </html>
